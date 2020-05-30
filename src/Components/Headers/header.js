@@ -6,9 +6,11 @@ import {
 function Header() {
   return (
     <div id="header-wrapper">
-      <div id="header">
-        <div id="logo">
-          <img src="/images/Logo.png" height="100" align="middle" alt="" />
+      <div class="container" style={{padding: "0px"}}>
+        <div id="header">
+          <div id="logo">
+            <img src="/images/Logo.png" height="100" align="middle" alt=""/>
+          </div>
         </div>
       </div>
       <div id="menu">

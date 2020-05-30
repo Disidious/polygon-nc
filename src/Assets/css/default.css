@@ -41,6 +41,7 @@ h2 {
 p,
 ol,
 ul {
+    font-family: 'Arial';
     margin-top: 0px;
 }
 
@@ -111,9 +112,11 @@ a img {
 
 /*********************************************************************************/
 
-.large.material-icons {
-    font-size: 100px;
-    vertical-align: middle;
+.material-icons.md-18 {
+    color: rgb(126, 126, 126);
+    padding-right: 0.5em;
+    float: left;
+    position: relative;
 }
 
 
@@ -162,7 +165,7 @@ a img {
 }
 
 hr {
-    display: none;
+    background-color: LightGray;
 }
 
 
@@ -172,6 +175,7 @@ hr {
     min-height: 100%;
     max-width: 2000px;
     position: relative;
+    padding-bottom: 40px;
     z-index: 9;
 }
 
@@ -226,7 +230,7 @@ hr {
 
 #logo img {
     position: absolute;
-    right: 0;
+    
 }
 
 #logo h1 {
@@ -267,11 +271,16 @@ hr {
 }
 
 #displayLogos ul {
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px;
-    list-style: none;
+    margin: 0px;
+    padding: 0px;
     line-height: normal;
+    display: flex;
+    justify-content: space-between;
     text-align: center;
+}
+
+.objectfit {
+    object-fit: contain;
 }
 
 /** MENU */
@@ -463,22 +472,41 @@ hr {
 
 #footer {
     background-color: #202020;
-    position: fixed;
-    bottom: 0;
+    position: relative;
+    bottom: 0px;
+    padding: 0px;
     width: 100%;
-    height: 40px;
+    height: 410px;
     z-index: 99999;
 }
 
 #footer p {
-    text-align: center;
-    color: rgba(255, 255, 255, 0.3);
+    color: rgb(126, 126, 126);
+    font-size: 0.9em;
+}
+
+#footer h2 {
+    color: rgb(163, 163, 163);
+    padding: 0;
+    font-size: 1.1em;
 }
 
 #footer a {
-    color: rgba(255, 255, 255, 0.4);
+    color: rgb(126, 126, 126);
+    font-size: 0.9em;
 }
 
+#footer ul {
+    list-style: none;
+    line-height: 2em;
+    padding: 0px;
+}
+
+#footer a:hover,
+#footer .current_page_item a {
+    text-decoration: none;
+    color: rgb(163, 163, 163);
+}
 
 /* List style 1 */
 
@@ -710,27 +738,23 @@ ul.style3 .first {
 .card2 {
     display: block;
     margin: 1em;
-    height: auto;
-    width: 300px;
+    height: 17em;
+    width: auto;
     background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: 50% -50%;
-    text-align: center;
+    background-size: 50%;
+    background-position: 50% 0%;
     float: left;
 }
 
 .card2 p{
     color: rgb(0, 0, 0);
     margin-bottom: 30px;
-    text-align: center;
 }
 
 .card2 h2{
-    padding: 1em;
-    padding-top: 9em;
+    padding-left: 7em;
+    padding-top: 3em;
     padding-bottom: 0px;
-    color: rgb(0, 0, 0);
-    text-align: center;
     font-size: 1.5em;
 }
 

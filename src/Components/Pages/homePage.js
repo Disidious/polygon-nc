@@ -36,7 +36,7 @@ function HomePage() {
 						<h2>About Us<br /></h2>
 						<span class="byline">Welcome to Polygon Network Company</span>
 					</div>
-					<p>
+					<p style={{textAlign: "justify"}}>
 						Our Company is a registered enterprise structured cabling certified company,
 						authorized to deploy Panduit&reg; enterprise structured cabling systems and participate in the certification
 						Plus sm System Warranty, and we are dedicated to giving you the very best of Network Infrastructures, CCTVs, Access Controls and Data Shows

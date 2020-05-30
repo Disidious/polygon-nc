@@ -12,6 +12,7 @@ import ContactUs from './Components/Pages/contactUs';
 import AboutUs from './Components/Pages/aboutUs';
 import CCTV from './Components/Pages/cctv';
 import DataShow from './Components/Pages/dataShow';
+import AccessControl from './Components/Pages/accessControl';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route exact path='/AboutUs' component={AboutUs} />
           <Route exact path='/Services/CCTV' component={CCTV} />
           <Route exact path='/Services/DataShow' component={DataShow} />
+          <Route exact path='/Services/AccessControl' component={AccessControl} />
           <Footer />
       </div>
     </Router>
