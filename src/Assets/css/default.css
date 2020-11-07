@@ -166,6 +166,7 @@ a img {
 
 hr {
     background-color: LightGray;
+    height: 0.5px
 }
 
 
@@ -273,6 +274,7 @@ hr {
 #displayLogos ul {
     margin: 0px;
     padding: 0px;
+    margin-bottom: -100px;
     line-height: normal;
     display: flex;
     justify-content: space-between;

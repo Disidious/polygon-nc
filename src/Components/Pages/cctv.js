@@ -13,9 +13,9 @@ function CCTV() {
                 </div>
 
                 <div class="title">
-                    <h2 style={{ marginBottom: "0.4em" }}>CCTV Technologies<br /></h2>
+                    <center><h2 style={{ marginBottom: "0.4em" }}>CCTV Technologies<br /></h2></center>
                 </div>
-
+                <hr/>
                 <div style={{ position: "relative" }}>
                     <img src="/images/cctv71.png" style={{ width: "100%", position: "relative" }} />
                     <div style={{ top: "10px", left: "0px", position: "absolute" }}>
@@ -91,7 +91,7 @@ function CCTV() {
                         </p>
                     </div>
                 </div>
-                <div class="row" style={{ padding: "0em 0em 2em 0em" }}>
+                <div class="row">
                     <div class="col-md-2">
                         <img src="/images/ptz.png" style={{ width: "90%" }} />
                     </div>
@@ -105,7 +105,7 @@ function CCTV() {
                     </div>
                     <div class="col-md-2"></div>
                     <div class="col-md-2">
-                        <img src="/images/motion.png" style={{ width: "90%", paddingBottom: "1.5em" }} />
+                        <img src="/images/motion.png" style={{ width: "90%"}} />
                     </div>
                     <div class="col-md-3 m-auto">
                         <h2 style={{ left: "0px", fontSize: "1.5em" }}>Motion Detection</h2>
@@ -116,14 +116,6 @@ function CCTV() {
                     </div>
                 </div>
                 <hr/>
-                <div id="displayLogos">
-                    <ul>
-                        <img class="objectfit" src="/images/bosch.png" style={{ width: "16%" }} />
-                        <img class="objectfit" src="/images/idis.png" style={{ width: "13%", marginBottom: "1.3em" }} />
-                        <img class="objectfit" src="/images/hikvision.png" style={{ width: "20%" }} />
-                        <img class="objectfit" src="/images/dahua.png" style={{ width: "16%" }} />
-                    </ul>
-                </div>
             </div>
         </div>
     );
