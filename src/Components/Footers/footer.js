@@ -14,7 +14,7 @@ function Footer() {
         </div>
 
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-3">
             <h2 style={{ left: "0px" }}>
               Services
             </h2>
@@ -26,7 +26,7 @@ function Footer() {
             </ul>
           </div>
 
-          <div class="col-md-3">
+          <div class="col-3">
             <h2 style={{ left: "0px" }}>
               Contact Us
             </h2>
@@ -40,7 +40,7 @@ function Footer() {
             <p>53 El-Makrizy St., Heliopolis, <br/>Cairo, Egypt.</p>
           </div>
 
-          <div class="col-md-3">
+          <div class="col-3">
             <h2 style={{ left: "0px" }}>
               Support
             </h2>
@@ -50,7 +50,7 @@ function Footer() {
             <p>0101 219 4689</p>
           </div>
 
-          <div class="col-md-3">
+          <div class="col-3">
             <h2 style={{ left: "0px" }}>
               Sales
             </h2>

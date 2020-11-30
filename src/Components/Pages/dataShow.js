@@ -20,7 +20,7 @@ function DataShow() {
                 </div>
                 <hr />
                 <div class="row">
-                    <div class="col-md-6 m-auto">
+                    <div class="col-lg-6 col-5 m-auto">
                         <div class="title">
                             <span class="byline">Short Throw / Ultra Short</span>
                         </div>
@@ -30,12 +30,12 @@ function DataShow() {
                             viewing and include robust networking capability.
                         </p>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-lg-6 col-7">
                         <img src="/images/datashow1.jpg" style={{ width: "90%", float: "right" }} />
                     </div>
                 </div>
                 <div class="row" style={{ marginTop: "1em" }}>
-                    <div class="col-md-6 m-auto">
+                    <div class="col-lg-6 col-5 m-auto">
                         <div class="title">
                             <div class="byline" style={{ paddingTop: "0em" }}>interactive projectors</div>
                         </div>
@@ -44,7 +44,7 @@ function DataShow() {
                             using his/her finger or an IR pen, and also create an exciting enviroment for any kind of event or purpose.
                         </p>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-lg-6 col-7">
                         <img src="/images/datashow3.jpg" style={{ width: "80%", float: "right" }} />
                     </div>
                 </div>

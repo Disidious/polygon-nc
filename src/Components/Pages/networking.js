@@ -22,10 +22,10 @@ function Networking() {
                 </div>
                 <hr />
                 <div class="row" style={{ padding: "1em 0em 2em 0em" }}>
-                    <div class="col-md-2">
+                    <div id="soorabentmetnaka" class="col-lg-2 col-3">
                         <img src="/images/fiber.png" style={{ width: "90%" }} />
                     </div>
-                    <div class="col-md-3 m-auto">
+                    <div class="col-lg-3 col-8">
                         <h2 style={{ left: "0px", fontSize: "1.5em" }}>Fiber optic cables</h2>
                         <p style={{ textAlign: "justify" }}>
                             Fiber optic cables have a much greater bandwidth than metal cables.
@@ -33,11 +33,11 @@ function Networking() {
                             also it offers low power loss.
                         </p>
                     </div>
-                    <div class="col-md-2"></div>
-                    <div class="col-md-2">
+                    <div class="col-lg-2 col-1"></div>
+                    <div class="col-lg-2 col-3">
                         <img src="/images/copper.png" style={{ width: "90%", paddingTop: "0.3em" }} />
                     </div>
-                    <div class="col-md-3 m-auto">
+                    <div class="col-lg-3 col-8">
                         <h2 style={{ left: "0px", fontSize: "1.5em" }}>Copper cables</h2>
                         <p style={{ textAlign: "justify" }}>
                             Copper cables can handle a wider load of electrical power,
@@ -46,12 +46,13 @@ function Networking() {
                             they also can be bent into nearly any form without breaking.
                         </p>
                     </div>
+                    <div class="col-lg-2 col-1"></div>
                 </div>
                 <div class="row" style={{ padding: "0em 0em 0em 0em" }}>
-                    <div class="col-md-2">
+                    <div class="col-lg-2 col-3">
                         <img src="/images/rack.png" style={{ width: "90%", paddingTop: "0.3em" }} />
                     </div>
-                    <div class="col-md-3 m-auto">
+                    <div class="col-lg-3 col-8">
                         <h2 style={{ left: "0px", fontSize: "1.5em" }}>Racks</h2>
                         <p style={{ textAlign: "justify" }}>
                             Starting with customised server racks and network cabinets that are flexible, easy to mount,
@@ -59,11 +60,11 @@ function Networking() {
                             and reliability of your critical infrastructure.
                         </p>
                     </div>
-                    <div class="col-md-2"></div>
-                    <div class="col-md-2">
+                    <div class="col-lg-2 col-1"></div>
+                    <div class="col-lg-2 col-3">
                         <img src="/images/port.png" style={{ width: "90%", paddingTop: "0.3em" }} />
                     </div>
-                    <div class="col-md-3 m-auto">
+                    <div class="col-lg-3 col-8">
                         <h2 style={{ left: "0px", fontSize: "1.5em" }}>Patch panels</h2>
                         <p style={{ textAlign: "justify" }}>
                             Available in different designs or port counts,
@@ -72,6 +73,7 @@ function Networking() {
                             including fiber and copper for various purposes.
                         </p>
                     </div>
+                    <div class="col-lg-2 col-1"></div>
                 </div>
                 <hr />
             </div>

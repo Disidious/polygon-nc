@@ -14,7 +14,7 @@ function AccessControl() {
                     </p>
                 </div>
                 <div class="row">
-                    <div class="col-md-12 m-auto">
+                    <div class="col-lg-12 col-12 m-auto">
                         <div class="title" style={{ margin: "0em 0em 0em 1em" }}>
                             <center><h2>Types of authentications</h2></center>
                         </div>
@@ -22,7 +22,7 @@ function AccessControl() {
                 </div>
                 <hr />
                 <div class="row">
-                    <div class="col-md-6 m-auto">
+                    <div class="col-lg-6 col-5 m-auto">
                         <div class="title">
                             <span class="byline">Biometric authentication</span>
                         </div>
@@ -32,12 +32,12 @@ function AccessControl() {
                             but also gives the data regarding the entry of persons.
                         </p>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-lg-6 col-7">
                         <img src="/images/biometric_security3.jpg" style={{ width: "80%", float: "right" }} />
                     </div>
                 </div>
                 <div class="row" style={{ marginTop: "1em" }}>
-                    <div class="col-md-6 m-auto">
+                    <div class="col-lg-6 col-5 m-auto">
                         <div class="title">
                             <span class="byline">Cards</span>
                         </div>
@@ -50,14 +50,14 @@ function AccessControl() {
                             data collection and more.
                         </p>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-lg-6 col-7">
                         <img src="/images/card.jpg" style={{ width: "80%", float: "right" }} />
                     </div>
                 </div>
                 <hr />
                 <div class="row" style={{ height: "5em" }}></div>
                 <div class="row">
-                    <div class="col-md-12 m-auto">
+                    <div class="col-lg-12 col-12 m-auto">
                         <div class="title" style={{ margin: "0em 0em 0em 1em" }}>
                             <center><h2>Types of access control</h2></center>
                         </div>
@@ -65,19 +65,20 @@ function AccessControl() {
                 </div>
                 <hr style={{ height: "0.05em" }} />
                 <div class="row" style={{ padding: "2em 0em 2em 0em" }}>
-                    <div class="col-md-2">
+                    <div class="col-lg-2 col-3">
                         <img src="/images/standalone.png" style={{ width: "90%", paddingBottom: "1em" }} />
                     </div>
-                    <div class="col-md-3 m-auto">
+                    <div class="col-lg-3 col-2 m-auto">
                         <h2 style={{ left: "0px", fontSize: "1.5em" }}>Standalone<br/>Access Control</h2>
                     </div>
-                    <div class="col-md-2"></div>
-                    <div class="col-md-2">
+                    <div class="col-lg-2 col-1"></div>
+                    <div class="col-lg-2 col-3">
                         <img src="/images/centralized.png" style={{ width: "90%", paddingTop: "0em" }} />
                     </div>
-                    <div class="col-md-3 m-auto">
+                    <div class="col-lg-3 col-2 m-auto">
                         <h2 style={{ left: "0px", fontSize: "1.5em" }}>Centralized<br/>Access Control</h2>
                     </div>
+                    <div class="col-lg-2 col-1"></div>
                 </div>
                 <hr/>
             </div>
