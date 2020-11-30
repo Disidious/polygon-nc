@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> c36160ce8b9f4eaaa6e8aa3b2e36ee63f362a913
 *{box-sizing: border-box;}
 body {
     width: 100%;
@@ -847,8 +851,86 @@ ul.style3 .first {
     position: absolute;
     
 }
+<<<<<<< HEAD
 
 @media(max-device-width: 900px){
+=======
+#cctv-logo{
+    position: relative;
+    width: 100%;
+}
+.cctv-h2-class {
+    padding: 40px;
+    padding-top: 100px ;
+    padding-bottom: 0px;
+    color: white;
+}
+.cctv-p-class{
+    padding: 40px;
+    padding-Top: 0px;
+    padding-Bottom: 0px;
+     width: 45em;
+     color: white;
+      text-align: justify;
+      width: 50%;
+}
+
+#IPCamera-Logo{
+    position:relative;
+    width: 100%;
+
+}
+.ipcamera-h2-class{
+   margin-left:700px;
+     padding: 40px;
+     padding-Top: 30px ;
+     padding-Bottom: 20px;
+     color: white;
+}
+.ipcamera-p-class{
+    margin-bottom: 300px;
+    margin-left: 700px;
+    color: white;
+    text-align: justify;
+    width:40%;
+}
+
+@media(min-width: 951px) and (max-width: 1190px)
+{
+    #cctv-h2{
+        padding-top: 50px;
+        padding-left: 20px;
+        padding-bottom: 0px;
+        color: white;
+    }
+    #cctv-p{
+        
+        padding: 0px;
+        margin-left: 20px;
+        width: 40%;
+    }
+    #cctv-logo{
+
+        width:100%
+    }
+    #ipcamera-h2{
+        margin-left:700px;
+          padding: 0px;
+          padding-Top: 30px ;
+          padding-Bottom: 20px;
+          color: white;
+     }
+     #ipcamera-p{
+         margin-bottom: 300px;
+       margin-left: 650px;
+         color: white;
+         text-align: justify;
+         width:40%;
+     }
+
+}
+@media(max-width: 950px){
+>>>>>>> c36160ce8b9f4eaaa6e8aa3b2e36ee63f362a913
 
     body{
         display: flex;
@@ -856,9 +938,41 @@ ul.style3 .first {
         border: 0;
         zoom: 100%;
     }
+<<<<<<< HEAD
     p {
         font-size: px;
     }
+=======
+    
+    #cctv-h2{
+        margin-top: 0px;
+        padding-top: 0px ;
+        padding-left: 20px ;
+        padding-bottom: 0px ;
+        color: white ;
+    }
+    #cctv-p{
+        padding: 0px;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        width: 40%;
+    }
+    #ipcamera-h2{
+        margin-left:400px;
+          padding: 40px;
+          padding-Top: 0px ;
+          padding-Bottom: 0px;
+          color: white;
+          width:100%;
+     }
+     #ipcamera-p{
+         margin-left: 450px;
+         margin-bottom: 300px;
+         color: white;
+        
+         width:40%;
+     }
+>>>>>>> c36160ce8b9f4eaaa6e8aa3b2e36ee63f362a913
     .container{
         margin-right: 50px;
     }

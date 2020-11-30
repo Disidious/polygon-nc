@@ -21,6 +21,7 @@ function CCTV() {
                 </div>
                 <hr />
                 <div class="row">
+<<<<<<< HEAD
                     <div id="testofa7" class="col-lg-12 col-12">
                         <img src="/images/cctv71.png" style={{ width: "100%", position: "relative" }}></img>
                         <div id="ofa7" style={{ top: "10px", position: "absolute" }}>
@@ -28,6 +29,15 @@ function CCTV() {
                                 HD Cameras
                             </h2>
                             <p style={{ padding: "40px", paddingTop: "0px", paddingBottom: "0px", width: "45em", color: "white", textAlign: "justify" }}>
+=======
+                    <div id="testofa7" class="col-lg-12 col-sm-12">
+                        <img id="cctv-logo" src="/images/cctv71.png" ></img>
+                        <div id="ofa7" style={{ top: "10px", position: "absolute" }}>
+                            <h2 id="cctv-h2" class= "cctv-h2-class">
+                                HD Cameras
+                            </h2>
+                            <p id= "cctv-p" class ="cctv-p-class">
+>>>>>>> c36160ce8b9f4eaaa6e8aa3b2e36ee63f362a913
                                 HD Cameras are much simpler to install, cost effective, allow you to use longer cable runs up to 500 meters without
                                 loss of quality and resolution can reach up to 4k. HD Cameras are available with fixed or varifocal lenses in dome or
                                 bullet housings.
@@ -35,12 +45,21 @@ function CCTV() {
                         </div>
                     </div>
                     <div class="col-lg-12 col-12">
+<<<<<<< HEAD
                         <img src="/images/cctv72.png" style={{ width: "100%", position: "relative" }} />
                         <div style={{ top: "0px", right: "-5px", position: "absolute" }}>
                             <h2 style={{ padding: "40px", paddingTop: "120px", paddingBottom: "0px", color: "white" }}>
                                 IP Cameras
                             </h2>
                             <p style={{ padding: "40px", paddingTop: "0px", paddingBottom: "0px", width: "43em", color: "white", textAlign: "justify" }}>
+=======
+                        <img id = "IPCamera-Logo" src="/images/cctv72.png"/>
+                        <div style={{ top: "0px", right: "-5px", position: "absolute" }}>
+                            <h2 id="ipcamera-h2" class= "ipcamera-h2-class">
+                                IP Cameras
+                            </h2>
+                            <p id="ipcamera-p" class="ipcamera-p-class">
+>>>>>>> c36160ce8b9f4eaaa6e8aa3b2e36ee63f362a913
                                 IP Cameras allow you to see the finest details with high resolution and accurate imaging, IP Cameras also
                                 come with several features and technologies, including power over Ethernet, Wi-Fi, and others,
                                 which means you can use wireless or you can use as few cables as possible.
