@@ -14,8 +14,9 @@ function AboutUs() {
                         </div>
                     </div>
                 </div>
-                <hr/>
-                <div class="row1" style={{ backgroundImage: "url(/images/connections2.jpg)" }}>
+                <hr />
+
+                <div id="aboutus-row" class="row1" style={{ backgroundImage: "url(/images/connections2.jpg)" }}>
                     <div class="text-to-right">
                         <h2>Welcome to Polygon Network Company</h2>
                         <p>
@@ -27,15 +28,15 @@ function AboutUs() {
                         </p>
                     </div>
                 </div>
-                <div class="row1" style={{ backgroundImage: "url(images/datacenters4.jpg)" }}>
+                <div id="background-to-left" class="row1" style={{ backgroundImage: "url(images/datacenters4.jpg)" }}>
                     <h2>Who are we ?</h2>
                     <p>
-
                         Our company is an IT Service Provider and a System Integrator Company located in Cairo Egypt.
                         We deliver fast and reliable IT Services including Video System Surveillances, Projectors,
                         Large Format Display and Network Solutions.
 					</p>
                 </div>
+
             </div>
         </div>
     );

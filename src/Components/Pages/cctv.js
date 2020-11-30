@@ -36,7 +36,7 @@ function CCTV() {
                     </div>
                     <div class="col-lg-12 col-12">
                         <img id = "IPCamera-Logo" src="/images/cctv72.png"/>
-                        <div style={{ top: "0px", right: "-5px", position: "absolute" }}>
+                        <div style={{ top: "0px", position: "absolute" }}>
                             <h2 id="ipcamera-h2" class= "ipcamera-h2-class">
                                 IP Cameras
                             </h2>

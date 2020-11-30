@@ -6,7 +6,7 @@ import {
 function Header() {
   return (
     <div id="header-wrapper">
-      <div class="container" style={{padding: "0px"}}>
+      <div id="page" class="container" style={{padding: "0px"}}>
         <div id="header">
           <div id="logo">
             <img src="/images/Logo.png" height="100" align="middle" alt=""/>
