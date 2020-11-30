@@ -63,12 +63,6 @@ function Footer() {
         <hr style={{ backgroundColor: "rgb(126, 126, 126)" }} />
         <p style={{ paddingTop: "7px" }}>Copyright &copy; <span id="year"></span> Polygon Network Company</p>
       </div>
-<<<<<<< HEAD
-=======
-     
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
->>>>>>> c36160ce8b9f4eaaa6e8aa3b2e36ee63f362a913
     </footer >
   );
 }
