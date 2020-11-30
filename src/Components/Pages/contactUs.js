@@ -4,6 +4,8 @@ function ContactUs() {
     return (
         <div id="wrapper">
             <div id="page" class="container">
+                <div style={{ width: "45em" }}>
+                </div>
                 <div class="row">
                     <div class="col-12 m-auto">
                         <div class="title" style={{ margin: "0em 0em 0em 1em" }}>
@@ -13,7 +15,7 @@ function ContactUs() {
                 </div>
                 <hr />
                 <div class="row">
-                    <div class="col-lg-4 col-sm-4">
+                    <div class="col-lg-4 col-12">
                         <div class="text-centered">
                             <div class="title" style={{ margin: "0em 0em 0em 1em" }}>
                                 <h2>Contact Us</h2>
@@ -22,7 +24,7 @@ function ContactUs() {
                             <div class="byline-lower">EMAIL<br /><strong>info@polygon-nc.com</strong></div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-4">
+                    <div class="col-lg-4 col-12">
                         <div class="text-centered">
                             <div class="title" style={{ margin: "0em 0em 0em 1em" }}>
                                 <h2>Support</h2>
@@ -31,7 +33,7 @@ function ContactUs() {
                             <div class="byline-lower">EMAIL<br /><strong>support@polygon-nc.com</strong></div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-4">
+                    <div class="col-lg-4 col-12">
                         <div class="text-centered">
                             <div class="title" style={{ margin: "0em 0em 0em 1em" }}>
                                 <h2>Sales</h2>
