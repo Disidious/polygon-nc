@@ -6,7 +6,7 @@ import {
 function Footer() {
   return (
     <footer id="footer">
-      <div class="container" style={{ padding: "1em 0em 0em 0em" }}>
+      <div id="page" class="container" style={{ padding: "1em 0em 0em 0em" }}>
         <div id="header" style={{ padding: "0em 0em 8em 0em" }}>
           <div id="logo">
             <img src="/images/FooterLogo.png" height="100" align="middle" alt="" />
@@ -60,8 +60,8 @@ function Footer() {
             <p>/</p>
           </div>
         </div>
-        <hr style={{ backgroundColor: "rgb(126, 126, 126)" }} />
-        <p style={{ paddingTop: "7px" }}>Copyright &copy; <span id="year"></span> Polygon Network Company</p>
+        <hr/>
+        <p>Copyright &copy; <span id="year"></span> Polygon Network Company</p>
       </div>
     </footer >
   );
