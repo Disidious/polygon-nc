@@ -1,10 +1,11 @@
 import React from 'react';
 
 function AccessControl() {
+    window.scrollTo(0, 0);
     return (
         <div id="wrapper">
-            <div id="page" class="container">
-                <div class="row1" style={{ backgroundImage: "url(/images/AC6.jpg)" }}>
+            <div id="page" className="container">
+                <div className="row1" style={{ backgroundImage: "url(/images/AC6.jpg)" }}>
                     <h2>Access Control</h2>
                     <p style={{ textAlign: "justify" }}>
                         Keep your business safe and secure by controlling who can view or use resources in a computing environment with
@@ -13,18 +14,18 @@ function AccessControl() {
                         to bring you full-featured security solutions serving any size facility.
                     </p>
                 </div>
-                <div class="row">
-                    <div class="col-lg-12 col-12 m-auto">
-                        <div class="title" style={{ margin: "0em 0em 0em 1em" }}>
+                <div className="row">
+                    <div className="col-lg-12 col-12 m-auto">
+                        <div className="title" style={{ margin: "0em 0em 0em 1em" }}>
                             <center><h2>Types of authentications</h2></center>
                         </div>
                     </div>
                 </div>
                 <hr />
-                <div class="row">
-                    <div class="col-lg-6 col-5 m-auto">
-                        <div class="title">
-                            <span class="byline">Biometric authentication</span>
+                <div className="row">
+                    <div className="col-7 m-auto">
+                        <div className="title">
+                            <span className="byline">Biometric authentication</span>
                         </div>
                         <p style={{ textAlign: "justify" }}>
                             Protect your facility with our Biometric Access Control Systems that use sophisticated biometrics identification scanners
@@ -32,14 +33,14 @@ function AccessControl() {
                             but also gives the data regarding the entry of persons.
                         </p>
                     </div>
-                    <div class="col-lg-6 col-7">
-                        <img src="/images/biometric_security3.jpg" style={{ width: "80%", float: "right" }} />
+                    <div className="col-5 imageDesc">
+                        <img src="/images/biometric_security3.jpg"style={{left: "100px"}}/>
                     </div>
                 </div>
-                <div class="row" style={{ marginTop: "1em" }}>
-                    <div class="col-lg-6 col-5 m-auto">
-                        <div class="title">
-                            <span class="byline">Cards</span>
+                <div className="row" style={{ marginTop: "1em" }}>
+                    <div className="col-7 m-auto">
+                        <div className="title">
+                            <span className="byline">Cards</span>
                         </div>
                         <p style={{ textAlign: "justify" }}>
                             Protect your property with our range of different readers for cards and ID badges,
@@ -50,37 +51,37 @@ function AccessControl() {
                             data collection and more.
                         </p>
                     </div>
-                    <div class="col-lg-6 col-7">
-                        <img src="/images/card.jpg" style={{ width: "80%", float: "right" }} />
+                    <div className="col-5 imageDesc">
+                        <img src="/images/card.jpg"/>
                     </div>
                 </div>
                 <hr />
-                <div class="row" style={{ height: "5em" }}></div>
-                <div class="row">
-                    <div class="col-lg-12 col-12 m-auto">
-                        <div class="title" style={{ margin: "0em 0em 0em 1em" }}>
+                <div className="row" style={{ height: "5em" }}></div>
+                <div className="row">
+                    <div className="col-lg-12 col-12 m-auto">
+                        <div className="title" style={{ margin: "0em 0em 0em 1em" }}>
                             <center><h2>Types of access control</h2></center>
                         </div>
                     </div>
                 </div>
                 <hr style={{ height: "0.05em" }} />
-                <div class="row" style={{ padding: "2em 0em 2em 0em" }}>
-                    <div class="col-lg-2 col-3">
+                <div className="row" style={{ padding: "2em 0em 2em 0em" }}>
+                    <div className="col-lg-2 col-3">
                         <img src="/images/standalone.png" style={{ width: "90%", paddingBottom: "1em" }} />
                     </div>
-                    <div class="col-lg-3 col-2 m-auto">
-                        <h2 style={{ left: "0px", fontSize: "1.5em" }}>Standalone<br/>Access Control</h2>
+                    <div className="col-lg-3 col-2">
+                        <h2 style={{ left: "0px", fontSize: "1.5em" }}>Standalone<br />Access Control</h2>
                     </div>
-                    <div class="col-lg-2 col-1"></div>
-                    <div class="col-lg-2 col-3">
+                    <div className="col-lg-2 col-1"></div>
+                    <div className="col-lg-2 col-3">
                         <img src="/images/centralized.png" style={{ width: "90%", paddingTop: "0em" }} />
                     </div>
-                    <div class="col-lg-3 col-2 m-auto">
-                        <h2 style={{ left: "0px", fontSize: "1.5em" }}>Centralized<br/>Access Control</h2>
+                    <div className="col-lg-3 col-2">
+                        <h2 style={{ left: "0px", fontSize: "1.5em" }}>Centralized<br />Access Control</h2>
                     </div>
-                    <div class="col-lg-2 col-1"></div>
+                    <div className="col-lg-2 col-1"></div>
                 </div>
-                <hr/>
+                <hr />
             </div>
         </div>
     );

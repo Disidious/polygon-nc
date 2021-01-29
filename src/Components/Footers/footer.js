@@ -4,17 +4,18 @@ import {
 } from 'react-router-dom';
 
 function Footer() {
+  const [dateo, setDate] = React.useState(new Date().getFullYear());
   return (
     <footer id="footer">
-      <div id="page" class="container" style={{ padding: "1em 0em 0em 0em" }}>
+      <div id="page" className="container" style={{ padding: "0", paddingTop: "1em" }}>
         <div id="header" style={{ padding: "0em 0em 8em 0em" }}>
           <div id="logo">
             <img src="/images/FooterLogo.png" height="100" align="middle" alt="" />
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-3">
+        <div className="row">
+          <div id="footerServices" className="col-lg-3">
             <h2 style={{ left: "0px" }}>
               Services
             </h2>
@@ -26,42 +27,48 @@ function Footer() {
             </ul>
           </div>
 
-          <div class="col-3">
+          <div className="col-lg-3 col-4">
             <h2 style={{ left: "0px" }}>
               Contact Us
             </h2>
-            <i class="material-icons md-18">email</i> 
-            <p>info@polygon-nc.com</p>
+            <ul>
+              <i className="material-icons md-18">email</i>
+              <p>info@polygon-nc.com</p>
 
-            <i class="material-icons md-18">phone</i> 
-            <p>0101 253 8320</p>
+              <i className="material-icons md-18">phone</i>
+              <p>0101 253 8320 /<br/> 0122 295 7402</p>
 
-            <i class="material-icons md-18">location_on</i> 
-            <p>53 El-Makrizy St., Heliopolis, <br/>Cairo, Egypt.</p>
+              <i className="material-icons md-18">location_on</i>
+              <p>53 El-Makrizy St., Heliopolis, <br />Cairo, Egypt.</p>
+            </ul>
           </div>
 
-          <div class="col-3">
+          <div className="col-lg-3 col-4">
             <h2 style={{ left: "0px" }}>
               Support
             </h2>
-            <i class="material-icons md-18">email</i> 
-            <p>support@polygon-nc.com</p>
-            <i class="material-icons md-18">phone</i> 
-            <p>0101 219 4689</p>
+            <ul>
+              <i className="material-icons md-18">email</i>
+              <p>support@polygon-nc.com</p>
+              <i className="material-icons md-18">phone</i>
+              <p>0106 284 7774</p>
+            </ul>
           </div>
 
-          <div class="col-3">
+          <div className="col-lg-3 col-4">
             <h2 style={{ left: "0px" }}>
               Sales
             </h2>
-            <i class="material-icons md-18">email</i> 
-            <p>sales@polygon-nc.com</p>
-            <i class="material-icons md-18">phone</i> 
-            <p>/</p>
+            <ul>
+              <i className="material-icons md-18">email</i>
+              <p>sales@polygon-nc.com</p>
+              <i className="material-icons md-18">phone</i>
+              <p>0101 253 8320</p>
+            </ul>
           </div>
         </div>
-        <hr/>
-        <p>Copyright &copy; <span id="year"></span> Polygon Network Company</p>
+        <hr id="footer-hr" />
+        <p style={{ marginBottom: "20px" }}>Copyright &copy; <span id="year">{dateo}</span> Polygon Network Company</p>
       </div>
     </footer >
   );
