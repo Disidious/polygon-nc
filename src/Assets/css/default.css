@@ -24,6 +24,10 @@ h1, h2 {
     color: #2D2D2D;
 }
 
+h1 {
+    font-size: 2em;
+}
+
 h3 {
     margin: 0;
     padding: 0;
@@ -56,42 +60,49 @@ a img {
     vertical-align: top;
 }
 
+/* [1] The container */
+.img-hover-zoom {
+    width: 100%; /* [1.1] Set it as per your need */
+    overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+  }
+  
+  /* [2] Transition property for smooth transformation of images */
+  .img-hover-zoom img {
+    width: 100%;
+    transition: transform .5s ease;
+  }
+  
+  /* [3] Finally, transforming the image when container gets hovered */
+  .img-hover-zoom:hover img {
+    transform: scale(1.5);
+  }
+  .col-6.no-padding {
+    padding : 0;
+  }
 /*********************************************************************************/
 
 /* Text Style                                                                    */
 
 /*********************************************************************************/
 
-.frame .text-middle {
-    text-align: center;
-    position: relative;
-    margin-top: -43.5%;
-    z-index: 99;
-    -webkit-user-select: none;
-    /* Safari */
-    -moz-user-select: none;
-    /* Firefox */
-    -ms-user-select: none;
-    /* IE10+/Edge */
-    user-select: none;
-    /* Standard */
+ul.hex {
+    list-style-type: "⬢ ";
+    padding-left: 1em;
 }
 
-.frame h2 {
-    font-size: 2.1em;
-    color: #FFFFFF;
-    -webkit-user-select: none;
-    /* Safari */
-    -moz-user-select: none;
-    /* Firefox */
-    -ms-user-select: none;
-    /* IE10+/Edge */
-    user-select: none;
-    /* Standard */
+li.hex{ 
+    color: rgb(44, 50, 133);
+}
+li span{
+    color: #333;
 }
 
 .text-centered {
     text-align: center;
+}
+
+ul p {
+    margin: 0;
 }
 
 /*********************************************************************************/
@@ -100,11 +111,7 @@ a img {
 
 /*********************************************************************************/
 
-.frame {}
-
-.frame-small {
-    height: 175px;
-    width: 330px;
+.frame {
     overflow: hidden;
 }
 
@@ -119,6 +126,7 @@ a img {
     padding-right: 0.5em;
     float: left;
     position: relative;
+    padding-top: 3px;
 }
 
 /*********************************************************************************/
@@ -140,6 +148,8 @@ a img {
 .image-full {
     display: block;
     width: 100%;
+    height: 30em;
+    object-fit: cover;
 }
 
 .image-medium {
@@ -167,7 +177,6 @@ hr {
     border-top: 0em;
     height: 0.5px
 }
-
 
 /** WRAPPER */
 
@@ -211,70 +220,6 @@ hr {
     right: 0;
 }
 
-/** LOGO */
-
-#logo {
-    position: absolute;
-    left: 0px;
-    width: 100%;
-}
-
-#logo h1, #logo p {
-    margin: 0;
-    padding: 0;
-}
-
-#logo img {
-    position: absolute;
-}
-
-#logo h1 {
-    letter-spacing: -1px;
-    text-transform: lowercase;
-    font-size: 3.5em;
-    color: #FFF;
-}
-
-#logo p {
-    padding: 0px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    font-size: 0.9em;
-    color: #FFF;
-}
-
-#logo p a {
-    color: #FFF;
-}
-
-#logo a {
-    border: none;
-    background: none;
-    text-decoration: none;
-    color: #FFF;
-}
-
-#displayLogos {
-    width: 100%;
-}
-
-#displayLogos img {
-    width: 20%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 2em;
-}
-
-#displayLogos ul {
-    margin: 0px;
-    padding: 0px;
-    margin-bottom: -100px;
-    line-height: normal;
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-}
-
 .objectfit {
     object-fit: contain;
 }
@@ -302,7 +247,9 @@ hr {
 
 #menu a {
     display: block;
-    padding: 0px 90px 0px 90px;
+    padding: 0px 0px 0px 0px;
+    padding-left: 90px;
+    padding-right: 90px;
     line-height: 50px;
     letter-spacing: 2px;
     text-decoration: none;
@@ -321,7 +268,7 @@ hr {
     position: relative;
 }
 
-#menu .dropdown {
+#menu .dropdown, .dropdown-hide {
     position: relative;
     display: none;
 }
@@ -350,12 +297,14 @@ hr {
     display: block;
 }
 
+#menu .dropdown-btn:hover .dropdown-hide {
+    display: block;
+}
+
 #menu a:hover, #menu .current_page_item a {
     text-decoration: none;
     color: rgb(255, 255, 255);
 }
-
-#menu .current_page_item a {}
 
 #menu .last {
     border-right: none;
@@ -458,7 +407,7 @@ hr {
     bottom: 0px;
     padding: 0px;
     width: 100%;
-    height: 410px;
+    height: 100%;
     z-index: 99999;
     margin-bottom: -21px;
 }
@@ -787,24 +736,24 @@ ul.style3 .first {
 
 /*********************************************************************************/
 
-.button-style1 {
+#left-button {
+    padding-left: 2.6em; 
+}
+.button-style {
     display: inline-block;
-    padding: 0em 1em;
+    padding-left: 2em;
     background-size: 100%;
     letter-spacing: 0.10em;
-    line-height: 176px;
-    width: 330px;
-    text-decoration: none;
+    line-height: 1000%;
+    width: 100%;
     text-transform: uppercase;
     font-weight: 400;
     color: rgb(255, 255, 255);
     transition: all .2s ease-in-out;
-    font-size: 1.3em;
+    font-size: 2.3em;
 }
 
-.btn1 {}
-
-.btn1:hover {
+.button-style:hover {
     color: rgb(255, 255, 255);
     transform: scale(1.05);
 }
@@ -817,9 +766,36 @@ ul.style3 .first {
 
 /*=================================================================================================================================*/
 
-#ofa7 {
-    margin-bottom: 100px;
+.slideshow-title {
+    color: white;
+}
+
+.slideshow-text {
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.1em;
+    color: white;
+}
+
+.slideshow-content-left {
+    top: 15px;
     position: absolute;
+    width: 50em;
+    padding-left: 5em;
+    padding-top: 8em;
+}
+
+.slideshow-content-right {
+    top: 15px;
+    position: absolute;
+    width: 80em;
+    padding-left: 50em;
+    padding-top: 8em;
+}
+
+#cctv-slide {
+    padding-top: 6.7em;
 }
 
 #cctv-logo {
@@ -863,6 +839,14 @@ ul.style3 .first {
     text-align: justify;
     width: 40%;
 }
+.imageDesc img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    vertical-align: middle;
+    border: 0;
+    margin-top: 13%;
+}
 
 @media(min-width: 951px) and (max-width: 1070px) {
     #cctv-h2 {
@@ -893,6 +877,14 @@ ul.style3 .first {
         text-align: justify;
         width: 40%;
     }
+    .slideshow-content-right {
+        padding-top: 2%;
+        padding-left: 39em;
+        width: 70em;
+    }
+    #cctv-slide {
+        padding-top: 2%;
+    }
 }
 
 @media(max-width: 950px) {
@@ -900,10 +892,18 @@ ul.style3 .first {
         display: flex;
         background-position: 100px 0px;
         border: 0;
-        zoom: 100%;
+    }
+    #dropdown {
+        right: 70px;
+    }
+    #menu a {
+        padding: 0px 0px 0px 0px;
+        padding-left: 20px;
+        padding-right: 30px;
     }
     #page {
-        margin-left: 2.5em;
+        margin-left: 2em;
+        margin-right: 2em;
         width: 45em;
     }
     #slideshow-mob {
@@ -927,7 +927,6 @@ ul.style3 .first {
         width: 90%;
         color: rgb(255, 255, 255);
     }
-    
     #aboutus-row h2 {
         padding: 40px;
         padding-top: 15px;
@@ -940,11 +939,19 @@ ul.style3 .first {
     }
     .row1 .text-to-right {
         padding-left: 0px;
-
+    }
+    .row1 p {
+        padding-top: 0;
+        padding-bottom: 0.3em;
+    }
+    .row1 h2 {
+        padding-top: 0em;
+        margin-top: 0.4em;
     }
     #cctv-h2 {
         margin-top: 5px;
         padding-top: 0px;
+        margin-bottom: 0;
         padding-left: 13px;
         padding-bottom: 0px;
         color: white;
@@ -956,8 +963,9 @@ ul.style3 .first {
         width: 50%;
     }
     #ipcamera-h2 {
-        margin-left: 320px;
-        margin-top: 12px;
+        margin-left: 330px;
+        margin-top: 5px;
+        margin-bottom: 0;
         padding: 40px;
         padding-Top: 0px;
         padding-Bottom: 0px;
@@ -965,10 +973,10 @@ ul.style3 .first {
         width: 100%;
     }
     #ipcamera-p {
-        margin-left: 350px;
+        margin-left: 370px;
         margin-bottom: 300px;
         color: white;
-        width: 50%;
+        width: 46%;
     }
     .container {
         margin-right: 50px;
@@ -978,5 +986,66 @@ ul.style3 .first {
     }
     #footer {
         position: relative;
+        height: 100%;
     }
+    .material-icons.md-18 {
+        padding-right: 0;
+    }
+    #footerServices {
+        display: none;
+    }
+    #menu .dropdown {
+        position: relative;
+        display: block;
+    }
+    #menu .dropdown-hide {
+        position: relative;
+        display: none;
+    }
+    #menu .dropdown-btn:hover .dropdown-hide {
+        display: none;
+    }
+    .image-full {
+        display: block;
+        width: 100%;
+        height: 17em;
+        object-fit: cover;
+    }
+    .slideshow-content-left {
+        padding-top: 1.7em;
+        padding-left: 4em;
+    }
+    .slideshow-content-right {
+        padding-top: 0.8%;
+    }
+    #cctv-slide {
+        width: 50em;
+        padding-top: 0.3em;
+        padding-left: 21.5em;
+    }
+    #datashow-slide {
+        width: 45em;
+        padding-top: 0.3em;
+        padding-left: 22.5em;
+    }
+    .imageDesc img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        vertical-align: middle;
+        border: 0;
+        margin-top: 13%;
+    }
+    hr{
+        margin-top: 0;
+    }
+    #footer-hr {
+        margin-top: 20px;
+    }
+    .button-style {
+        line-height: 800%;
+        font-size: 1.5em;
+        background-repeat: no-repeat;
+    }
+    
 }
