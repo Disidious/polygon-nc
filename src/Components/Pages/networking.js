@@ -1,81 +1,134 @@
 import React from 'react';
+import Modal from 'react-bootstrap/Modal'
+import { Col, Row } from 'react-bootstrap';
 
 function Networking() {
-    window.scrollTo(0, 0);
+    React.useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
+
+    const [imageWind, setLgShow] = React.useState(false);
+    const [image, setImage] = React.useState("");
+    const [title, settitle] = React.useState("");
+
+    const show = function (url, title) {
+        setLgShow(true);
+        setImage(url);
+        settitle(title);
+    }
+
     return (
         <div id="wrapper">
             <div id="page" className="container">
                 <div className="row1" style={{ backgroundImage: "url(/images/networking3.jpg)" }}>
                     <h2>Networking</h2>
                     <p style={{ textAlign: "justify" }}>
-                        The certified Panduit engineers from Polygon can plan, schedule,
-                        engineer and execute the wiring foundation necessary to meet your current and future needs. From single connectivity to multi-point.
-                        Today, we can custom design a cable infrastructure for your company that will be scalable for future development.
-                        If you're thinking about rewiring or reconfiguring your current setup to prepare for development, it's all right within our wheelhouse.
+                        We provide the optimum LAN and WAN network solution from single connectivity to multi-point to meet your current and future needs.
+                        We can plan, design and execute the structured cabling system for your company that will be secure, robust and scalable to reach the peak level of productivity and performance.
+                        If you're thinking about rewiring or reconfiguring your current network setup, it's all right within our wheelhouse.
                     </p>
                 </div>
-                <div className="row">
-                    <div className="col-md-12 m-auto">
+                <Row>
+                    <Col md={12} xs={12}>
                         <div className="title" style={{ margin: "0em 0em 0em 1em" }}>
                             <center><h2>Structured cabling system</h2></center>
                         </div>
-                    </div>
-                </div>
+                    </Col>
+                </Row>
                 <hr />
-                <div className="row" style={{ padding: "1em 0em 2em 0em" }}>
-                    <div className="col-lg-2 col-3" style={{top: "15px"}}>
-                        <img src="/images/fiber.png" style={{ width: "90%" }} />
-                    </div>
-                    <div className="col-lg-3 col-9">
+
+                <Modal
+                    show={imageWind}
+                    onHide={() => setLgShow(false)}
+                    dialogClassName="modal-90w"
+                    aria-labelledby="example-modal-sizes-title-lg"
+                >
+                    <Modal.Header closeButton>
+                        <Modal.Title id="example-modal-sizes-title-lg">
+                            {title}
+                        </Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <center><img alt="" src={image} style={{ width: "50%" }} /></center>
+                    </Modal.Body>
+                </Modal>
+
+                <Row style={{ padding: "1em 0em 2em 0em" }}>
+                    <Col md={2} xs={3}>
+                        <img alt="" src="/images/fiber.png" style={{ width: "90%" }} />
+                    </Col>
+                    <Col md={3} xs={3}>
                         <h2 style={{ left: "0px", fontSize: "1.5em" }}>Fiber optic cables</h2>
-                        <p style={{ textAlign: "justify" }}>
-                            Fiber optic cables have a much greater bandwidth than metal cables.
-                            The amount of information that can be transmitted per unit time of fiber over other transmission media is its most significant advantage,
-                            also it offers low power loss.
-                        </p>
-                    </div>
-                    <div className="col-lg-2"></div>
-                    <div className="col-lg-2 col-3" style={{top: "10px"}}>
-                        <img src="/images/copper.png" style={{ width: "90%", paddingTop: "0.3em" }} />
-                    </div>
-                    <div className="col-lg-3 col-9">
+                        <ul className="hex">
+                            <li className="hex"><button onClick={() => show("/images/networkingImages/mpo.jpeg", "MPO")}>MPO.</button></li>
+                            <li className="hex"><button onClick={() => show("/images/networkingImages/multimode.jpeg", "Multi Mode")}>Multi Mode.</button></li>
+                            <li className="hex"><button onClick={() => show("/images/networkingImages/singlemode.jpeg", "Single Mode")}>Single Mode.</button></li>
+                        </ul>
+                    </Col>
+                    <Col id="empty-col" md={2}></Col>
+                    <Col md={2} xs={3}>
+                        <img alt="" src="/images/copper.png" style={{ width: "90%" }} />
+                    </Col>
+                    <Col md={3} xs={3}>
                         <h2 style={{ left: "0px", fontSize: "1.5em" }}>Copper cables</h2>
-                        <p style={{ textAlign: "justify" }}>
-                            Copper cables can handle a wider load of electrical power,
-                            allowing it to use less insulation and armouring.
-                            They have high resistance to heat, eliminating most issues of overloading,
-                            they also can be bent into nearly any form without breaking.
-                        </p>
-                    </div>
-                    <div className="col-lg-2"></div>
-                </div>
-                <div className="row" style={{ padding: "0em 0em 0em 0em" }}>
-                    <div className="col-lg-2 col-3">
-                        <img src="/images/rack.png" style={{ width: "90%", paddingTop: "0.3em" }} />
-                    </div>
-                    <div className="col-lg-3 col-9">
+                        <ul className="hex">
+                            <li className="hex"><button onClick={() => show("/images/networkingImages/utp.jpeg", "UTP")}>UTP.</button></li>
+                            <li className="hex"><button onClick={() => show("/images/networkingImages/stp.jpeg", "STP")}>STP.</button></li>
+                        </ul>
+                    </Col>
+                    <Col id="empty-col" md={2}></Col>
+                </Row>
+                <Row style={{ padding: "1em 0em 2em 0em" }}>
+                    <Col md={2} xs={3}>
+                        <img alt="" src="/images/rack.png" style={{ width: "90%", paddingTop: "0.3em" }} />
+                    </Col>
+                    <Col md={3} xs={3}>
                         <h2 style={{ left: "0px", fontSize: "1.5em" }}>Racks</h2>
-                        <p style={{ textAlign: "justify" }}>
-                            Starting with customised server racks and network cabinets that are flexible, easy to mount,
-                            adaptable and pre-configured saves you costs, footprint, and improves the performance, productivity,
-                            and reliability of your critical infrastructure.
-                        </p>
-                    </div>
-                    <div className="col-lg-2"></div>
-                    <div className="col-lg-2 col-3">
-                        <img src="/images/port.png" style={{ width: "90%", paddingTop: "0.3em" }} />
-                    </div>
-                    <div className="col-lg-3 col-9">
+                        <ul className="hex">
+                            <li className="hex"><button onClick={() => show("/images/networkingImages/indoor.jpeg", "Indoor")}>Indoor.</button></li>
+                            <li className="hex"><button onClick={() => show("/images/networkingImages/outdoor.jpeg", "Outdoor")}>Outdoor.</button></li>
+                            <li className="hex"><button onClick={() => show("/images/networkingImages/overhead.jpeg", "Overhead")}>Overhead.</button></li>
+                        </ul>
+                    </Col>
+                    <Col id="empty-col" md={2}></Col>
+                    <Col md={2} xs={3}>
+                        <img alt="" src="/images/port.png" style={{ width: "90%" }} />
+                    </Col>
+                    <Col md={3} xs={3}>
                         <h2 style={{ left: "0px", fontSize: "1.5em" }}>Patch panels</h2>
-                        <p style={{ textAlign: "justify" }}>
-                            Available in different designs or port counts,
-                            It is possible to configure the patch panels to suit different network cabling specifications. 
-                            A dazzling range of patch panel options are available, 
-                            including fiber and copper for various purposes.
-                        </p>
-                    </div>
-                    <div className="col-lg-2"></div>
-                </div>
+                        <ul className="hex">
+                            <li className="hex"><button onClick={() => show("/images/networkingImages/preloaded.jpeg", "Pre-loaded")}>Pre-loaded.</button></li>
+                            <li className="hex"><button onClick={() => show("/images/networkingImages/modular.jpeg", "Modular")}>Modular.</button></li>
+                        </ul>
+                    </Col>
+                    <Col id="empty-col" md={2}></Col>
+                </Row>
+                <Row style={{ padding: "0em 0em 0em 0em" }}>
+                    <Col md={2} xs={3}>
+                        <img alt="" src="/images/faceplate.png" style={{ width: "90%", paddingTop: "0.3em" }} />
+                    </Col>
+                    <Col md={3} xs={3}>
+                        <h2 style={{ left: "0px", fontSize: "1.5em" }}>Faceplates</h2>
+                        <ul className="hex">
+                            <li className="hex"><button onClick={() => show("/images/networkingImages/internal.jpeg", "Internal")}>Internal.</button></li>
+                            <li className="hex"><button onClick={() => show("/images/networkingImages/external.jpeg", "External")}>External.</button></li>
+                            <li className="hex"><button onClick={() => show("/images/networkingImages/floorbox.jpeg", "External")}>Floor Box.</button></li>
+                        </ul>
+                    </Col>
+                    <Col id="empty-col" md={2}></Col>
+                    <Col md={2} xs={3}>
+                        <img alt="" src="/images/cabletray2.png" style={{ width: "90%", paddingTop: "0.3em" }} />
+                    </Col>
+                    <Col md={3} xs={3}>
+                        <h2 style={{ left: "0px", fontSize: "1.5em" }}>Cable Trays</h2>
+                        <ul className="hex">
+                            <li className="hex"><button onClick={() => show("/images/networkingImages/wyrgrid.jpeg", "Wyr-Grid")}>Wyr-Grid.</button></li>
+                            <li className="hex"><button onClick={() => show("/images/networkingImages/wirebasket.jpeg", "Wire Basket")}>Wire Basket.</button></li>
+                        </ul>
+                    </Col>
+                    <Col id="empty-col" md={2}></Col>
+                </Row>
+                <br />
                 <hr />
             </div>
         </div>

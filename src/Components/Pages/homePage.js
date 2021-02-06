@@ -1,9 +1,9 @@
 import React from 'react';
-import $ from 'jquery';
 import Slider from "react-slick";
 import {
 	Link
 } from 'react-router-dom';
+import { Col, Row } from 'react-bootstrap';
 
 function HomePage() {
 	var settings = {
@@ -17,19 +17,21 @@ function HomePage() {
 		cssEase: "linear",
 		pauseOnHover: true,
 	};
-	window.scrollTo(0, 0);
+	React.useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [])
 	return (
 		<div id="wrapper">
 			<div id="page" className="container">
 				<div id="slideshow-mob" style={{ marginBottom: "2em" }}>
-					<div className="row">
-						<div className="col-12">
+					<Row>
+						<Col md={12} xs={12}>
 							<Slider {...settings}>
 								<div>
-									<img src="images/slideshow1.jpg" class="image-full" alt="" />
+									<img src="images/slideshow1.jpg" className="image-full" alt="" />
 									<div className="slideshow-content-left">
 										<h2 className="slideshow-title">
-											NETWORK SOLUTIONS
+											NETWORKING
                             			</h2>
 										<p className="slideshow-text">⬢ Data Centers.</p>
 										<p className="slideshow-text">⬢ Structure Cabling Systems.</p>
@@ -37,10 +39,10 @@ function HomePage() {
 									</div>
 								</div>
 								<div>
-									<img src="images/slideshow2.jpg" class="image-full" alt="" />
+									<img src="images/slideshow2.jpg" className="image-full" alt="" />
 									<div id="cctv-slide" className="slideshow-content-right">
 										<h2 className="slideshow-title">
-											VIDEO SYSTEM SURVEILLANCE
+											CCTV
                             			</h2>
 										<p className="slideshow-text">⬢ HD Systems.</p>
 										<p className="slideshow-text">⬢ IP Systems.</p>
@@ -48,10 +50,10 @@ function HomePage() {
 									</div>
 								</div>
 								<div>
-									<img src="images/slideshow3.jpg" class="image-full" alt="" />
+									<img src="images/slideshow3.jpg" className="image-full" alt="" />
 									<div className="slideshow-content-left">
 										<h2 className="slideshow-title">
-											SYSTEM SECURITY
+											ACCESS CONTROL
                             			</h2>
 
 										<p className="slideshow-text">⬢ Centralized Access Control.</p>
@@ -60,10 +62,10 @@ function HomePage() {
 									</div>
 								</div>
 								<div>
-									<img src="images/slideshow4.jpg" class="image-full" alt="" />
+									<img src="images/slideshow4.jpg" className="image-full" alt="" />
 									<div id="datashow-slide" className="slideshow-content-right">
 										<h2 className="slideshow-title">
-											DISPLAY SOLUTIONS
+											DATA SHOW
                             			</h2>
 
 										<p className="slideshow-text">⬢ Projectors.</p>
@@ -72,67 +74,68 @@ function HomePage() {
 									</div>
 								</div>
 							</Slider>
-						</div>
-					</div>
+						</Col>
+					</Row>
 				</div>
-				<div class="row">
-					<div class="col-12 m-auto">
-						<div class="title">
-							<center><h2>Welcome to Polygon Network Company</h2></center>
+				<Row>
+					<Col md={12} className="m-auto">
+						<div className="title">
+							<center><h2>Welcome to<br /> Polygon Network Company</h2></center>
 						</div>
-					</div>
-				</div>
+					</Col>
+				</Row>
 				<hr />
-				<div className="row" style={{ marginTop: "1em" }}>
-					<div className="col-md-12 m-auto">
-						<p style={{ textAlign: "justify" }}><center>
-							We are an IT Service Provider and a System Integrator Company located in Cairo Egypt.
-							We deliver fast and reliable IT Services including Video System Surveillances, Projectors,
-							Large Format Display and Network Solutions, and we are dedicated to giving you the very best of Network Infrastructures, CCTVs,
-							Access Controls and Data Shows with System integration and we are constantly working to improve our network
-							services and solutions to overcome all expected challenges and to fulfill and exceed our customer requirements.
-							Our Company is a registered enterprise structured cabling certified company,
-							authorized to deploy Panduit&reg; enterprise structured cabling systems and participate in the certification
-							Plus sm System Warranty.
-                        </center></p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-12 m-auto">
-						<div class="title" style={{ margin: "0em 0em 0em 1em" }}>
+				<Row style={{ marginTop: "1em" }}>
+					<Col md={12} className="m-auto">
+						<center><p style={{ textAlign: "justify", textAlignLast: "center" }}>
+							We are an IT Service Provider and a System
+							Integrator Company offering special skills in designing, supplying and implementing fast and reliable IT Services
+							including Network Solutions, Video System
+							Surveillances, System security, and Display
+							solutions.
+							we are an IT Service Provider and a registered enterprise
+							structured cabling certified company,
+							authorized to deploy Panduit® enterprise
+							structured cabling systems.
+							we are offering special skills in designing, supplying and implementing fast and reliable IT Services
+							including Network Solutions, Video System Surveillances, System security, and Display solutions
+                        </p></center>
+					</Col>
+				</Row>
+				<Row>
+					<Col md={12} className="m-auto">
+						<div className="title" style={{ margin: "0em 0em 0em 1em" }}>
 							<center><h2>Our Services</h2></center>
 						</div>
-					</div>
-				</div>
+					</Col>
+				</Row>
 				<hr />
-				<div className="row">
-					<div className="col-lg-6 col-6 no-padding">
+				<Row>
+					<Col md={6} xs={6} className="no-padding">
 						<div className="frame">
-							<Link to="/services/networking" id="left-button" className="button-style" style={{ backgroundImage: "url(images/Networking.jpg)" }}>networking</Link>
+							<Link to="/services/networking" className="button-style left-button" style={{ backgroundImage: "url(images/Networking.jpg)" }}>networking</Link>
 						</div>
-					</div>
-					<div className="col-lg-6 col-6 no-padding">
+					</Col>
+					<Col md={6} xs={6} className="no-padding">
 						<div className="frame">
 							<Link to="/services/accesscontrol" className="button-style" style={{ backgroundImage: "url(images/Access%20Control.jpg)" }}>access control</Link>
 						</div>
-					</div>
-				</div>
-				<div className="row">
-					<div className="col-lg-6 col-6 no-padding">
+					</Col>
+				</Row>
+				<Row>
+					<Col md={6} xs={6} className="no-padding">
 						<div className="frame">
-							<Link to="/services/cctv" id="left-button" className="button-style" style={{ backgroundImage: "url(images/CCTV.jpg)" }}>CCTV</Link>
+							<Link to="/services/cctv" id="cctv-button" className="button-style left-button" style={{ backgroundImage: "url(images/CCTV.jpg)" }}>Video System<br />Surrveillance</Link>
 						</div>
-					</div>
-					<div className="col-lg-6 col-6 no-padding">
+					</Col>
+					<Col md={6} xs={6} className="no-padding">
 						<div className="frame">
 							<Link to="/services/datashow" className="button-style" style={{ backgroundImage: "url(images/Data%20Show.jpg)" }}>data show</Link>
 						</div>
-					</div>
-				</div>
+					</Col>
+				</Row>
 			</div>
-			<div className="row">
-
-			</div>
+			
 		</div>
 
 	);

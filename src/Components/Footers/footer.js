@@ -4,7 +4,7 @@ import {
 } from 'react-router-dom';
 
 function Footer() {
-  const [dateo, setDate] = React.useState(new Date().getFullYear());
+  const [dateo] = React.useState(new Date().getFullYear());
   return (
     <footer id="footer">
       <div id="page" className="container" style={{ padding: "0", paddingTop: "1em" }}>
@@ -20,10 +20,10 @@ function Footer() {
               Services
             </h2>
             <ul>
-              <li><Link to="/Services/Networking">Networking</Link></li>
-              <li><Link to="/Services/CCTV">CCTV</Link></li>
-              <li><Link to="/Services/AccessControl">Access Control</Link></li>
-              <li><Link to="/Services/DataShow">Data Show</Link></li>
+              <li><Link to="/services/networking">Networking</Link></li>
+              <li><Link to="/services/cctv">CCTV</Link></li>
+              <li><Link to="/services/accesscontrol">Access Control</Link></li>
+              <li><Link to="/services/datashow">Data Show</Link></li>
             </ul>
           </div>
 
@@ -32,14 +32,18 @@ function Footer() {
               Contact Us
             </h2>
             <ul>
-              <i className="material-icons md-18">email</i>
-              <p>info@polygon-nc.com</p>
+              <li>
+                <i className="material-icons md-18">email</i>
+                <p style={{ overflow: "hidden" }}>info@polygon-nc.com</p>
+              </li>
 
-              <i className="material-icons md-18">phone</i>
-              <p>0101 253 8320 /<br/> 0122 295 7402</p>
+              <li>
+                <i className="material-icons md-18">phone</i>
+                <p id="footer-numbers" style={{ overflow: "hidden" }}>0101 253 8320 / 0122 295 7402</p>
+              </li>
 
               <i className="material-icons md-18">location_on</i>
-              <p>53 El-Makrizy St., Heliopolis, <br />Cairo, Egypt.</p>
+              <p style={{ overflow: "hidden"}}>53 El-Makrizy St., Heliopolis, <br />Cairo, Egypt.</p>
             </ul>
           </div>
 
@@ -51,7 +55,7 @@ function Footer() {
               <i className="material-icons md-18">email</i>
               <p>support@polygon-nc.com</p>
               <i className="material-icons md-18">phone</i>
-              <p>0106 284 7774</p>
+              <p>0101 219 4689</p>
             </ul>
           </div>
 

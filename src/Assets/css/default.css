@@ -60,25 +60,150 @@ a img {
     vertical-align: top;
 }
 
-/* [1] The container */
-.img-hover-zoom {
-    width: 100%; /* [1.1] Set it as per your need */
-    overflow: hidden; /* [1.2] Hide the overflowing of child elements */
-  }
-  
-  /* [2] Transition property for smooth transformation of images */
-  .img-hover-zoom img {
+.col-6.no-padding {
+    padding: 0;
+}
+.modal-90w{
+    width: 90%;
+    max-width: none!important;
+}
+.hexagon-gallery {
+    margin: auto;
+    margin-top: 50px;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-auto-rows: 196px;
+    grid-gap: 14px;
+    padding-bottom: 50px;
+}
+
+.hexagon {
+    display: flex;
+    position: relative;
+    width: 240px;
+    height: 265px;
+    background-color: rgb(44, 50, 133);
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    border-color: rgb(44, 50, 133);
+    border-style: solid;
+    border-width: 0.5em;
+}
+
+.hexagon img {
     width: 100%;
-    transition: transform .5s ease;
-  }
-  
-  /* [3] Finally, transforming the image when container gets hovered */
-  .img-hover-zoom:hover img {
-    transform: scale(1.5);
-  }
-  .col-6.no-padding {
-    padding : 0;
-  }
+    display: block;
+    object-fit: cover;
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.hexagon:first-child {
+    grid-row-start: 1;
+    grid-column: 1 / span 2;
+}
+
+.hexagon:nth-child(2) {
+    grid-row-start: 1;
+    grid-column: 3 / span 2;
+}
+
+.hexagon:nth-child(3) {
+    grid-row-start: 1;
+    grid-column: 5 / span 2;
+}
+
+.hexagon:nth-child(4) {
+    grid-row-start: 1;
+    grid-column: 7 / span 2;
+}
+
+.hexagon:nth-child(5) {
+    grid-row-start: 2;
+    grid-column: 2 / span 2;
+}
+
+.hexagon:nth-child(6) {
+    grid-row-start: 2;
+    grid-column: 4 / span 2;
+}
+
+.hexagon:nth-child(7) {
+    grid-row-start: 2;
+    grid-column: 6 / span 2;
+}
+
+.hexagon:nth-child(8) {
+    grid-row-start: 3;
+    grid-column: 1 / span 2;
+}
+
+.hexagon:nth-child(9) {
+    grid-row-start: 3;
+    grid-column: 3 / span 2;
+}
+
+.hexagon:nth-child(10) {
+    grid-row-start: 3;
+    grid-column: 5 / span 2;
+}
+
+.hexagon:nth-child(11) {
+    grid-row-start: 3;
+    grid-column: 7 / span 2;
+}
+
+.hexagon:nth-child(12) {
+    grid-row-start: 4;
+    grid-column: 2 / span 2;
+}
+
+.hexagon:nth-child(13) {
+    grid-row-start: 4;
+    grid-column: 4 / span 2;
+}
+
+.hexagon:nth-child(14) {
+    grid-row-start: 4;
+    grid-column: 6 / span 2;
+}
+
+.hexagon:nth-child(15) {
+    grid-row-start: 5;
+    grid-column: 1 / span 2;
+}
+
+.hexagon:nth-child(16) {
+    grid-row-start: 5;
+    grid-column: 3 / span 2;
+}
+
+.hexagon:nth-child(17) {
+    grid-row-start: 5;
+    grid-column: 5 / span 2;
+}
+
+.hexagon:nth-child(18) {
+    grid-row-start: 5;
+    grid-column: 7 / span 2;
+}
+
+.hexagon:nth-child(19) {
+    grid-row-start: 6;
+    grid-column: 2 / span 2;
+}
+
+.hexagon:nth-child(20) {
+    grid-row-start: 6;
+    grid-column: 4 / span 2;
+}
+
+.hexagon:nth-child(21) {
+    grid-row-start: 6;
+    grid-column: 6 / span 2;
+}
+
 /*********************************************************************************/
 
 /* Text Style                                                                    */
@@ -90,11 +215,24 @@ ul.hex {
     padding-left: 1em;
 }
 
-li.hex{ 
+li.hex {
     color: rgb(44, 50, 133);
 }
-li span{
-    color: #333;
+
+li span {
+    color: rgb(0, 0, 0, 0.8);
+}
+
+li button {
+    color: rgb(0, 0, 0, 0.8);
+    border: none;
+    padding: 0;
+    background: none;
+    transition: 0.2s;
+    outline: none !important;
+}
+li button:hover {
+    color: rgb(145, 180, 213);
 }
 
 .text-centered {
@@ -127,6 +265,7 @@ ul p {
     float: left;
     position: relative;
     padding-top: 3px;
+    float: left;
 }
 
 /*********************************************************************************/
@@ -245,7 +384,7 @@ hr {
     display: inline-block;
 }
 
-#menu a {
+#menu a , #menu button{
     display: block;
     padding: 0px 0px 0px 0px;
     padding-left: 90px;
@@ -258,8 +397,10 @@ hr {
     font-family: 'Varela Round', sans-serif;
     font-size: 13px;
     color: rgba(255, 255, 255, 0.5);
+    background-color: rgb(44, 50, 133);
     margin: auto;
     border: none;
+    outline: none;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -277,11 +418,17 @@ hr {
     margin: auto;
     position: absolute;
     background-color: rgb(44, 50, 133);
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-left: 25px;
 }
 
 #menu .dropdown-content a {
     white-space: nowrap;
-    padding: 0px 56px 0px 56px;
+    padding: 0px 0px 0px 0px;
+    width: 100%;
+    margin: auto;
+    align-content: center;
     line-height: 40px;
 }
 
@@ -301,7 +448,7 @@ hr {
     display: block;
 }
 
-#menu a:hover, #menu .current_page_item a {
+#menu a:hover, #menu button:hover {
     text-decoration: none;
     color: rgb(255, 255, 255);
 }
@@ -538,72 +685,6 @@ ul.style3 .first {
     color: #FFFFFF;
 }
 
-/*********************************************************************************/
-
-/* Portfolio                                                                     */
-
-/*********************************************************************************/
-
-#portfolio-wrapper {}
-
-#portfolio {
-    text-align: center;
-}
-
-#portfolio .icon {
-    display: inline-block;
-    margin-bottom: 1em;
-    font-size: 2em;
-    color: rgb(0, 64, 182) url(/public/images/overlay.png);
-    ;
-}
-
-#portfolio .box {
-    color: rgba(0, 0, 0, 0.5);
-}
-
-#portfolio h3 {
-    display: block;
-    padding-bottom: 1em;
-    text-transform: uppercase;
-    font-size: 1.2em;
-    font-weight: 400;
-    color: rgba(0, 0, 0, 0.7);
-}
-
-#portfolio .title h2 {
-    color: rgba(0, 0, 0, 0.8);
-}
-
-#portfolio .title .byline {
-    display: block;
-    padding-bottom: 2em;
-    color: rgba(0, 0, 0, 0.7);
-}
-
-#portfolio .byline {
-    display: block;
-    padding-bottom: 2em;
-    color: rgba(0, 0, 0, 0.7);
-}
-
-.column1, .column2, .column3, .column4 {
-    width: 330px;
-}
-
-.column1, .column2, .column3 {
-    float: left;
-    margin-right: 24px;
-}
-
-.column3 {
-    margin-left: 0.6em;
-}
-
-.column4 {
-    float: right;
-}
-
 .row1 {
     margin-bottom: 10px;
     height: auto;
@@ -625,7 +706,7 @@ ul.style3 .first {
 
 .row1 h2 {
     padding: 40px;
-    padding-top: 15px;
+    padding-top: 30px;
     padding-bottom: 0px;
     width: 15em;
     color: rgb(255, 255, 255);
@@ -736,9 +817,16 @@ ul.style3 .first {
 
 /*********************************************************************************/
 
-#left-button {
-    padding-left: 2.6em; 
+.left-button {
+    padding-left: 2.5em;
 }
+
+#cctv-button {
+    padding-top: 4em;
+    padding-bottom: 4em;
+    line-height: 100%;
+}
+
 .button-style {
     display: inline-block;
     padding-left: 2em;
@@ -751,6 +839,7 @@ ul.style3 .first {
     color: rgb(255, 255, 255);
     transition: all .2s ease-in-out;
     font-size: 2.3em;
+    background-size: cover;
 }
 
 .button-style:hover {
@@ -795,7 +884,7 @@ ul.style3 .first {
 }
 
 #cctv-slide {
-    padding-top: 6.7em;
+    padding-left: 55em;
 }
 
 #cctv-logo {
@@ -839,13 +928,49 @@ ul.style3 .first {
     text-align: justify;
     width: 40%;
 }
+
+.desc {
+    height: auto;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
 .imageDesc img {
     width: 100%;
     height: 250px;
+    padding-top: 5px;
     object-fit: cover;
     vertical-align: middle;
     border: 0;
-    margin-top: 13%;
+}
+
+.projColDesktop {
+    padding-top: 30px;
+}
+
+button.button1 {
+    display: inline-block;
+    line-height: 3.0em;
+    padding: 0em 1.2em;
+    border: 0.1em solid rgb(44, 50, 133);
+    background-color:rgb(255, 255, 255);
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Varela Round', sans-serif;
+    color:#2D2D2D;
+    text-align: center;
+    transition: all 0.2s;
+    outline: none;
+}
+
+button.button1:hover{
+    color: #ffffff;
+    background-color:rgb(44, 50, 133);
+}
+
+#break-point {
+    display: none;
 }
 
 @media(min-width: 951px) and (max-width: 1070px) {
@@ -885,6 +1010,9 @@ ul.style3 .first {
     #cctv-slide {
         padding-top: 2%;
     }
+    #break-point {
+        display: block;
+    }
 }
 
 @media(max-width: 950px) {
@@ -896,10 +1024,10 @@ ul.style3 .first {
     #dropdown {
         right: 70px;
     }
-    #menu a {
+    #menu a , #menu button {
         padding: 0px 0px 0px 0px;
         padding-left: 20px;
-        padding-right: 30px;
+        padding-right: 20px;
     }
     #page {
         margin-left: 2em;
@@ -964,7 +1092,6 @@ ul.style3 .first {
     }
     #ipcamera-h2 {
         margin-left: 330px;
-        margin-top: 5px;
         margin-bottom: 0;
         padding: 40px;
         padding-Top: 0px;
@@ -1016,27 +1143,17 @@ ul.style3 .first {
         padding-left: 4em;
     }
     .slideshow-content-right {
-        padding-top: 0.8%;
+        padding-top: 1.7em;
     }
     #cctv-slide {
         width: 50em;
-        padding-top: 0.3em;
-        padding-left: 21.5em;
+        padding-left: 25em;
     }
     #datashow-slide {
         width: 45em;
-        padding-top: 0.3em;
         padding-left: 22.5em;
     }
-    .imageDesc img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        vertical-align: middle;
-        border: 0;
-        margin-top: 13%;
-    }
-    hr{
+    hr {
         margin-top: 0;
     }
     #footer-hr {
@@ -1045,7 +1162,44 @@ ul.style3 .first {
     .button-style {
         line-height: 800%;
         font-size: 1.5em;
-        background-repeat: no-repeat;
     }
-    
+    .hexagon {
+        width: 170px;
+        height: 195px;
+    }
+    .hexagon-gallery {
+        grid-auto-rows: 144px;
+    }
+    #cctv-button {
+        padding-top: 3em;
+        padding-bottom: 3em;
+        line-height: 100%;
+    }
+    #break-point {
+        display: block;
+    }
+    .row1 h2 {
+        padding-left: 25px;
+    }
+    .row1 p {
+        padding-left: 25px;
+    }
+    #empty-col {
+        display: none;
+    }
+    .modal-backdrop{
+        width: 100%;
+        height: 100%;
+    }
+    .modal-dialog {
+        margin: auto;
+        padding-top: 100px;
+    }
+
+    .projColMobile{
+        padding-top: 30px;
+    }
+    #footer-numbers {
+        width: 120px;
+    }
 }

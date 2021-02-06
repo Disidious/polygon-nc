@@ -1,3 +1,4 @@
+import { ClickAwayListener } from '@material-ui/core';
 import React from 'react';
 import {
   Link
@@ -12,6 +13,7 @@ function Header() {
       setClasso('dropdown');
     else setClasso('dropdown-hide');
   }
+
   return (
     <div id="header-wrapper">
       <div id="page" className="container" style={{ padding: "0px" }}>
@@ -25,21 +27,24 @@ function Header() {
         <ul>
           <li><Link to="/" onClick={() => changeState(true)}>Homepage</Link></li>
           <li>
-            <div className="dropdown-btn">
-              <a onClick={changeState}>Services</a>
-              <div id="dropdown" className={classo}>
-                <div className="dropdown-content">
-                  <Link to="/services/networking" className="choice" onClick={changeState}>Networking</Link>
-                  <Link to="/services/cctv" className="choice" onClick={changeState}>CCTV</Link>
-                  <Link to="/services/accesscontrol" className="choice" onClick={changeState}>Access Control</Link>
-                  <Link to="/services/datashow" className="choice" onClick={changeState}>Data Show</Link>
+            <ClickAwayListener onClickAway={() => changeState(true)}>
+              <div className="dropdown-btn">
+                <button onClick={changeState}>Services</button>
+                <div id="dropdown" className={classo}>
+                  <div className="dropdown-content">
+                    <Link to="/services/networking" onClick={changeState}>Networking</Link>
+                    <Link to="/services/cctv" onClick={changeState}>CCTV</Link>
+                    <Link to="/services/accesscontrol" onClick={changeState}>Access Control</Link>
+                    <Link to="/services/datashow" onClick={changeState}>Data Show</Link>
+                  </div>
                 </div>
               </div>
-            </div>
+            </ClickAwayListener>
           </li>
           {/*<li><Link to="/aboutus">About Us</Link></li>*/}
-          <li><Link to="/projects" onClick={() => changeState(true)}>Projects</Link></li>
-          <li><Link to="/contactus" onClick={() => changeState(true)}>Contact Us</Link></li>
+          <li><Link to="/projects">Projects</Link></li>
+          <li><Link to="/clients">Clients</Link></li>
+          <li><Link to="/contactus">Contact Us</Link></li>
         </ul>
       </div>
     </div>
