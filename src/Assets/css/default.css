@@ -488,7 +488,6 @@ hr {
 }
 
 #page .byline-lower {
-    padding-top: 1em;
     font-size: 1.5em;
     color: rgba(0, 0, 0, 0.7);
 }
@@ -989,6 +988,10 @@ button.button1:hover{
     font-size: 1em !important;
 }
 
+.email-contactus {
+    padding-top: 1.5em;
+}
+
 @media(min-width: 951px) and (max-width: 1070px) {
     #cctv-h2 {
         padding-top: 50px;
@@ -1220,5 +1223,8 @@ button.button1:hover{
     }
     #panduit-logo {
         width: 50%;
+    }
+    .email-contactus {
+        padding-top: 1em;
     }
 }

@@ -87,8 +87,8 @@ function Projects() {
                         <div className="title">
                             <h1 className="proj-name">EL ENTAG EL HARBY</h1>
                         </div>
-                        <div className="desc proj-desc-title" style={{ maxHeight: stateDesc[2] }}>
-                            <span className="byline">SUPPLYING, DESIGNING AND INSTALLING:</span>
+                        <div className="desc" style={{ maxHeight: stateDesc[2] }}>
+                            <span className="byline proj-desc-title">SUPPLYING, DESIGNING AND INSTALLING:</span>
                             <ul className="hex">
                                 <li className="hex"><span>UTP network infrastructure for IP cameras.</span></li>
                                 <li className="hex"><span>Centralized access control system for the Datacenter.</span></li>
