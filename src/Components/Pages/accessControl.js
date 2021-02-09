@@ -48,9 +48,7 @@ function AccessControl() {
                             Protect your property with our range of different readers for cards and ID badges,
                             each suitable for a different purpose.
                             For opening doors and other access control applications,
-                            both proximity cards and MIFARE ® product technology readers are suitable,
-                            while companies using regular ID cards will benefit from the use of magnetic stripe or barcode readers for access,
-                            data collection and more.
+                            both proximity cards and MIFARE ® product technology readers are suitable.
                         </p>
                     </Col>
                     <Col md={5} xs={5} className="imageDesc">

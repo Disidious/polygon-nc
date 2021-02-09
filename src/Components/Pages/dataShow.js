@@ -52,8 +52,7 @@ function DataShow() {
                         <img alt="" src="/images/datashow3.jpg" />
                     </Col>
                 </Row>
-                <hr />
-                <Row style={{ height: "5em" }} />
+                <hr id="hr-end"/>
                 <Row>
                     <Col md={12} className="m-auto">
                         <div className="title" style={{ margin: "0em 0em 0em 1em" }}>
@@ -72,7 +71,7 @@ function DataShow() {
                         <center><p style={{ textAlign: "justify", textAlignLast: "center" }}>
                             The video wall display solutions are often the highest quality offered on the market.
                             Our portfolio often includes the right solution for your application,
-                            available in various technologies (LCD, LED rear-projection and RGB laser rear-projection),
+                            available in various technologies,
                             sizes and resolutions.
                             Our dedicated tools and a variety of professional resources ensure that your video wall gets the most out of it.
                         </p></center>

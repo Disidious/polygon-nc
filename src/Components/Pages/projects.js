@@ -49,10 +49,10 @@ function Projects() {
                     <Col md={4} xs={12} className="imageDesc">
                         <img alt="" src="/images/ACA.jpg" />
                         <div className="title">
-                            <h1>ADMINISTRATIVE CAPITAL AUTHORITY</h1>
+                            <h1 className="proj-name">ADMINISTRATIVE CAPITAL AUTHORITY</h1>
                         </div>
                         <div className="desc" style={{ maxHeight: stateDesc[0] }}>
-                            <span className="byline">CURRENTLY SUPPLYING, DESIGNING AND INSTALLING:</span>
+                            <span className="byline proj-desc-title">CURRENTLY SUPPLYING, DESIGNING AND INSTALLING:</span>
                             <ul className="hex">
                                 <li className="hex"><span>Structured cabling system for Datacenter (80 Racks) at the
                                 new capital using MPO fiber cables interconnection.</span></li>
@@ -67,10 +67,10 @@ function Projects() {
                     <Col md={4} xs={12} className="imageDesc projColMobile">
                         <img alt="" src="/images/DEI.jpg" />
                         <div className="title">
-                            <h1>DAR AL IFTA</h1>
+                            <h1 className="proj-name">DAR AL IFTA</h1>
                         </div>
                         <div className="desc" style={{ maxHeight: stateDesc[1] }}>
-                            <span className="byline">SUPPLYING, DESIGNING AND INSTALLING:</span>
+                            <span className="byline proj-desc-title">SUPPLYING, DESIGNING AND INSTALLING:</span>
                             <ul className="hex">
                                 <li className="hex"><span>Structured cabling system for Datacenter (10 Racks) using UTP
                                 and fiber cables interconnection.</span></li>
@@ -85,9 +85,9 @@ function Projects() {
                     <Col md={4} xs={12} className="imageDesc projColMobile">
                         <img alt="" src="/images/EH.png" />
                         <div className="title">
-                            <h1>EL ENTAG EL HARBY</h1>
+                            <h1 className="proj-name">EL ENTAG EL HARBY</h1>
                         </div>
-                        <div className="desc" style={{ maxHeight: stateDesc[2] }}>
+                        <div className="desc proj-desc-title" style={{ maxHeight: stateDesc[2] }}>
                             <span className="byline">SUPPLYING, DESIGNING AND INSTALLING:</span>
                             <ul className="hex">
                                 <li className="hex"><span>UTP network infrastructure for IP cameras.</span></li>
@@ -102,10 +102,10 @@ function Projects() {
                     <Col md={4} xs={12} className="imageDesc projColDesktop">
                         <img alt="" src="/images/CC.jpg" />
                         <div className="title">
-                            <h1>COPTIC CATHEDRAL</h1>
+                            <h1 className="proj-name">COPTIC CATHEDRAL</h1>
                         </div>
                         <div className="desc" style={{ maxHeight: stateDesc[3] }}>
-                            <span className="byline">SUPPLYING, DESIGNING AND INSTALLING:</span>
+                            <span className="byline proj-desc-title">SUPPLYING, DESIGNING AND INSTALLING:</span>
                             <ul className="hex">
                                 <li className="hex"><span>UTP network infrastructure for IP cameras at Pope headquarter.</span></li>
                                 <li className="hex"><span>Stand-alone access control system.</span></li>
@@ -118,10 +118,10 @@ function Projects() {
                     <Col md={4} xs={12} className="imageDesc projColDesktop">
                         <img alt="" src="/images/LC.png" />
                         <div className="title">
-                            <h1>LUFTHANSA CARGO</h1>
+                            <h1 className="proj-name">LUFTHANSA CARGO</h1>
                         </div>
                         <div className="desc" style={{ maxHeight: stateDesc[4] }}>
-                            <span className="byline">SUPPLYING, DESIGNING AND INSTALLING:</span>
+                            <span className="byline proj-desc-title">SUPPLYING, DESIGNING AND INSTALLING:</span>
                             <ul className="hex">
                                 <li className="hex"><span>UTP network infrastructure at airport branch.</span></li>
                                 <li className="hex"><span>Digital telephone system.</span></li>
@@ -135,10 +135,10 @@ function Projects() {
                     <Col md={4} xs={12} className="imageDesc projColDesktop">
                         <img alt="" src="/images/PWC.jpg" />
                         <div className="title">
-                            <h1>PYRAMIDS WALK COMPOUND</h1>
+                            <h1 className="proj-name">PYRAMIDS WALK COMPOUND</h1>
                         </div>
                         <div className="desc" style={{ maxHeight: stateDesc[5] }}>
-                            <span className="byline">SUPPLYING, DESIGNING AND INSTALLING:</span>
+                            <span className="byline proj-desc-title">SUPPLYING, DESIGNING AND INSTALLING:</span>
                             <ul className="hex">
                                 <li className="hex"><span>UTP and fiber network infrastructure.</span></li>
                                 <li className="hex"><span>Fiber fusion splicing and testing.</span></li>

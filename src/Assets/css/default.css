@@ -64,7 +64,7 @@ a img {
     padding: 0;
 }
 .modal-90w{
-    width: 90%;
+    width: 20%;
     max-width: none!important;
 }
 .hexagon-gallery {
@@ -396,7 +396,7 @@ hr {
     text-align: center;
     font-family: 'Varela Round', sans-serif;
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.705);
     background-color: rgb(44, 50, 133);
     margin: auto;
     border: none;
@@ -702,13 +702,13 @@ ul.style3 .first {
     padding-bottom: 20px;
     width: 45em;
     color: rgb(255, 255, 255);
+    text-align: justify;
 }
 
 .row1 h2 {
     padding: 40px;
     padding-top: 30px;
     padding-bottom: 0px;
-    width: 15em;
     color: rgb(255, 255, 255);
 }
 
@@ -973,6 +973,22 @@ button.button1:hover{
     display: none;
 }
 
+#panduit-logo {
+    width: 30%;
+}
+
+#hr-end {
+    margin-bottom: 5em;
+}
+
+.proj-name {
+    font-size: 130%;
+    margin-top: 0.5em;
+}
+.proj-desc-title{
+    font-size: 1em !important;
+}
+
 @media(min-width: 951px) and (max-width: 1070px) {
     #cctv-h2 {
         padding-top: 50px;
@@ -1201,5 +1217,8 @@ button.button1:hover{
     }
     #footer-numbers {
         width: 120px;
+    }
+    #panduit-logo {
+        width: 50%;
     }
 }

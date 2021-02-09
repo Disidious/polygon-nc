@@ -33,9 +33,9 @@ function HomePage() {
 										<h2 className="slideshow-title">
 											NETWORKING
                             			</h2>
-										<p className="slideshow-text">⬢ Data Centers.</p>
-										<p className="slideshow-text">⬢ Structure Cabling Systems.</p>
-										<p className="slideshow-text">⬢ Network Infrastructure.</p>
+										<p className="slideshow-text">⬢ Data Centers</p>
+										<p className="slideshow-text">⬢ Structure Cabling Systems</p>
+										<p className="slideshow-text">⬢ Network Infrastructure</p>
 									</div>
 								</div>
 								<div>
@@ -44,9 +44,9 @@ function HomePage() {
 										<h2 className="slideshow-title">
 											CCTV
                             			</h2>
-										<p className="slideshow-text">⬢ HD Systems.</p>
-										<p className="slideshow-text">⬢ IP Systems.</p>
-										<p className="slideshow-text">⬢ PTZ Cameras.</p>
+										<p className="slideshow-text">⬢ HD Systems</p>
+										<p className="slideshow-text">⬢ IP Systems</p>
+										<p className="slideshow-text">⬢ PTZ Cameras</p>
 									</div>
 								</div>
 								<div>
@@ -56,9 +56,9 @@ function HomePage() {
 											ACCESS CONTROL
                             			</h2>
 
-										<p className="slideshow-text">⬢ Centralized Access Control.</p>
-										<p className="slideshow-text">⬢ Standalone Access Control.</p>
-										<p className="slideshow-text">⬢ Biometric Authentication.</p>
+										<p className="slideshow-text">⬢ Centralized Access Control</p>
+										<p className="slideshow-text">⬢ Standalone Access Control</p>
+										<p className="slideshow-text">⬢ Biometric Authentication</p>
 									</div>
 								</div>
 								<div>
@@ -68,9 +68,9 @@ function HomePage() {
 											DATA SHOW
                             			</h2>
 
-										<p className="slideshow-text">⬢ Projectors.</p>
-										<p className="slideshow-text">⬢ Projector Screens.</p>
-										<p className="slideshow-text">⬢ Large Format Display.</p>
+										<p className="slideshow-text">⬢ Projectors</p>
+										<p className="slideshow-text">⬢ Projector Screens</p>
+										<p className="slideshow-text">⬢ Large Format Display</p>
 									</div>
 								</div>
 							</Slider>
@@ -87,18 +87,12 @@ function HomePage() {
 				<hr />
 				<Row style={{ marginTop: "1em" }}>
 					<Col md={12} className="m-auto">
-						<center><p style={{ textAlign: "justify", textAlignLast: "center" }}>
+						<center><p style={{ textAlign: "justify", textAlignLast: "center", width: "910px" }}>
 							We are an IT Service Provider and a System
 							Integrator Company offering special skills in designing, supplying and implementing fast and reliable IT Services
 							including Network Solutions, Video System
 							Surveillances, System security, and Display
 							solutions.
-							we are an IT Service Provider and a registered enterprise
-							structured cabling certified company,
-							authorized to deploy Panduit® enterprise
-							structured cabling systems.
-							we are offering special skills in designing, supplying and implementing fast and reliable IT Services
-							including Network Solutions, Video System Surveillances, System security, and Display solutions
                         </p></center>
 					</Col>
 				</Row>
@@ -125,7 +119,7 @@ function HomePage() {
 				<Row>
 					<Col md={6} xs={6} className="no-padding">
 						<div className="frame">
-							<Link to="/services/cctv" id="cctv-button" className="button-style left-button" style={{ backgroundImage: "url(images/CCTV.jpg)" }}>Video System<br />Surrveillance</Link>
+						<Link to="/services/networking" className="button-style left-button" style={{ backgroundImage: "url(images/CCTV.jpg)" }}>CCTV</Link>
 						</div>
 					</Col>
 					<Col md={6} xs={6} className="no-padding">
