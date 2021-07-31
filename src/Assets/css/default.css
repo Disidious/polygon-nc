@@ -401,6 +401,7 @@ hr {
     margin: auto;
     border: none;
     outline: none;
+    transition: 0s;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -689,7 +690,6 @@ ul.style3 .first {
     height: auto;
     width: 100%;
     background-repeat: no-repeat;
-    float: left;
     background-size: 100%;
     text-align: left;
     padding: 0.5em;
@@ -867,7 +867,7 @@ ul.style3 .first {
 }
 
 .slideshow-content-left {
-    top: 15px;
+    top: 20px;
     position: absolute;
     width: 50em;
     padding-left: 5em;
@@ -875,7 +875,7 @@ ul.style3 .first {
 }
 
 .slideshow-content-right {
-    top: 15px;
+    top: 20px;
     position: absolute;
     width: 80em;
     padding-left: 50em;
@@ -991,7 +991,21 @@ button.button1:hover{
 .email-contactus {
     padding-top: 1.5em;
 }
-
+.tech-title{
+    margin: 0;
+    font-size: 1.4em;
+    width: 90%;
+}
+.tech-img{
+    width: 90%;
+}
+.tech-right-text{
+    float: right;
+    width: 210px;
+}
+.tech-right-img{
+    float: right;
+}
 @media(min-width: 951px) and (max-width: 1070px) {
     #cctv-h2 {
         padding-top: 50px;
@@ -1226,5 +1240,8 @@ button.button1:hover{
     }
     .email-contactus {
         padding-top: 1em;
+    }
+    .tech-right-text{
+        width: 73%;
     }
 }

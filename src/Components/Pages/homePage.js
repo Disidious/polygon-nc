@@ -119,7 +119,7 @@ function HomePage() {
 				<Row>
 					<Col md={6} xs={6} className="no-padding">
 						<div className="frame">
-						<Link to="/services/networking" className="button-style left-button" style={{ backgroundImage: "url(images/CCTV.jpg)" }}>CCTV</Link>
+						<Link to="/services/cctv" className="button-style left-button" style={{ backgroundImage: "url(images/CCTV.jpg)" }}>CCTV</Link>
 						</div>
 					</Col>
 					<Col md={6} xs={6} className="no-padding">

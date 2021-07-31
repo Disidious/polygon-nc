@@ -57,7 +57,7 @@ function CCTV() {
                         <img alt="" src="/images/hd.png" style={{ width: "90%"}} />
                     </Col>
                     <Col md={3} xs={9}>
-                        <h2 style={{ left: "0px", fontSize: "1.5em" }}>High Resolution</h2>
+                        <h2 style={{ left: "0px", fontSize: "1.4em" }}>High Resolution</h2>
                         <p style={{ textAlign: "justify" }}>
                             Cameras capture High definition and accurate imaging videos with high resolution up to 4k and with
                             the ability to record up to 30fps. The range of HD cameras continues to expand to adapt to all application requirements.
@@ -68,7 +68,7 @@ function CCTV() {
                         <img alt="" src="/images/electronics.png" style={{ width: "90%", paddingTop: "1.5em" }} />
                     </Col>
                     <Col md={3} xs={9}>
-                        <h2 style={{ left: "0px", fontSize: "1.5em" }}>Remote access</h2>
+                        <h2 style={{ left: "0px", fontSize: "1.4em" }}>Remote access</h2>
                         <p style={{ textAlign: "justify" }}>
                             Monitor your cameras remotely from anywhere with any device (Smart Phones, Laptops, etc.)
                             that has an internet connection. The mobile application is available for iOS devices and for

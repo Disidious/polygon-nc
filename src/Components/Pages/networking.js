@@ -48,7 +48,7 @@ function Networking() {
                         </center>
                     </Col>
                 </Row>
-                <hr id="hr-end"/>
+                <hr id="hr-end" />
 
                 <Row>
                     <Col md={12} xs={12}>
@@ -75,12 +75,12 @@ function Networking() {
                     </Modal.Body>
                 </Modal>
 
-                <Row style={{ padding: "1em 0em 2em 0em" }}>
+                <Row style={{ padding: "1em 0em 2em 0em" }} className="m-auto">
                     <Col md={2} xs={3}>
-                        <img alt="" src="/images/fiber.png" style={{ width: "90%" }} />
+                        <img alt="" src="/images/fiber.png" className="tech-img tech-right" />
                     </Col>
                     <Col md={3} xs={3}>
-                        <h2 style={{ left: "0px", fontSize: "1.5em" }}>Fiber optic cables</h2>
+                        <h2 className="tech-title">Fiber cables</h2>
                         <ul className="hex">
                             <li className="hex"><button onClick={() => show("/images/networkingImages/mpo.jpeg", "MPO")}>MPO</button></li>
                             <li className="hex"><button onClick={() => show("/images/networkingImages/multimode.jpeg", "Multi Mode")}>Multi Mode</button></li>
@@ -88,24 +88,26 @@ function Networking() {
                         </ul>
                     </Col>
                     <Col id="empty-col" md={2}></Col>
+                    <Col md={3} xs={3}>
+                        <div className="tech-right-text">
+                            <h2 className="tech-title">Copper cables</h2>
+                            <ul className="hex">
+                                <li className="hex"><button onClick={() => show("/images/networkingImages/utp.jpeg", "UTP")}>UTP</button></li>
+                                <li className="hex"><button onClick={() => show("/images/networkingImages/stp.jpeg", "STP")}>STP</button></li>
+                            </ul>
+                        </div>
+                    </Col>
                     <Col md={2} xs={3}>
                         <img alt="" src="/images/copper.png" style={{ width: "90%" }} />
                     </Col>
-                    <Col md={3} xs={3}>
-                        <h2 style={{ left: "0px", fontSize: "1.5em" }}>Copper cables</h2>
-                        <ul className="hex">
-                            <li className="hex"><button onClick={() => show("/images/networkingImages/utp.jpeg", "UTP")}>UTP</button></li>
-                            <li className="hex"><button onClick={() => show("/images/networkingImages/stp.jpeg", "STP")}>STP</button></li>
-                        </ul>
-                    </Col>
                     <Col id="empty-col" md={2}></Col>
                 </Row>
-                <Row style={{ padding: "1em 0em 2em 0em" }}>
+                <Row style={{ padding: "1em 0em 2em 0em" }} className="m-auto">
                     <Col md={2} xs={3}>
-                        <img alt="" src="/images/rack.png" style={{ width: "90%", paddingTop: "0.3em" }} />
+                        <img alt="" src="/images/rack.png" className="tech-right tech-img" />
                     </Col>
                     <Col md={3} xs={3}>
-                        <h2 style={{ left: "0px", fontSize: "1.5em" }}>Racks</h2>
+                        <h2 className="tech-title">Racks</h2>
                         <ul className="hex">
                             <li className="hex"><button onClick={() => show("/images/networkingImages/indoor.jpeg", "Indoor")}>Indoor</button></li>
                             <li className="hex"><button onClick={() => show("/images/networkingImages/outdoor.jpeg", "Outdoor")}>Outdoor</button></li>
@@ -113,24 +115,26 @@ function Networking() {
                         </ul>
                     </Col>
                     <Col id="empty-col" md={2}></Col>
+                    <Col md={3} xs={3}>
+                        <div className="tech-right-text">
+                            <h2 className="tech-title">Patch panels</h2>
+                            <ul className="hex">
+                                <li className="hex"><button onClick={() => show("/images/networkingImages/preloaded.jpeg", "Pre-loaded")}>Pre-loaded</button></li>
+                                <li className="hex"><button onClick={() => show("/images/networkingImages/modular.jpeg", "Modular")}>Modular</button></li>
+                            </ul>
+                        </div>
+                    </Col>
                     <Col md={2} xs={3}>
                         <img alt="" src="/images/port.png" style={{ width: "90%" }} />
                     </Col>
-                    <Col md={3} xs={3}>
-                        <h2 style={{ left: "0px", fontSize: "1.5em" }}>Patch panels</h2>
-                        <ul className="hex">
-                            <li className="hex"><button onClick={() => show("/images/networkingImages/preloaded.jpeg", "Pre-loaded")}>Pre-loaded</button></li>
-                            <li className="hex"><button onClick={() => show("/images/networkingImages/modular.jpeg", "Modular")}>Modular</button></li>
-                        </ul>
-                    </Col>
                     <Col id="empty-col" md={2}></Col>
                 </Row>
-                <Row style={{ padding: "0em 0em 0em 0em" }}>
+                <Row style={{ padding: "0em 0em 0em 0em" }} className="m-auto">
                     <Col md={2} xs={3}>
                         <img alt="" src="/images/faceplate.png" style={{ width: "90%", paddingTop: "0.3em" }} />
                     </Col>
                     <Col md={3} xs={3}>
-                        <h2 style={{ left: "0px", fontSize: "1.5em" }}>Faceplates</h2>
+                        <h2 className="tech-title">Faceplates</h2>
                         <ul className="hex">
                             <li className="hex"><button onClick={() => show("/images/networkingImages/internal.jpeg", "Internal")}>Internal</button></li>
                             <li className="hex"><button onClick={() => show("/images/networkingImages/external.jpeg", "External")}>External</button></li>
@@ -138,16 +142,18 @@ function Networking() {
                         </ul>
                     </Col>
                     <Col id="empty-col" md={2}></Col>
+                    <Col md={3} xs={3}>
+                        <div className="tech-right-text">
+                            <h2 className="tech-title">Cable Trays</h2>
+                            <ul className="hex">
+                                <li className="hex"><button onClick={() => show("/images/networkingImages/wyrgrid.jpeg", "Wyr-Grid")}>Wyr-Grid</button></li>
+                                <li className="hex"><button onClick={() => show("/images/networkingImages/wirebasket.jpeg", "Wire Basket")}>Wire Basket</button></li>
+                                <li className="hex"><button onClick={() => show("/images/networkingImages/runner.jpeg", "Fiber Runner")}>Fiber Runner</button></li>
+                            </ul>
+                        </div>
+                    </Col>
                     <Col md={2} xs={3}>
                         <img alt="" src="/images/cabletray2.png" style={{ width: "90%", paddingTop: "0.3em" }} />
-                    </Col>
-                    <Col md={3} xs={3}>
-                        <h2 style={{ left: "0px", fontSize: "1.5em" }}>Cable Trays</h2>
-                        <ul className="hex">
-                            <li className="hex"><button onClick={() => show("/images/networkingImages/wyrgrid.jpeg", "Wyr-Grid")}>Wyr-Grid</button></li>
-                            <li className="hex"><button onClick={() => show("/images/networkingImages/wirebasket.jpeg", "Wire Basket")}>Wire Basket</button></li>
-                            <li className="hex"><button onClick={() => show("/images/networkingImages/runner.jpeg", "Fiber Runner")}>Fiber Runner</button></li>
-                        </ul>
                     </Col>
                     <Col id="empty-col" md={2}></Col>
                 </Row>
