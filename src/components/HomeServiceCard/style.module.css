@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   justify-content: center;
-  height: 400px;
+  height: 500px;
   width: 100%;
   padding: 50px 0px 50px 0px;
 }
@@ -13,8 +13,7 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 70%;
-  max-width: 1100px;
+  width: 85%;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
@@ -45,7 +44,7 @@
 .cardTextContainer ul {
   position: relative;
 	list-style: none;
-	margin-left: 0;
+  margin: 30px 0px 30px 0px;
 	padding-left: 0em;
 }
 
@@ -65,7 +64,7 @@
 .cardText h1{
   margin: 0;
   font-size: 50px;
-  max-width: 250px;
+  font-weight: lighter;
 }
 
 .underline {
@@ -77,12 +76,12 @@
 .learnMore {
   padding-left: 0;
   padding-right: 0;
+  border-radius: 0;
 }
 
-@media(max-width: 1350px) {
+@media(max-width: 1150px) {
   .cardContent {
     flex-direction: column;
-    width: 60%;
   }
 
   .cardImg {
@@ -94,6 +93,10 @@
     width: 100%;
     height: 50%;
     padding: 0;
+  }
+
+  .cardTextContainer ul {
+    margin: 10px 0px 10px 0px;
   }
 
   .cardText {
@@ -123,7 +126,7 @@
   }
 }
 
-@media(max-width: 850px) {
+@media(max-width: 875px) {
   .cardContent {
     width: 90%;
   }
@@ -165,5 +168,11 @@
 
   .cardText li {
     font-size: 11px;
+  }
+}
+
+@media(max-width: 325px) {
+  .cardText h1 {
+    font-size: 14px;
   }
 }

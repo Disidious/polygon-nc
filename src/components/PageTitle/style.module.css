@@ -5,6 +5,8 @@
   align-items: center;
   background-color: white;
   box-shadow: 0px 30px 20px rgb(255, 255, 255);
+  z-index: -1;
+  padding: 20px 0 20px 0;
 }
 
 .title {
@@ -14,12 +16,12 @@
   background-color: white;
   display:inline-block;
   z-index: 2;
-  padding: 0px 20px 0px 20px
+  padding: 0px 20px 0px 20px;
 }
 
 .lineThrough {
   position: absolute;
-  width: 50%;
+  width: 80%;
   height: 3px;
   background-color: var(--dark);
   top: 50%;
@@ -42,21 +44,18 @@
   }
 
   .lineThrough {
-    width: 60%;
+    width: 95%;
   }
 }
 
 @media(max-width: 600px) {
   .title {
-    font-size: 35px;
-  }
-  .lineThrough {
-    width: 80%;
+    font-size: 30px;
   }
 }
 
 @media(max-width: 425px) {
   .title {
-    font-size: 33px;
+    font-size: 25px;
   }
 }

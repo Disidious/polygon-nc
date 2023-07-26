@@ -25,13 +25,17 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  object-fit: none;
+  object-fit: cover;
+  object-position: center;
   z-index: -1;
 }
 
 .header {
   display: flex;
   background-color: rgba(0,0,0,0.75);
+  /* background-image: linear-gradient(to top, rgba(0,0,0,0), var(--dark)); */
+  background-image: linear-gradient(0, transparent 0%, var(--dark) 50%, var(--dark) 50%, transparent 100%);
+  /* background-image: linear-gradient(to bottom, rgba(0,0,0,0), var(--dark)); */
   width: 100%;
   height: 100%;
   justify-content: center;
@@ -65,8 +69,31 @@
   border-color: white;
 }
 
-@media(max-width: 702px) {
+.contactUsBtn:hover {
+  background-color: var(--medium);
+}
+
+.partnerBadge {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, transparent 0%, var(--medium) 50%, var(--medium) 50%, transparent 100%);
+  width: 100%;
+}
+
+.partnerBadge p {
+  color: white;
+  font-size: 17px;
+  margin: 0;
+}
+
+@media(max-width: 720px) {
   .header h1 {
     font-size: 40px;
+  }
+
+  .headerContent {
+    width: 90%;
   }
 }

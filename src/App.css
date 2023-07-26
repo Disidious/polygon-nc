@@ -2,9 +2,11 @@
   --dark: rgb(44, 50, 133);
   --medium: rgb(79, 84, 159);
   --light: rgb(145, 180, 213);
+
+  --darkOpaque: rgba(44, 50, 133, 0.9)
 }
 
 body {
   margin: 0;
-  font-family: 'Roboto';
+  font-family: 'Open Sans';
 }

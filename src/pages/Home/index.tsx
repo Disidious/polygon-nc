@@ -1,12 +1,13 @@
 import style from './style.module.css';
 
-import { Button, HomeServiceCard, PageTitle } from 'components';
+import { Button, HomeServiceCard, MainBackground, PageTitle } from 'components';
 
 import headerBackground from 'assets/header-background.jpg'
 import datacenterImg from 'assets/datacenter.jpg'
 import cctvImg from 'assets/cctv.jpg'
 import accessControlImg from 'assets/access-control.jpg'
 import datashowImg from 'assets/datashow.webp'
+import panduitLogo from 'assets/PanduitWhite.png'
 
 function Home() {
 	// React.useEffect(() => {
@@ -14,7 +15,7 @@ function Home() {
 	// }, [])
 	return (
 		<div className={style.container}>
-			<div className={style.containerBackground}/>
+			<MainBackground/>
 			<div className={style.headerContainer}>
 				<img className={style.headerBackground} src={headerBackground}/>
 				<div className={style.header}>
@@ -22,6 +23,12 @@ function Home() {
 						<h1>
 							We Are Polygon Network Company
 						</h1>
+						<div className={style.partnerBadge}>
+							<img src={panduitLogo} width={150}/>
+							<p>
+								Silver Partner
+							</p>
+						</div>
 						<p>
 							We are an IT Service Provider and a System
 							Integrator Company offering special skills in designing, supplying and implementing fast and reliable IT Services
@@ -29,7 +36,7 @@ function Home() {
 							Surveillances, System security, and Display
 							solutions.
 						</p>
-						<Button text={"Contact Us"} goto={"/contactus"} btnClass={style.contactUsBtn} secondary/>
+						<Button text={"Get in Touch"} goto={"/contactus"} btnClass={style.contactUsBtn} secondary/>
 					</div>
 				</div>
 			</div>
@@ -70,7 +77,7 @@ function Home() {
 				btnGoto='/services/accesscontrol'
 			/>
 
-<HomeServiceCard 
+			<HomeServiceCard 
 				imgSrc={datashowImg}
 				title="Data Show" 
 				points={[
