@@ -1,8 +1,4 @@
 import style from './style.module.css';
-import fiberImg from 'assets/fiber.png'
-import mpoImg from 'assets/mpo.jpeg'
-import singleImg from 'assets/singlemode.jpeg'
-import multiImg from 'assets/multimode.jpeg'
 
 type Props = {
   inverted?: boolean;
@@ -55,27 +51,6 @@ function HexagonItems(props: Props) {
         {renderItem(firstImg, firstTitle)}
         {renderItem(secondImg, secondTitle)}
         {renderItem(thirdImg, thirdTitle)}
-        {/* <div className={style.hex}>
-          <img src={mpoImg}/>
-          <div className={style.overlay}/>
-          <p>
-            MPO
-          </p>
-        </div>
-        <div className={style.hex}>
-          <img src={singleImg}/>
-          <div className={style.overlay}/>
-          <p>
-            Single Mode
-          </p>
-        </div>
-        <div className={style.hex}>
-          <img src={multiImg}/>
-          <div className={style.overlay}/>
-          <p>
-            Multi Mode
-          </p>
-        </div> */}
       </div>
     </div>
 	);

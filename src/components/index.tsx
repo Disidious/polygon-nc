@@ -6,3 +6,5 @@ export { default as HomeServiceCard} from "./HomeServiceCard";
 export { default as PageTitle } from "./PageTitle";
 export { default as ServiceHeader } from "./ServiceHeader";
 export { default as HexagonItems } from "./HexagonItems";
+export { default as TechnologyPoster } from "./TechnologyPoster";
+export { default as TechnologyItem } from "./TechnologyItem";

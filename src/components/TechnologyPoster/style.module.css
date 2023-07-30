@@ -1,0 +1,55 @@
+.techsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.techsContent {
+  position: relative;
+  width: 90%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.techRow {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  color: white;
+}
+
+.techTextContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.719);
+  height: 100%;
+  width: 100%;
+}
+
+.techText {
+  width: 70%;
+  padding: 100px 0 100px 0;
+  z-index: 1;
+}
+
+.techText p {
+  margin: 20px 0 0 0;
+}
+
+.techText h1 {
+  font-size: 30px;
+}
+
+.overlayDivider {
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  top: 50%;
+  transform: translate(0%, -50%);
+  background-image: linear-gradient(0, transparent 0%, var(--dark) 50%, var(--dark) 50%, transparent 100%);
+}

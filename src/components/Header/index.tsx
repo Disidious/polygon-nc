@@ -28,7 +28,6 @@ function Header() {
             <Link to="/services/datashow">Data Show</Link>
           </div>
         </div>
-        <Link to="/aboutus">About Us</Link>
         <Link to="/projects">Projects</Link>
         <Link to="/clients">Clients</Link>
         <Link to="/contactus">Contact Us</Link>
