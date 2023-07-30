@@ -7,10 +7,12 @@ type Props = {
   secondTechImg?: string;
   secondTechTitle?: string;
   secondTechDescription?: string;
+  techImgPosition?: string;
+  secondTechImgPosition?: string;
 }
 
 function TechnologyPoster(props: Props) {
-  const { techImg, techDescription, techTitle, secondTechDescription, secondTechImg, secondTechTitle } = props
+  const { techImg, techDescription, techTitle, secondTechDescription, secondTechImg, secondTechTitle, techImgPosition, secondTechImgPosition } = props
 
   const secondExists = () => secondTechDescription && secondTechImg && secondTechTitle
 
@@ -21,7 +23,8 @@ function TechnologyPoster(props: Props) {
           secondExists() && <div className={style.overlayDivider}/>
         }
         <div className={style.techRow} style={{
-          backgroundImage: `url(${techImg})`
+          backgroundImage: `url(${techImg})`,
+          backgroundPosition: techImgPosition ? techImgPosition : "center"
         }}>
           <div className={style.techTextContainer}>
             <div className={style.techText}>
@@ -37,7 +40,8 @@ function TechnologyPoster(props: Props) {
         {
           secondExists() &&
           <div className={style.techRow} style={{
-            backgroundImage: `url(${secondTechImg})`
+            backgroundImage: `url(${secondTechImg})`,
+            backgroundPosition: secondTechImgPosition ? secondTechImgPosition : "center"
           }}>
             <div className={style.techTextContainer}>
               <div className={style.techText}>
