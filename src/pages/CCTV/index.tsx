@@ -22,8 +22,9 @@ function CCTV() {
 				imgSrc={cctvImg} 
 				title={'CCTV'} 
 				description={`
-				Protect your property with our professional business CCTV systems including High Definition cameras with infrared capability 
-        that can give you high resolution details and accurate imaging any time of the day.
+          Our professional business CCTV systems provide ultimate protection with state-of-the-art High Definition cameras featuring infrared capability. 
+          Day or night, you'll get high-resolution details and accurate imaging, ensuring reliable surveillance for peace of mind. 
+          Trust our cutting-edge solutions to handle your security needs, allowing you to focus on what matters most.
 				`}
 			/>
       

@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { MainLayout } from './components';
-import { CCTV, Home, Networking } from 'pages'
+import { AccessControl, CCTV, Home, Networking } from 'pages'
 
 import "./App.css"
 
@@ -14,6 +14,7 @@ function App() {
           <Route path="services">
             <Route path="networking" element={<Networking/>}/>
             <Route path="cctv" element={<CCTV/>}/>
+            <Route path="accesscontrol" element={<AccessControl/>}/>
           </Route>
         </Route>
       </Routes>

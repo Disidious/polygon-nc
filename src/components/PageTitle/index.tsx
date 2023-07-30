@@ -6,9 +6,7 @@ type Props = {
 
 function PageTitle(props: Props) {
   const { text } = props
-	// React.useEffect(() => {
-	// 	window.scrollTo(0, 0);
-	// }, [])
+	
 	return (
 			<div className={style.titleContainer}>
 				<div className={style.lineThrough}/>

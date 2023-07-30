@@ -1,0 +1,25 @@
+.container {
+  position: relative;
+}
+
+.techItemsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+.techItem {
+  width: 40%;
+}
+
+@media(max-width: 850px) {
+  .techItemsContainer {
+    flex-direction: column;
+  }
+
+  .techItem {
+    width: 90%;
+  }
+}

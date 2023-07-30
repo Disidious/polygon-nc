@@ -4,10 +4,11 @@ type Props = {
   imgSrc: string;
   title: string;
   description: string;
+	imgPosition?: string;
 }
 
 function ServiceHeader(props: Props) {
-  const { imgSrc, title, description } = props;
+  const { imgSrc, title, description, imgPosition } = props;
 
 	return (
 			<div className={style.headerContainer}>
@@ -26,7 +27,8 @@ function ServiceHeader(props: Props) {
 						</div>
 					</div>
           <div className={style.headerImg} style={{
-						backgroundImage: `url(${imgSrc})`
+						backgroundImage: `url(${imgSrc})`,
+						backgroundPosition: imgPosition ? imgPosition : 'right'
 					}}/>
 				</div>
 			</div>
