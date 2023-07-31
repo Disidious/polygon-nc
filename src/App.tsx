@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { MainLayout } from './components';
-import { AccessControl, CCTV, Clients, DataShow, Home, Networking, Projects } from 'pages';
+import { AccessControl, CCTV, Clients, ContactUs, DataShow, Home, Networking, Projects } from 'pages';
 
 import "./App.css"
 
@@ -19,6 +19,7 @@ function App() {
           </Route>
           <Route path="projects" element={<Projects/>}/>
           <Route path="clients" element={<Clients/>}/>
+          <Route path="contactus" element={<ContactUs/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

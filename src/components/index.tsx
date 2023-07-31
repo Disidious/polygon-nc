@@ -10,3 +10,4 @@ export { default as TechnologyPoster } from "./TechnologyPoster";
 export { default as TechnologyItem } from "./TechnologyItem";
 export { default as ProjectItems } from "./ProjectItems";
 export { default as ClientItems } from "./ClientItems";
+export { default as ContactItems } from "./ContactItems";

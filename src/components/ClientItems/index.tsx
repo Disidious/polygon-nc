@@ -17,12 +17,10 @@ function ClientItems(props: Props) {
       <div className={style.hex}>
         <img src={client.img}/>
       </div>
-      <div className={style.clientsTextContainer}>
-        <div className={style.clientsText}>
-          <h1>
-            {client.name}
-          </h1>
-        </div>
+      <div className={style.clientsText}>
+        <h1>
+          {client.name}
+        </h1>
       </div>
     </div>
   )
