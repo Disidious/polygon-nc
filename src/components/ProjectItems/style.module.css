@@ -27,7 +27,6 @@
 
 .projectTextContainer {
   display: flex;
-  align-items: center;
   transition: 150ms;
   height: 50%;
 }
@@ -44,7 +43,7 @@
 }
 
 .projectTextContainer ul {
-  margin-top: 10px;
+  margin: 10px 0 0 0;
   list-style: none;
   padding-left: 25px;
 }

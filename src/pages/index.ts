@@ -4,3 +4,4 @@ export { default as CCTV } from './CCTV';
 export { default as AccessControl } from './AccessControl';
 export { default as DataShow } from './DataShow';
 export { default as Projects } from './Projects';
+export { default as Clients } from './Clients';

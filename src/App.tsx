@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { MainLayout } from './components';
-import { AccessControl, CCTV, DataShow, Home, Networking, Projects } from 'pages';
+import { AccessControl, CCTV, Clients, DataShow, Home, Networking, Projects } from 'pages';
 
 import "./App.css"
 
@@ -18,6 +18,7 @@ function App() {
             <Route path="datashow" element={<DataShow/>}/>
           </Route>
           <Route path="projects" element={<Projects/>}/>
+          <Route path="clients" element={<Clients/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

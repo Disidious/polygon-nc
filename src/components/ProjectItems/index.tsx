@@ -14,8 +14,8 @@ type Props = {
 function ProjectItems(props: Props) {
   const { projects } = props
 
-  const renderItem = (project: Project) => (
-    <div className={style.projectContent}>
+  const renderItem = (project: Project, key: number) => (
+    <div key={key} className={style.projectContent}>
       <div className={style.projectImg} style={{
         backgroundImage: `url(${project.img})`
       }}/>
@@ -39,7 +39,7 @@ function ProjectItems(props: Props) {
 
 	return (
     <div className={style.projectsContainer}>
-      {projects.map(project => renderItem(project))}
+      {projects.map((project, idx) => renderItem(project, idx))}
     </div>
 	);
 }
