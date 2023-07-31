@@ -1,6 +1,6 @@
 import style from './style.module.css';
 
-import { MainBackground, PageTitle, ServiceHeader, TechnologyItem, TechnologyPoster } from 'components';
+import { MainBackground, PageTitle, ServiceHeader, TechnologyPoster } from 'components';
 
 import datashowImg from 'assets/datashow2.webp'
 import shortThrowImg from 'assets/short-throw.jpg'

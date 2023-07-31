@@ -4,16 +4,17 @@ import style from './style.module.css';
 type Props = {
   text: string
   goto: string
+  onClick?: () => void
   btnClass?: string
   primary?: boolean
   secondary?: boolean
 }
 
 function Button(props: Props) {
-  const { text, goto, btnClass, primary, secondary } = props
+  const { text, goto, onClick, btnClass, primary, secondary } = props
 
   return (
-    <Link to={goto} className={`${style.main} ${btnClass} ${primary && style.primary} ${secondary && style.secondary}`}>
+    <Link onClick={onClick} to={goto} className={`${style.main} ${btnClass} ${primary && style.primary} ${secondary && style.secondary}`}>
       {text}
     </Link>
   );

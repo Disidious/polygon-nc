@@ -8,3 +8,4 @@ export { default as ServiceHeader } from "./ServiceHeader";
 export { default as HexagonItems } from "./HexagonItems";
 export { default as TechnologyPoster } from "./TechnologyPoster";
 export { default as TechnologyItem } from "./TechnologyItem";
+export { default as ProjectItems } from "./ProjectItems";
