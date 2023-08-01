@@ -18,7 +18,6 @@ import seedstarsImg from "assets/clients/seedstars.png";
 import dorrahImg from "assets/clients/dorrah.png";
 import primaplastImg from "assets/clients/primaplast.png";
 import dareleftaImg from "assets/clients/darelefta.jpeg";
-import carpaccioImg from "assets/clients/carpaccio.jpg";
 import trainsectorImg from "assets/clients/trainsector.jpg";
 import topbusinessImg from "assets/clients/topbusiness.jpg";
 import pyramidswalkImg from "assets/clients/pyramidswalk.png";
@@ -96,8 +95,8 @@ function Clients() {
       name: "Dar Al Ifta"
     },
     {
-      img: carpaccioImg,
-      name: "Carpaccio"
+      img: darelasherImg,
+      name: "Dar Al Asher"
     },
     {
       img: trainsectorImg,
@@ -110,10 +109,6 @@ function Clients() {
     {
       img: pyramidswalkImg,
       name: "Pyramids Walk"
-    },
-    {
-      img: darelasherImg,
-      name: "Dar Al Asher"
     }
   ]
 
