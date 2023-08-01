@@ -1,12 +1,17 @@
 import style from './style.module.css';
 
-import { ContactItems, MainBackground, PageTitle } from 'components';
+import { ContactItems, PageTitle } from 'components';
 
-import infoImg from 'assets/info.png'
-import supportImg from 'assets/support.png'
-import salesImg from 'assets/sales.png'
+import infoImg from 'assets/info.png';
+import supportImg from 'assets/support.png';
+import salesImg from 'assets/sales.png';
+import { useEffect } from 'react';
 
 function ContactUs() {
+  useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [])
+  
   const contacts = [
     {
       img: infoImg,
@@ -30,7 +35,6 @@ function ContactUs() {
 
 	return (
 		<div className={style.container}>
-      <MainBackground/>
       
       <PageTitle text='Contact Us'/>
       <ContactItems contacts={contacts}/>

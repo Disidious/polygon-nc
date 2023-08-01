@@ -1,6 +1,6 @@
 import style from './style.module.css';
 
-import { MainBackground, PageTitle, ProjectItems } from 'components';
+import { PageTitle, ProjectItems } from 'components';
 
 import acaImg from 'assets/aca.jpg';
 import daiImg from 'assets/dai.jpg';
@@ -8,8 +8,13 @@ import eeehImg from 'assets/eeeh.png';
 import ccImg from 'assets/cc.jpg';
 import lcImg from 'assets/lc.png';
 import pwcImg from 'assets/pwc.jpg';
+import { useEffect } from 'react';
 
 function Projects() {
+  useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [])
+  
   const projects = [
     {
       img: acaImg,
@@ -83,8 +88,6 @@ function Projects() {
 
 	return (
 		<div className={style.container}>
-      <MainBackground/>
-      
       <PageTitle text='Latest Projects'/>
       <div className={style.projectsContainer}>
         <ProjectItems

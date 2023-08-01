@@ -1,6 +1,6 @@
 import style from './style.module.css';
 
-import { HexagonItems, MainBackground, PageTitle, ServiceHeader } from 'components';
+import { HexagonItems, PageTitle, ServiceHeader } from 'components';
 
 import datacenterImg from 'assets/datacenter2.avif'
 
@@ -31,11 +31,15 @@ import cabelTrayImg from 'assets/cabletray.png'
 import wyrgridImg from 'assets/wyrgrid.jpg'
 import wirebasketImg from 'assets/wirebasket.jpeg'
 import fiberRunnerImg from 'assets/fiberrunner.jpg'
+import { useEffect } from 'react';
 
 function Networking() {
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [])
+	
 	return (
 		<div className={style.container}>
-			<MainBackground/>
 			<ServiceHeader 
 				imgSrc={datacenterImg} 
 				title={'Networking'} 

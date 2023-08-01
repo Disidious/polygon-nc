@@ -1,21 +1,22 @@
 import style from './style.module.css';
 
-import { Button, HomeServiceCard, MainBackground, PageTitle } from 'components';
+import { Button, HomeServiceCard, PageTitle } from 'components';
 
 import headerBackground from 'assets/header-background.jpg'
 import datacenterImg from 'assets/datacenter.jpg'
-import cctvImg from 'assets/cctv.jpg'
+import cctvImg from 'assets/hdcamera.jpg'
 import accessControlImg from 'assets/access-control.jpg'
-import datashowImg from 'assets/datashow.webp'
+import datashowImg from 'assets/datashow2.webp'
 import panduitLogo from 'assets/PanduitWhite.png'
+import { useEffect } from 'react';
 
 function Home() {
-	// React.useEffect(() => {
-	// 	window.scrollTo(0, 0);
-	// }, [])
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [])
+
 	return (
 		<div className={style.container}>
-			<MainBackground/>
 			<div className={style.headerContainer}>
 				<img className={style.headerBackground} src={headerBackground}/>
 				<div className={style.header}>

@@ -1,18 +1,22 @@
 import style from './style.module.css';
 
-import { MainBackground, PageTitle, ServiceHeader, TechnologyItem, TechnologyPoster } from 'components';
+import { PageTitle, ServiceHeader, TechnologyItem, TechnologyPoster } from 'components';
 
 import accessControlImg from 'assets/access-control2.jpeg'
 import biometricImg from 'assets/biometric.webp'
 import cardsImg from 'assets/access-control.jpg'
 import standaloneImg from 'assets/standalone.png'
 import centralizedImg from 'assets/centralized.png'
+import { useEffect } from 'react';
 
 
 function AccessControl() {
+  useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [])
+  
 	return (
 		<div className={style.container}>
-			<MainBackground/>
 			<ServiceHeader 
 				imgSrc={accessControlImg} 
 				title={'Access Control'} 

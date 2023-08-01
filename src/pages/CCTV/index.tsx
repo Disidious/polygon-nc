@@ -1,6 +1,6 @@
 import style from './style.module.css';
 
-import { MainBackground, PageTitle, ServiceHeader, TechnologyItem, TechnologyPoster } from 'components';
+import { PageTitle, ServiceHeader, TechnologyItem, TechnologyPoster } from 'components';
 
 import cctvImg from 'assets/cctv2.jpg'
 import hdCameraImg from 'assets/hdcamera.jpg'
@@ -12,12 +12,16 @@ import nightImg from 'assets/night.png'
 import wirelessImg from 'assets/wireless.png'
 import motionImg from 'assets/motion.png'
 import ptzImg from 'assets/ptz.png'
+import { useEffect } from 'react';
 
 
 function CCTV() {
+  useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [])
+  
 	return (
 		<div className={style.container}>
-			<MainBackground/>
 			<ServiceHeader 
 				imgSrc={cctvImg} 
 				title={'CCTV'} 

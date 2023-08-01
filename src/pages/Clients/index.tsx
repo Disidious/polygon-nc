@@ -1,6 +1,6 @@
 import style from './style.module.css';
 
-import { ClientItems, MainBackground, PageTitle } from 'components';
+import { ClientItems, PageTitle } from 'components';
 
 import egyproImg from "assets/clients/egypro.jpg";
 import collegeImg from "assets/clients/college.png";
@@ -23,8 +23,13 @@ import trainsectorImg from "assets/clients/trainsector.jpg";
 import topbusinessImg from "assets/clients/topbusiness.jpg";
 import pyramidswalkImg from "assets/clients/pyramidswalk.png";
 import darelasherImg from "assets/clients/darelasher.jpg";
+import { useEffect } from 'react';
 
 function Clients() {
+  useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [])
+  
   const clients = [
     {
       img: egyproImg,
@@ -114,8 +119,6 @@ function Clients() {
 
 	return (
 		<div className={style.container}>
-      <MainBackground/>
-      
       <PageTitle text='Our Clients'/>
       <ClientItems
         clients={clients}

@@ -1,12 +1,19 @@
 import { Outlet } from "react-router-dom";
-import { Header } from "..";
+import { Footer, Header, MainBackground } from "components";
 
 const MainLayout = () => {
   return (
-    <>
+    <div style={{
+      position: "relative",
+      height: "100%"
+    }}>
+      <MainBackground/>
       <Header/>
-      <Outlet />
-    </>
+      
+      <Outlet/>
+      
+      <Footer/>
+    </div>
   )
 };
 

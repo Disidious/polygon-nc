@@ -20,7 +20,12 @@ function TechnologyPoster(props: Props) {
     <div className={style.techsContainer}>
       <div className={style.techsContent}>
         {
-          secondExists() && <div className={style.overlayDivider}/>
+          secondExists() && 
+          <div className={style.overlayDivider}>
+            <div className={style.hex}/>
+            <div className={style.hex}/>
+            <div className={style.hex}/>
+          </div>
         }
         <div className={style.techRow} style={{
           backgroundImage: `url(${techImg})`,

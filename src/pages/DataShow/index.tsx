@@ -1,17 +1,21 @@
 import style from './style.module.css';
 
-import { MainBackground, PageTitle, ServiceHeader, TechnologyPoster } from 'components';
+import { PageTitle, ServiceHeader, TechnologyPoster } from 'components';
 
 import datashowImg from 'assets/datashow2.webp'
 import shortThrowImg from 'assets/short-throw.jpg'
 import interactiveImg from 'assets/interactive.jpg'
 import videoWallImg from 'assets/videowall.jpg'
+import { useEffect } from 'react';
 
 
 function DataShow() {
+  useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [])
+  
 	return (
 		<div className={style.container}>
-			<MainBackground/>
 			<ServiceHeader 
 				imgSrc={datashowImg} 
 				title={'Data Show'} 

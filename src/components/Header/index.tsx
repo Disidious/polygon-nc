@@ -1,5 +1,6 @@
 import {
-	Link
+	Link,
+  useNavigate
 } from 'react-router-dom';
 import Hamburger from 'hamburger-react'
 
@@ -10,10 +11,16 @@ import { useState } from 'react';
 function Header() {
   const [menuToggled, setMenuToggled] = useState(false);
 
+  let navigate = useNavigate(); 
+  const routeChange = () =>{ 
+    let path = `/`; 
+    navigate(path);
+  }
+
   return (
     <div className={style.header}>
       <div className={style.backgroundImg}/>
-      <img className={style.logo} src={logo}/>
+      <img className={style.logo} src={logo} onClick={routeChange}/>
       <div className={style.hamburger}>
         <Hamburger size={25} onToggle={toggled => setMenuToggled(toggled)} color='var(--dark)'/>
       </div>

@@ -8,6 +8,10 @@
   z-index: 10;
 }
 
+.header img {
+  cursor: pointer;
+}
+
 .backgroundImg {
   position: absolute;
   width: 100%;
