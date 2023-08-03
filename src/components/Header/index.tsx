@@ -11,10 +11,11 @@ import { useEffect, useRef, useState } from 'react';
 function Header() {
   const [menuToggled, setMenuToggled] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null)
+  const hamRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node) && !hamRef.current?.contains(event.target as Node)) {
         setMenuToggled(false)
       }
     }
@@ -34,7 +35,7 @@ function Header() {
     <div className={style.header}>
       <div className={style.backgroundImg}/>
       <img className={style.logo} src={logo} onClick={routeChange}/>
-      <div className={style.hamburger}>
+      <div className={style.hamburger} ref={hamRef}>
         <Hamburger size={25} toggled={menuToggled} onToggle={toggled => setMenuToggled(toggled)} color='var(--dark)'/>
       </div>
       <div className={`${style.menu} ${!menuToggled ? style.hidden : ""}`} onClick={() => setMenuToggled(false)} ref={menuRef}>
