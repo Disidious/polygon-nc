@@ -8,7 +8,7 @@ import rayaImg from "assets/clients/raya.jpg";
 import lifetogetherImg from "assets/clients/lifetogether.jpg";
 import cultureImg from "assets/clients/culture.jpg";
 import wadiImg from "assets/clients/wadi.jpg";
-import onecareImg from "assets/clients/onecare.jpg";
+import althurayaImg from "assets/clients/althuraya.jfif";
 import coffeeshopImg from "assets/clients/coffeeshop.jpg";
 import goodlifeImg from "assets/clients/goodlife.png";
 import rekabaImg from "assets/clients/rekaba.jpeg";
@@ -55,8 +55,8 @@ function Clients() {
       name: "Wadi Degla"
     },
     {
-      img: onecareImg,
-      name: "One Care"
+      img: althurayaImg,
+      name: "Al Thuraya Holdings"
     },
     {
       img: coffeeshopImg,
@@ -88,7 +88,7 @@ function Clients() {
     },
     {
       img: primaplastImg,
-      name: "Prime Plast"
+      name: "Prima Plast"
     },
     {
       img: dareleftaImg,

@@ -6,10 +6,23 @@ import Hamburger from 'hamburger-react'
 
 import logo from 'assets/logo.png'
 import style from './style.module.css';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 function Header() {
   const [menuToggled, setMenuToggled] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleClick = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setMenuToggled(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClick)
+    return () => {
+      document.removeEventListener("mousedown", handleClick)
+    }
+  })
 
   let navigate = useNavigate(); 
   const routeChange = () =>{ 
@@ -22,9 +35,9 @@ function Header() {
       <div className={style.backgroundImg}/>
       <img className={style.logo} src={logo} onClick={routeChange}/>
       <div className={style.hamburger}>
-        <Hamburger size={25} onToggle={toggled => setMenuToggled(toggled)} color='var(--dark)'/>
+        <Hamburger size={25} toggled={menuToggled} onToggle={toggled => setMenuToggled(toggled)} color='var(--dark)'/>
       </div>
-      <div className={`${style.menu} ${!menuToggled ? style.hidden : ""}`}>
+      <div className={`${style.menu} ${!menuToggled ? style.hidden : ""}`} onClick={() => setMenuToggled(false)} ref={menuRef}>
         <Link to="/">Home</Link>
         <div className={style.dropdown}>
           <a className={style.dropbtn}>Services</a>
