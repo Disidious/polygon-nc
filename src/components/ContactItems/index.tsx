@@ -1,11 +1,5 @@
 import style from './style.module.css';
-
-type Contact = {
-  img: string;
-  name: string;
-  numbers: string[];
-  email: string;
-}
+import { Contact } from 'contacts';
 
 type Props = {
   contacts: Contact[];
@@ -16,21 +10,21 @@ function ContactItems(props: Props) {
 
   const renderItem = (contact: Contact, key: number) => (
     <div key={key} className={style.contactContent}>
-      <img src={contact.img}/>
+      <img src={contact.icon}/>
       <div className={style.contactText}>
         <h1>
-          {contact.name}
+          {contact.title}
         </h1>
         <h2>
           Numbers
         </h2>
         {contact.numbers.map((number, idx) => (
-          <>
-            <a key={idx} href={`tel:${number}`}>
+          <div key={idx}>
+            <a href={`tel:${number}`}>
               {number}
             </a>
             <br/>
-          </>
+          </div>
         ))}
         
         <h2>

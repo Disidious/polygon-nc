@@ -7,9 +7,10 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
+      contacts: `${path.resolve(__dirname, "./src/contacts")}`,
       assets: `${path.resolve(__dirname, "./src/assets")}`,
       components: `${path.resolve(__dirname, "./src/components/index")}`,
-      pages: `${path.resolve(__dirname, "./src/pages/index")}`
+      pages: `${path.resolve(__dirname, "./src/pages/index")}`,
     },
   }
 })

@@ -1,20 +1,36 @@
 import style from './style.module.css';
 
-import { PageTitle, ServiceHeader, TechnologyItem, TechnologyPoster } from 'components';
+import { PageTitle, ServiceHeader, TechnologyItems, TechnologyPoster } from 'components';
 
 import accessControlImg from 'assets/access-control2.jpeg'
 import biometricImg from 'assets/biometric.webp'
 import cardsImg from 'assets/access-control.jpg'
 import standaloneImg from 'assets/standalone.png'
 import centralizedImg from 'assets/centralized.png'
-import { useEffect } from 'react';
 
 
 function AccessControl() {
-  useEffect(() => {
-		window.scrollTo(0, 0);
-	}, [])
-  
+  const techs = [
+    {
+      img: standaloneImg,
+      title: 'Standalone Access Control',
+      description: `
+        Standalone access control refers to a self-contained security system that operates independently without 
+        relying on a centralized network or server. It provides a simple and efficient 
+        way to control access to specific areas or resources within a facility.
+      `
+    },
+    {
+      img: centralizedImg,
+      title: 'Centralized Access Control',
+      description: `
+        Centralized access control refers to a security system where all access control decisions and data management are handled 
+        from a central server. This system consolidates the control and monitoring of access across 
+        multiple entry points within a facility.
+      `
+    }
+  ]
+
 	return (
 		<div className={style.container}>
 			<ServiceHeader 
@@ -47,29 +63,7 @@ function AccessControl() {
       />
       <PageTitle text={'Types of Access Control'}/>
 
-      <div className={style.techItemsContainer}>
-          <TechnologyItem
-            techImg={standaloneImg}
-            techTitle='Standalone Access Control'
-            techDescription={`
-              Standalone access control refers to a self-contained security system that operates independently without 
-              relying on a centralized network or server. It provides a simple and efficient 
-              way to control access to specific areas or resources within a facility.
-            `}
-            containerStyle={style.techItem}
-          />
-
-          <TechnologyItem
-            techImg={centralizedImg}
-            techTitle='Centralized Access Control'
-            techDescription={`
-              Centralized access control refers to a security system where all access control decisions and data management are handled 
-              from a central server. This system consolidates the control and monitoring of access across 
-              multiple entry points within a facility.
-            `}
-            containerStyle={style.techItem}
-          />
-      </div>
+      <TechnologyItems techs={techs}/>
 		</div>
 	);
 }

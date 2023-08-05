@@ -29,7 +29,7 @@ function HomeServiceCard(props: Props) {
               </div>
 							<ul>
                 {
-                  points.map(point => <li>{ point }</li>)
+                  points.map((point, idx) => <li key={idx}>{ point }</li>)
                 }
 							</ul>
 						</div>

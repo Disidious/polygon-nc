@@ -22,6 +22,7 @@
 
     "baseUrl": ".",
     "paths": {
+      "contacts": ["src/contacts"],
       "assets/*": ["src/assets/*"],
       "components": ["src/components/index"],
       "pages": ["src/pages/index"],

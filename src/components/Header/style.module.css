@@ -38,7 +38,12 @@
   transition: 150ms;
 }
 
-.header a:hover {
+.active {
+  cursor: default;
+  pointer-events: none;
+}
+
+.header .active, .header a:hover {
   color: white;
   background-color: var(--dark);
 }
@@ -56,6 +61,7 @@
 .dropbtn {
   font-size: 16px;
   border: none;
+  cursor: default;
 }
 
 .dropdown {
@@ -89,7 +95,7 @@
   display: block;
 }
 
-.dropdownContent a:hover {
+.dropdownContent .active, .dropdownContent a:hover {
   background-color: var(--medium);
 }
 

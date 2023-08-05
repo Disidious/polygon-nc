@@ -8,13 +8,8 @@ import cctvImg from 'assets/hdcamera.jpg'
 import accessControlImg from 'assets/access-control.jpg'
 import datashowImg from 'assets/datashow2.webp'
 import panduitLogo from 'assets/PanduitWhite.png'
-import { useEffect } from 'react';
 
 function Home() {
-	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, [])
-
 	return (
 		<div className={style.container}>
 			<div className={style.headerContainer}>

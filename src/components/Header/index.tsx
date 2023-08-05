@@ -1,17 +1,91 @@
+import { useEffect, useRef, useState } from 'react';
 import {
 	Link,
   useNavigate
 } from 'react-router-dom';
 import Hamburger from 'hamburger-react'
 
-import logo from 'assets/logo.png'
 import style from './style.module.css';
-import { useEffect, useRef, useState } from 'react';
+
+import logo from 'assets/logo.png'
+
+type Element = {
+  title: string;
+  path?: string;
+  menuItems?: Element[];
+}
 
 function Header() {
   const [menuToggled, setMenuToggled] = useState(false);
+  const navigate = useNavigate(); 
+
   const menuRef = useRef<HTMLDivElement>(null)
   const hamRef = useRef<HTMLDivElement>(null)
+
+  const elements: Element[] = [
+    {
+      title: "Home",
+      path: "/"
+    },
+    {
+      title: "Services",
+      menuItems: [
+        {
+          title: "Networking",
+          path: "/services/networking"
+        },
+        {
+          title: "CCTV",
+          path: "/services/cctv"
+        },
+        {
+          title: "Access Control",
+          path: "/services/accesscontrol"
+        },
+        {
+          title: "Data Show",
+          path: "/services/datashow"
+        }
+      ]
+    },
+    {
+      title: "Projects",
+      path: "/projects"
+    },
+    {
+      title: "Clients",
+      path: "/clients"
+    },
+    {
+      title: "Contact Us",
+      path: "/contactus"
+    }
+  ]
+
+  const currPath = window.location.pathname
+
+  const renderBarItem = (el: Element, key: number) => {
+    if (!el.path && el.menuItems) {
+      return (
+        <div className={style.dropdown} key={key}>
+          <a className={style.dropbtn}>{el.title}</a>
+          <div className={style.dropdownContent}>
+            {el.menuItems.map((el, idx) => renderBarItem(el, idx))}
+          </div>
+        </div>
+      )
+    }
+
+    const isActive = currPath === el.path
+    return (
+      <Link className={isActive ? style.active : undefined} to={el.path!} key={key}>{el.title}</Link>
+    )
+  }
+
+  const routeChange = () =>{ 
+    let path = '/'; 
+    navigate(path);
+  }
 
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
@@ -25,12 +99,6 @@ function Header() {
     }
   })
 
-  let navigate = useNavigate(); 
-  const routeChange = () =>{ 
-    let path = `/`; 
-    navigate(path);
-  }
-
   return (
     <div className={style.header}>
       <div className={style.backgroundImg}/>
@@ -39,19 +107,7 @@ function Header() {
         <Hamburger size={25} toggled={menuToggled} onToggle={toggled => setMenuToggled(toggled)} color='var(--dark)'/>
       </div>
       <div className={`${style.menu} ${!menuToggled ? style.hidden : ""}`} onClick={() => setMenuToggled(false)} ref={menuRef}>
-        <Link to="/">Home</Link>
-        <div className={style.dropdown}>
-          <a className={style.dropbtn}>Services</a>
-          <div className={style.dropdownContent}>
-            <Link to="/services/networking">Networking</Link>
-            <Link to="/services/cctv">CCTV</Link>
-            <Link to="/services/accesscontrol">Access Control</Link>
-            <Link to="/services/datashow">Data Show</Link>
-          </div>
-        </div>
-        <Link to="/projects">Projects</Link>
-        <Link to="/clients">Clients</Link>
-        <Link to="/contactus">Contact Us</Link>
+        {elements.map((el, idx) => renderBarItem(el, idx))}
       </div>
     </div>
   );

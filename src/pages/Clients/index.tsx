@@ -22,13 +22,8 @@ import trainsectorImg from "assets/clients/trainsector.jpg";
 import topbusinessImg from "assets/clients/topbusiness.jpg";
 import pyramidswalkImg from "assets/clients/pyramidswalk.png";
 import darelasherImg from "assets/clients/darelasher.jpg";
-import { useEffect } from 'react';
 
 function Clients() {
-  useEffect(() => {
-		window.scrollTo(0, 0);
-	}, [])
-  
   const clients = [
     {
       img: egyproImg,

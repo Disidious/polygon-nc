@@ -1,71 +1,129 @@
 import {
-	Link
+	Link, useNavigate
 } from 'react-router-dom';
 import style from './style.module.css';
 
+import { contacts, location } from 'contacts';
+
 import footerLogo from 'assets/logo-white.png'
+import addressImg from 'assets/address.png'
+
+type Link = {
+  title: string;
+  url: string;
+}
+
+type Content = {
+  title: string;
+  icon?: string;
+  links: Link[];
+}
 
 function Footer() {
+  const navigate = useNavigate(); 
+
+  const routeChange = () =>{ 
+    let path = '/'; 
+    navigate(path);
+  }
+
+  const renderTitleIcon = (icon: string) => (
+    <div className={style.titleIcon} style={{
+      mask: `url(${icon}) center/contain no-repeat`,
+      WebkitMask: `url(${icon}) center/contain no-repeat`
+    }} />
+  )
+  
+  const renderContent = (content: Content, key: number | undefined = undefined) => (
+    <div className={style.footerContent} key={key}>
+      {
+        content.icon 
+        ? 
+        <div className={style.titleContainer}>
+          {renderTitleIcon(content.icon)}
+          <h1>
+            {content.title}
+          </h1>
+        </div>
+        :
+        <h1>
+          {content.title}
+        </h1>
+      }
+      {
+        content.links.map((link, idx) => (
+          <Link to={`${link.url}`} key={idx}>{link.title}</Link>
+        ))
+      }
+    </div>
+  )
+  
+  const renderContacts = () => {
+    const contactsFormatted: Content[] = contacts.map((contact) => {
+      const emailLink = {
+        title: contact.email,
+        url: `mailto:${contact.email}`
+      }
+      const links: Link[] = [emailLink].concat(contact.numbers.map((num) => {
+        return {
+          title: num,
+          url: `tel:${num}"`
+        }
+      }))
+
+      return {
+        title: contact.title,
+        icon: contact.icon,
+        links: links
+      }
+    })
+
+    return (
+      <>
+        {contactsFormatted.map((contact, idx) => renderContent(contact, idx))}
+      </>
+    )
+  }
+
   return (
     <div className={style.footer}>
       <div className={style.footerContainer}>
-        <img src={footerLogo}/>
+        <img className={style.footerLogo} src={footerLogo} onClick={routeChange}/>
         <div className={style.footerContentContainer}>
-          <div className={style.footerContent}>
-            <h1>
-              Services
-            </h1>
-            <Link to={'services/networking'}>
-              Networking
-            </Link>
-            <br/>
-            <Link to={'services/cctv'}>
-              CCTV
-            </Link>
-            <br/>
-            <Link to={'services/accesscontrol'}>
-              Access Control
-            </Link>
-            <br/>
-            <Link to={'services/datashow'}>
-              Data Show
-            </Link>
-          </div>
+          {renderContent({
+            title: "Services",
+            links: [
+              {
+                title: "Networking",
+                url: "/services/networking"
+              },
+              {
+                title: "CCTV",
+                url: "/services/cctv"
+              },
+              {
+                title: "Access Control",
+                url: "/services/accesscontrol"
+              },
+              {
+                title: "Data Show",
+                url: "/services/datashow"
+              }
+            ]
+          })}
+          
+          {renderContacts()}
 
-          <div className={style.footerContent}>
-            <h1>
-              Contact Us
-            </h1>
-            <a href="mailto:info@polygon-nc.com">info@polygon-nc.com</a>
-            <br/>
-            <a href="tel:+2 02 24518678">+2 02 24518678</a>
-            <br/>
-            <a href="tel:+2 01012538320">+2 01012538320</a>
-            <br/>
-            <a href="https://goo.gl/maps/2oP9ncYfjBWGfW7M9">
-              53 El-Makrizy St., Heliopolis,
-              Cairo, Egypt.
-            </a>
-          </div>
-
-          <div className={style.footerContent}>
-            <h1>
-              Support
-            </h1>
-            <a href="mailto:support@polygon-nc.com">support@polygon-nc.com</a>
-            <br/>
-            <a href="tel:+2 01012194689">+2 01012194689</a>
-            <br/>
-          </div>
-
-          <div className={style.footerContent}>
-            <h1>
-              Sales
-            </h1>
-            <a href="mailto:sales@polygon-nc.com">sales@polygon-nc.com</a>
-            <br/>
-            <a href="tel:+2 01012538320">+2 01012538320</a>
-          </div>
+          {renderContent({
+            title: "Address",
+            icon: addressImg,
+            links: [
+              {
+                title: location.address,
+                url: location.gmapsURL
+              }
+            ]
+          })}
         </div>
         <div className={style.divider}/>
         <p>

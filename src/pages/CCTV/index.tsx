@@ -1,6 +1,6 @@
 import style from './style.module.css';
 
-import { PageTitle, ServiceHeader, TechnologyItem, TechnologyPoster } from 'components';
+import { PageTitle, ServiceHeader, TechnologyItems, TechnologyPoster } from 'components';
 
 import cctvImg from 'assets/cctv2.jpg'
 import hdCameraImg from 'assets/hdcamera.jpg'
@@ -12,13 +12,63 @@ import nightImg from 'assets/night.png'
 import wirelessImg from 'assets/wireless.png'
 import motionImg from 'assets/motion.png'
 import ptzImg from 'assets/ptz.png'
-import { useEffect } from 'react';
 
 
 function CCTV() {
-  useEffect(() => {
-		window.scrollTo(0, 0);
-	}, [])
+  const techs = [
+    {
+      img: hdImg,
+      title: 'High Resolution',
+      description: `
+        Cameras capture High definition and accurate imaging videos with high resolution 
+        up to 4k and with the ability to record up to 30fps. 
+        The range of HD cameras continues to expand to adapt to all application requirements.
+      `
+    },
+    {
+      img: electronicsImg,
+      title: 'Remote Access',
+      description: `
+        Cameras use Starlight Technology which enables the camera to display and record coloured videos in low light and no light. 
+        Starlight Sensors provide clear images regardless of the lighting conditions during any time of the day.
+      `
+    },
+    {
+      img: nightImg,
+      title: 'Night Vision',
+      description: `
+        Cameras use Starlight Technology which enables the camera to display and record coloured videos in low light and no light. 
+        Starlight Sensors provide clear images regardless of the lighting conditions during any time of the day.
+      `
+    },
+    {
+      img: wirelessImg,
+      title: 'Remote Access',
+      description: `
+        Wireless cameras are very flexible since they give you the ability to place them in any 
+        location that you desire without worrying about connecting them to an outlet or moving them from a 
+        location to another without dealing with any wires.
+      `
+    },
+    {
+      img: ptzImg,
+      title: 'Pan Tilt Zoom (PTZ)',
+      description: `
+        PTZ cameras can be controlled remotely, it can pan horizontally (360°) and tilt vertically, 
+        also it can zoom in and enhance the image quality without pixelation. 
+        PTZ allows to monitor large areas with a single camera with great quality.
+      `
+    },
+    {
+      img: motionImg,
+      title: 'Motion Detection',
+      description: `
+        Motion Detection can greatly make your surveillance better as it has the ability to detect motion, 
+        capture the events and send notifications (Email, SMS), 
+        also it saves storage space and a lot of time as it only records when motion is detected.
+      `
+    }
+  ]
   
 	return (
 		<div className={style.container}>
@@ -49,72 +99,7 @@ function CCTV() {
           Wi-Fi, and others, which means you can use wireless or you can use as few cables as possible.
         `}
       />
-      
-      <div className={style.techItemsContainer}>
-          <TechnologyItem
-            techImg={hdImg}
-            techTitle='High Resolution'
-            techDescription={`
-              Cameras capture High definition and accurate imaging videos with high resolution 
-              up to 4k and with the ability to record up to 30fps. 
-              The range of HD cameras continues to expand to adapt to all application requirements.
-            `}
-            containerStyle={style.techItem}
-          />
-
-          <TechnologyItem
-            techImg={electronicsImg}
-            techTitle='Remote Access'
-            techDescription={`
-              Monitor your cameras remotely from anywhere with any device (Smart Phones, Laptops, etc.) 
-              that has an internet connection. The mobile application is available for iOS devices and for Android devices with P2P discovery.
-            `}
-            containerStyle={style.techItem}
-          />
-
-          <TechnologyItem
-            techImg={nightImg}
-            techTitle='Night Vision'
-            techDescription={`
-              Cameras use Starlight Technology which enables the camera to display and record coloured videos in low light and no light. 
-              Starlight Sensors provide clear images regardless of the lighting conditions during any time of the day.
-            `}
-            containerStyle={style.techItem}
-          />
-
-          <TechnologyItem
-            techImg={wirelessImg}
-            techTitle='Remote Access'
-            techDescription={`
-              Wireless cameras are very flexible since they give you the ability to place them in any 
-              location that you desire without worrying about connecting them to an outlet or moving them from a 
-              location to another without dealing with any wires.
-            `}
-            containerStyle={style.techItem}
-          />
-
-          <TechnologyItem
-            techImg={ptzImg}
-            techTitle='Pan Tilt Zoom (PTZ)'
-            techDescription={`
-              PTZ cameras can be controlled remotely, it can pan horizontally (360°) and tilt vertically, 
-              also it can zoom in and enhance the image quality without pixelation. 
-              PTZ allows to monitor large areas with a single camera with great quality.
-            `}
-            containerStyle={style.techItem}
-          />
-
-          <TechnologyItem
-            techImg={motionImg}
-            techTitle='Motion Detection'
-            techDescription={`
-              Motion Detection can greatly make your surveillance better as it has the ability to detect motion, 
-              capture the events and send notifications (Email, SMS), 
-              also it saves storage space and a lot of time as it only records when motion is detected.
-            `}
-            containerStyle={style.techItem}
-          />
-      </div>
+      <TechnologyItems techs={techs}/>
 		</div>
 	);
 }

@@ -20,7 +20,7 @@ function ProjectItems(props: Props) {
         backgroundImage: `url(${project.img})`
       }}/>
       <div className={style.projectTextContainer}>
-        <div className={style.projectText}>
+        <div>
           <h1>
             {project.title}
           </h1>

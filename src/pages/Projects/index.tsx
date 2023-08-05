@@ -8,13 +8,8 @@ import eeehImg from 'assets/eeeh.png';
 import ccImg from 'assets/cc.jpg';
 import lcImg from 'assets/lc.png';
 import pwcImg from 'assets/pwc.jpg';
-import { useEffect } from 'react';
 
 function Projects() {
-  useEffect(() => {
-		window.scrollTo(0, 0);
-	}, [])
-  
   const projects = [
     {
       img: acaImg,

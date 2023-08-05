@@ -10,7 +10,6 @@
   overflow: hidden;
   box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
   width: 30%;
-  height: fit-content;
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
@@ -28,7 +27,7 @@
 .projectTextContainer {
   display: flex;
   transition: 150ms;
-  height: 50%;
+  padding: 25px;
 }
 
 .projectTextContainer h1 {
@@ -57,9 +56,6 @@
   color: var(--dark);
 }
 
-.projectText {
-  padding: 20px;
-}
 
 @media(max-width: 960px) {
   .projectContent {

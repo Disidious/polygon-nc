@@ -1,33 +1,42 @@
 import style from './style.module.css';
 
-type Props = {
-  techImg: string;
-  techTitle: string;
-  techDescription: string;
-  containerStyle?: string;
+type Tech = {
+  img: string;
+  title: string;
+  description: string;
 }
 
-function TechnologyItem(props: Props) {
-  const { techImg, techDescription, techTitle, containerStyle } = props
+type Props = {
+  techs: Tech[];
+}
 
-	return (
-    <div className={`${style.container} ${containerStyle}`}>
+function TechnologyItems(props: Props) {
+  const { techs } = props
+
+  const renderTech = (tech: Tech, key: number) => (
+    <div className={style.techContainer} key={key}>
       <div className={style.hex}>
-        <img src={techImg}/>
+        <img src={tech.img}/>
       </div>
       <div className={style.itemTextContainer}>
         <div className={style.itemText}>
           <h2>
-            {techTitle}
+            {tech.title}
           </h2>
           <div className={style.underline}/>
           <p>
-            {techDescription}
+            {tech.description}
           </p>
         </div>
       </div>
     </div>
+  )
+
+	return (
+    <div className={style.container}>
+      {techs.map((tech, idx) => renderTech(tech, idx))}
+    </div>
 	);
 }
 
-export default TechnologyItem;
+export default TechnologyItems;
