@@ -21,7 +21,7 @@ import dareleftaImg from "assets/clients/darelefta.jpeg";
 import trainsectorImg from "assets/clients/trainsector.jpg";
 import topbusinessImg from "assets/clients/topbusiness.jpg";
 import pyramidswalkImg from "assets/clients/pyramidswalk.png";
-import darelasherImg from "assets/clients/darelasher.jpg";
+import wallstreetImg from "assets/clients/wallstreet.jpg";
 
 function Clients() {
   const clients = [
@@ -67,7 +67,7 @@ function Clients() {
     },
     {
       img: myahelshorbImg,
-      name: "Dakahlia water and sanitation company"
+      name: "Dakahlia Water and Sanitation Company"
     },
     {
       img: lcImg,
@@ -90,8 +90,8 @@ function Clients() {
       name: "Dar Al Ifta"
     },
     {
-      img: darelasherImg,
-      name: "Dar Al Asher"
+      img: wallstreetImg,
+      name: "Wallstreet Securities Brokerage"
     },
     {
       img: trainsectorImg,
