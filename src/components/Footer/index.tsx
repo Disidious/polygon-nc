@@ -1,9 +1,12 @@
 import {
 	Link, useNavigate
 } from 'react-router-dom';
+import { useRef } from 'react';
 import style from './style.module.css';
 
 import { contacts, location } from 'contacts';
+
+import { DotsAnimation } from 'components';
 
 import footerLogo from 'assets/logo-white.png'
 import addressImg from 'assets/address.png'
@@ -21,6 +24,7 @@ type Content = {
 
 function Footer() {
   const navigate = useNavigate(); 
+  const animationParentRef = useRef<HTMLDivElement>(null)
 
   const routeChange = () =>{ 
     let path = '/'; 
@@ -86,7 +90,8 @@ function Footer() {
   }
 
   return (
-    <div className={style.footer}>
+    <div className={style.footer} ref={animationParentRef}>
+      <DotsAnimation parentRef={animationParentRef}/>
       <div className={style.footerContainer}>
         <img className={style.footerLogo} src={footerLogo} onClick={routeChange}/>
         <div className={style.footerContentContainer}>

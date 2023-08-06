@@ -6,7 +6,6 @@ import { contacts } from 'contacts';
 function ContactUs() {
 	return (
 		<div className={style.container}>
-      
       <PageTitle text='Contact Us'/>
       <ContactItems contacts={contacts}/>
 		</div>

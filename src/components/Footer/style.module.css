@@ -1,4 +1,5 @@
 .footer {
+  position: relative;
   width: 100%;
   margin-top: 50px;
   background-color: var(--dark);
@@ -10,11 +11,12 @@
 .footerContainer {
   width: 90%;
   margin: 20px 0 20px 0;
+  z-index: 1;
 }
 
 .footerContentContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 250px);
+  grid-template-columns: repeat(auto-fill, 300px);
   justify-content: space-between;
 }
 
