@@ -1,0 +1,13 @@
+.container {
+  position: relative;
+}
+
+@media(max-width: 850px) {
+  .techItemsContainer {
+    flex-direction: column;
+  }
+
+  .techItem {
+    width: 90%;
+  }
+}

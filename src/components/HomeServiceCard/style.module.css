@@ -1,0 +1,178 @@
+.cardContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 500px;
+  width: 100%;
+  padding: 50px 0px 50px 0px;
+}
+
+.cardContent {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 85%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+}
+
+.reversedContent {
+  flex-direction: row-reverse;
+}
+
+.cardImg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 60%;
+  height: 100%;
+}
+
+.cardTextContainer {
+  background-color: white;
+  height: 100%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 50px 0px 50px;
+}
+
+.cardTextContainer ul {
+  position: relative;
+	list-style: none;
+  margin: 30px 0px 30px 0px;
+	padding-left: 0em;
+}
+
+.cardText li {
+  margin: 10px 0px 10px 0px;
+  font-size: 20px;
+}
+
+.cardText li:before{
+  content: "⬢";
+  position: "absolute";
+  left: 0;
+  margin-right: 5px;
+  color: var(--dark);
+}
+
+.cardText h1{
+  margin: 0;
+  font-size: 50px;
+  font-weight: lighter;
+}
+
+.underline {
+  width: 90px;
+  height: 3px;
+  background-color: var(--dark);
+}
+
+.learnMore {
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 0;
+}
+
+@media(max-width: 1150px) {
+  .cardContent {
+    flex-direction: column;
+  }
+
+  .cardImg {
+    width: 100%;
+    height: 250px;
+  }
+
+  .cardTextContainer {
+    width: 100%;
+    height: 50%;
+    padding: 0;
+  }
+
+  .cardTextContainer ul {
+    margin: 10px 0px 10px 0px;
+  }
+
+  .cardText {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+  }
+
+  .cardContainer {
+    height: auto;
+  }
+}
+
+@media(max-width: 1035px) {
+  .cardText h1 {
+    font-size: 40px;
+  }
+
+  .underline {
+    width: 70px;
+  }
+
+  .cardText li {
+    margin: 10px 0px 10px 0px;
+    font-size: 18px;
+  }
+}
+
+@media(max-width: 875px) {
+  .cardContent {
+    width: 90%;
+  }
+}
+
+@media(max-width: 750px) {
+  .header h1 {
+    font-size: 40px;
+  }
+
+  .headerContent {
+    width: 80%;
+  }
+}
+
+@media(max-width: 600px) {
+  .cardText h1 {
+    font-size: 22px;
+  }
+
+  .underline {
+    width: 25px;
+  }
+
+  .cardText li {
+    margin: 10px 0px 10px 0px;
+    font-size: 14px;
+  }
+}
+
+@media(max-width: 425px) {
+  .cardText h1 {
+    font-size: 20px;
+  }
+
+  .underline {
+    width: 22px;
+  }
+
+  .cardText li {
+    font-size: 11px;
+  }
+}
+
+@media(max-width: 325px) {
+  .cardText h1 {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,101 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.containerBackground {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/hexagon-grid-2.jpg");
+  background-position: center;
+  background-size: 50%;
+  z-index: -1;
+  opacity: 0.2;
+}
+
+.headerContainer {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  z-index: 1;
+}
+
+.headerBackground {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -1;
+}
+
+.header {
+  display: flex;
+  background-color: rgba(0,0,0,0.75);
+  /* background-image: linear-gradient(to top, rgba(0,0,0,0), var(--dark)); */
+  background-image: linear-gradient(0, transparent 0%, var(--dark) 50%, var(--dark) 50%, transparent 100%);
+  /* background-image: linear-gradient(to bottom, rgba(0,0,0,0), var(--dark)); */
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.headerContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 60%;
+  z-index: 1;
+}
+
+.header h1 {
+  text-align: center;
+  margin: 0;
+  color: white;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.header p {
+  color: white;
+  text-align: center;
+  font-size: 18px;
+}
+
+.contactUsBtn {
+  color: white;
+  border-color: white;
+}
+
+.contactUsBtn:hover {
+  background-color: var(--medium);
+}
+
+.partnerBadge {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, transparent 0%, var(--medium) 50%, var(--medium) 50%, transparent 100%);
+  width: 100%;
+}
+
+.partnerBadge p {
+  color: white;
+  font-size: 17px;
+  margin: 0;
+}
+
+@media(max-width: 720px) {
+  .header h1 {
+    font-size: 40px;
+  }
+
+  .headerContent {
+    width: 90%;
+  }
+}

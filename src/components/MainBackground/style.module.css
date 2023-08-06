@@ -1,0 +1,10 @@
+#background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/hexagon-grid-2.jpg");
+  background-position: center;
+  background-size: 50%;
+  z-index: -1;
+  opacity: 0.2;
+}
