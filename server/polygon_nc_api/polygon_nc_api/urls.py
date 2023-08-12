@@ -16,7 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+admin.site.site_header = "Polygon Network Company Administration"
+admin.site.site_title = "Polygon Network Company Administration"
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("products/", include("products.urls")),
+    path("quote_requests/", include("quote_requests.urls")),
 ]

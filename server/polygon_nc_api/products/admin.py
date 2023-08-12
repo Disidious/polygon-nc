@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import *
+from products.models import *
 
 
 @admin.register(MasterCategory)
@@ -18,7 +18,7 @@ class CategoryAdmin(admin.ModelAdmin):
 class ProductAdmin(admin.ModelAdmin):
     list_display = [
         "id",
-        "part_number",
+        "name",
         "category",
         "brand",
         "name",
@@ -26,7 +26,7 @@ class ProductAdmin(admin.ModelAdmin):
     ]
     search_fields = [
         "id",
-        "part_number",
+        "name",
         "category",
         "brand",
         "name",
