@@ -9,7 +9,7 @@ lerna-debug.log*
 
 node_modules
 dist
-dist.zip
+*.zip
 dist-ssr
 *.local
 
@@ -23,3 +23,14 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+#Backend
+.env
+venv
+*.sqlite3
+media
+static
+*.pot
+*.pyc
+__pycache__
+
