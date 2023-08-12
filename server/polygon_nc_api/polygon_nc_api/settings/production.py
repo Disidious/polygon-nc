@@ -14,7 +14,7 @@ DEBUG = False
 STATIC_ROOT = os.path.join(env.str("ROOT_PATH"), "static")
 MEDIA_ROOT = os.path.join(env.str("ROOT_PATH"), "media")
 
-REST_FRAMEWORK = REST_FRAMEWORK.update(
+REST_FRAMEWORK.update(
     {"DEFAULT_RENDERER_CLASSES": ("rest_framework.renderers.JSONRenderer",)}
 )
 
