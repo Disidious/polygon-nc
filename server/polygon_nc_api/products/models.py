@@ -44,9 +44,8 @@ class Product(models.Model):
         _("Name / Part Number"),
         max_length=200,
     )
-    image = models.FileField(
+    image = models.ImageField(
         upload_to="product_images/",
-        validators=[validate_image_extension],
         null=True,
     )
     specs = models.TextField(max_length=2000)
