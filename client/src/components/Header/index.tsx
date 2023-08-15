@@ -28,6 +28,10 @@ function Header() {
       path: "/"
     },
     {
+      title: "Shop",
+      path: "/shop"
+    },
+    {
       title: "Services",
       menuItems: [
         {
