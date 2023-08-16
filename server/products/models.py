@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
+from products.validators import validate_image_extension
+
 
 class MasterCategory(models.Model):
     class Meta:
@@ -42,8 +44,9 @@ class Product(models.Model):
         _("Name / Part Number"),
         max_length=200,
     )
-    image = models.ImageField(
+    image = models.FileField(
         upload_to="product_images/",
+        validators=[validate_image_extension],
         null=True,
         blank=True,
     )
