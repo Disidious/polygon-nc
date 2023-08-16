@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { MainLayout } from './components';
-import { AccessControl, CCTV, Clients, ContactUs, DataShow, Home, Networking, Projects } from 'pages';
+import { AccessControl, CCTV, Clients, ContactUs, DataShow, Home, Networking, Projects, Shop } from 'pages';
 
 import "./App.css"
 
@@ -11,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout/>}>
           <Route index element={<Home/>}/>
+          <Route path="shop" element={<Shop/>}/>
           <Route path="services">
             <Route path="networking" element={<Networking/>}/>
             <Route path="cctv" element={<CCTV/>}/>
