@@ -8,6 +8,8 @@ export default defineConfig({
   resolve: {
     alias: {
       contacts: `${path.resolve(__dirname, "./src/contacts")}`,
+      types: `${path.resolve(__dirname, "./src/types")}`,
+      api_handler: `${path.resolve(__dirname, "./src/api_handler")}`,
       assets: `${path.resolve(__dirname, "./src/assets")}`,
       components: `${path.resolve(__dirname, "./src/components/index")}`,
       pages: `${path.resolve(__dirname, "./src/pages/index")}`,

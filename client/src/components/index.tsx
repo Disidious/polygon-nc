@@ -13,3 +13,4 @@ export { default as ProjectItems } from "./ProjectItems";
 export { default as ClientItems } from "./ClientItems";
 export { default as ContactItems } from "./ContactItems";
 export { default as DotsAnimation } from "./DotsAnimation";
+export { default as CategoryList } from "./CategoryList";

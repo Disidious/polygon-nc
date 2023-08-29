@@ -23,6 +23,8 @@
     "baseUrl": ".",
     "paths": {
       "contacts": ["src/contacts"],
+      "types": ["src/types"],
+      "api_handler": ["src/api_handler"],
       "assets/*": ["src/assets/*"],
       "components": ["src/components/index"],
       "pages": ["src/pages/index"],

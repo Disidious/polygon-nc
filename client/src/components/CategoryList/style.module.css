@@ -1,0 +1,54 @@
+.listContainer {
+  background-color: white;
+  border: 1px solid var(--dark);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.listContainer h1 {
+  font-size: 20px;
+  margin: 5px 0 15px 0;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.listItemBtn {
+  width: 100%;
+  cursor: pointer;
+}
+
+.listItemBtn:hover {
+  color: var(--light);
+}
+
+.listItemExpand {
+  padding: 0;
+  font-size: 10px;
+  padding: 5px 7px 5px 7px;
+}
+
+.listItem h2 {
+  font-weight: lighter;
+  font-size: 17px;
+  margin: 5px 0 5px 0;
+}
+
+.listSubItemsContainer {
+  overflow: hidden;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.hidden {
+  height: 0;
+  margin-bottom: 0;
+}
+
+.active h2 {
+  color: var(--light);
+  font-weight: bold;
+}

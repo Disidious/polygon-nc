@@ -30,19 +30,21 @@ class ProductsView(ReadOnlyModelViewSet):
         params = self.request.query_params
 
         search = params.get("search", None)
-        category = params.get("category", None)
+        categoryid = params.get("categoryid", None)
+        mastercategoryid = params.get("mastercategoryid", None)
 
         query = Q(hidden=False) & Q(category__hidden=False)
 
         if search is not None:
-            query = (
-                query
-                | Q(name__icontains=search)
+            query = query & (
+                Q(name__icontains=search)
                 | Q(brand__icontains=search)
                 | Q(specs__icontains=search)
             )
 
-        if category is not None and category.isnumeric():
-            query = query & Q(category=category)
+        if categoryid is not None and categoryid.isnumeric():
+            query = query & Q(category=categoryid)
+        if mastercategoryid is not None and mastercategoryid.isnumeric():
+            query = query & Q(category__master_category=mastercategoryid)
 
         return self.queryset.filter(query)
