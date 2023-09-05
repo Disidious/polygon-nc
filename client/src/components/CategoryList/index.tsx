@@ -1,22 +1,41 @@
-import { useState } from 'react';
-import { SetURLSearchParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 import style from './style.module.css';
 
-import { Button } from 'components';
+import { Button, Spinner } from 'components';
 import { Category, ChosenCategory, MasterCategory } from 'types';
 
 type Props = {
   categories?: MasterCategory[];
-  setSearchParams: SetURLSearchParams;
 	chosenCategory?: ChosenCategory;
+	containerStyle?: string;
 	loading?: boolean;
 }
 
 function CategoryList(props: Props) {
-  const {categories, setSearchParams, chosenCategory, loading} = props
+  const { categories = [], chosenCategory, containerStyle, loading } = props
 
-	const [expanded, setExpanded] = useState<{[key: number]: boolean}>({});
+	const [searchParams, setSearchParams] = useSearchParams();
+	const [expanded, setExpanded] = useState<{[id: number]: boolean}>({});
+
+	useEffect(() => {
+		const newExpanded:{[id: number]: boolean} = []
+		if(categories != null) {
+			for(let cat of categories) {
+				for(let subCat of cat.categories) {
+					if(isActive(subCat, false)) {
+						newExpanded[cat.id] = true;
+						break;
+					}
+				}
+				if(newExpanded[cat.id]) {
+					setExpanded(newExpanded)
+					break
+				}
+			}
+		}
+	}, [categories])
 
 	const setCatExpanded = (id: number) => {
 		const newExpanded = {...expanded}
@@ -31,20 +50,45 @@ function CategoryList(props: Props) {
 			chosenCategory.id === category.id
 		)
 	}
+
+	const setCategoryAll = () => {
+		searchParams.delete("mastercategoryid")
+		searchParams.delete("categoryid")
+		searchParams.delete("category")
+		searchParams.delete("page")
+		setSearchParams(searchParams)
+	}
+
+	const setCategory = (id: number, name: string, isMaster = false) => {
+		searchParams.delete("mastercategoryid")
+		searchParams.delete("categoryid")
+		searchParams.delete("category")
+		searchParams.delete("page")
+
+		searchParams.set("category", name)
+		if(isMaster) {
+			searchParams.set("mastercategoryid", `${id}`)
+		} else {
+			searchParams.set("categoryid", `${id}`)
+		}
+
+		setSearchParams(searchParams)
+	}
   
 	const renderCategories = () => (
-		<div className={style.listContainer}>
-			<h1>
-				Categories
-			</h1>
+		<>
+			<div className={style.listItem}>
+				<div className={style.listItemBtn} onClick={setCategoryAll}>
+					<h2>
+						All
+					</h2>
+				</div>
+			</div>
 			{categories!.map((cat) => (
 				<div key={cat.id}>
 					<div className={style.listItem}>
 						<div className={`${style.listItemBtn} ${isActive(cat, true) && style.active}`} onClick={() => {
-              setSearchParams({
-                mastercategoryid: `${cat.id}`,
-                category: `${cat.name}`
-              })
+              setCategory(cat.id, cat.name, true)
             }}>
 							<h2>
 								{cat.name}
@@ -60,10 +104,7 @@ function CategoryList(props: Props) {
 					<div className={`${style.listSubItemsContainer} ${!expanded[cat.id] && style.hidden}`}>
 						{cat.categories.map((subCat) => (
 								<div className={`${style.listItemBtn} ${isActive(subCat, false) && style.active}`} key={subCat.id} onClick={() => {
-                  setSearchParams({
-                    categoryid: `${subCat.id}`,
-                    category: `${subCat.name}`
-                  })
+                  setCategory(subCat.id, subCat.name)
                 }}>
 									<div className={style.listItem}>
 										<h2>
@@ -75,16 +116,8 @@ function CategoryList(props: Props) {
 					</div>
 				</div>
 			))}
-		</div>
+		</>
 	);
-
-	if(loading) {
-		return (
-			<p>
-				LOADING
-			</p>
-		)
-	}
 
 	if(categories == null) {
 		return (
@@ -94,7 +127,20 @@ function CategoryList(props: Props) {
 		)
 	}
 
-	return renderCategories();
+	return (
+		<div className={`${style.container} ${containerStyle ? containerStyle : ""}`}>
+			<div className={style.listContainer}>
+				<h1>
+					Categories
+				</h1>
+				{
+					loading ? 
+					<Spinner size='med'/> : 
+					renderCategories()
+				}
+			</div>
+		</div>
+	);
 }
 
 export default CategoryList;

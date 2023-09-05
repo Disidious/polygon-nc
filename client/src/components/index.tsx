@@ -14,3 +14,7 @@ export { default as ClientItems } from "./ClientItems";
 export { default as ContactItems } from "./ContactItems";
 export { default as DotsAnimation } from "./DotsAnimation";
 export { default as CategoryList } from "./CategoryList";
+export { default as ProductList } from "./ProductList";
+export { default as PageNumbers } from "./PageNumbers";
+export { default as SearchBar } from "./SearchBar";
+export { default as Spinner } from "./Spinner";

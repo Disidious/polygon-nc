@@ -8,17 +8,21 @@ type Props = {
   btnClass?: string
   primary?: boolean
   secondary?: boolean
+  disabled?: boolean
 }
 
 function Button(props: Props) {
-  const { text, goto, onClick, btnClass, primary, secondary } = props
+  const { text, goto, onClick, btnClass, primary, secondary, disabled } = props
 
-  const currPath = window.location.search
-  return (
-    <Link onClick={onClick} to={goto ? goto : currPath} className={`${style.main} ${btnClass} ${primary && style.primary} ${secondary && style.secondary}`}>
+  const className = `${style.main} ${primary && style.primary} ${secondary && style.secondary} ${btnClass} ${disabled && style.disabled}`
+
+  return goto ? 
+    <Link onClick={onClick} to={goto} className={className}>
       {text}
-    </Link>
-  );
+    </Link> :
+    <a onClick={onClick} className={className}>
+      {text}
+    </a>
 }
 
 export default Button;

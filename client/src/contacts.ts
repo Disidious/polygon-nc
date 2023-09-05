@@ -14,8 +14,8 @@ export const contacts: Contact[] = [
     icon: infoImg,
     title: "Contact Us",
     numbers: [
-      "+2 02 24518678",
-      "+2 01012538320",
+      "+20224518678",
+      "+201012538320",
     ],
     email: "info@polygon-nc.com"
   },
@@ -23,7 +23,7 @@ export const contacts: Contact[] = [
     icon: supportImg,
     title: "Support",
     numbers: [
-      "+2 01012194689",
+      "+201012194689",
     ],
     email: "support@polygon-nc.com"
   },
@@ -31,7 +31,7 @@ export const contacts: Contact[] = [
     icon: salesImg,
     title: "Sales",
     numbers: [
-      "+2 01012538320",
+      "+201012538320",
     ],
     email: "sales@polygon-nc.com"
   }

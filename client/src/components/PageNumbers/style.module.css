@@ -1,0 +1,15 @@
+.numbersContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.numberBtn {
+  padding: 0;
+  width: 30px;
+  aspect-ratio: 1/1;
+  margin-left: 5px;
+}
+
+.activeNumberBtn {
+  pointer-events: none;
+}
