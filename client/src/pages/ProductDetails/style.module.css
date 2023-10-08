@@ -100,7 +100,7 @@
   }
 }
 
-@media(max-width: 350px) {
+@media(max-width: 605px) {
   .navButtonsContainer {
     flex-direction: column;
     justify-content: center;

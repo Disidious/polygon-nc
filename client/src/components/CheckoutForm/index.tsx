@@ -62,38 +62,38 @@ function CheckoutForm(props: Props) {
 			<form className={style.form}>
                 <div className={style.formFields}>
                     <div className={style.field}>
-                        <h4>Company Name *</h4>
-                        <input type="text" required onChange={(e) => changeField("company_name", e.target.value) }/>
+                        <h4>Company Name</h4>
+                        <input type="text" placeholder="Company Name" onChange={(e) => changeField("company_name", e.target.value) }/>
                     </div>
 
                     <div className={style.field}>
                         <h4>First Name *</h4>
-                        <input type="text" required onChange={(e) => changeField("first_name", e.target.value) }/>
+                        <input type="text" placeholder="First Name" required onChange={(e) => changeField("first_name", e.target.value) }/>
                     </div>
 
                     <div className={style.field}>
                         <h4>Last Name *</h4>
-                        <input type="text" required onChange={(e) => changeField("last_name", e.target.value) }/>
+                        <input type="text" placeholder="Last Name" required onChange={(e) => changeField("last_name", e.target.value) }/>
                     </div>
 
                     <div className={style.field}>
                         <h4>Email *</h4>
-                        <input type="email" required onChange={(e) => changeField("email", e.target.value) }/>
+                        <input type="email" placeholder="Email" required onChange={(e) => changeField("email", e.target.value) }/>
                     </div>
 
                     <div className={style.field}>
                         <h4>Phone *</h4>
-                        <input type="number" required onChange={(e) => changeField("phone", e.target.value) }/>
+                        <input type="number" placeholder="Phone" required onChange={(e) => changeField("phone", e.target.value) }/>
                     </div>
 
                     <div className={style.field}>
                         <h4>Address *</h4>
-                        <input type="text" required onChange={(e) => changeField("address", e.target.value) }/>
+                        <input type="text" placeholder="Address" required onChange={(e) => changeField("address", e.target.value) }/>
                     </div>
 
                     <div className={`${style.field} ${style.messageField}`}>
                         <h4>Notes</h4>
-                        <textarea onChange={(e) => changeField("message", e.target.value)}></textarea>
+                        <textarea placeholder="Notes" onChange={(e) => changeField("message", e.target.value)}></textarea>
                     </div>
                 </div>
                 {

@@ -1,8 +1,12 @@
 from django.db.models import Q, Prefetch
 
 from rest_framework.viewsets import ReadOnlyModelViewSet
+from rest_framework.response import Response
 
-from products.serializers import ProductSerializer, MasterCategorySerializer
+from products.serializers import (
+    ProductSerializer,
+    MasterCategorySerializer,
+)
 from products.models import Product, MasterCategory, Category
 
 
@@ -18,6 +22,45 @@ class CategoriesView(ReadOnlyModelViewSet):
         .filter(categories__hidden=False)
         .distinct()
     )
+
+
+class CategoriesDisplayView(ReadOnlyModelViewSet):
+    authentication_classes = []
+    pagination_class = None
+
+    def list(self, request):
+        queryset = (
+            Category.objects.prefetch_related(
+                Prefetch(
+                    "products",
+                    queryset=Product.objects.filter(
+                        hidden=False,
+                        image__contains=Product.PRODUCT_IMAGES_PATH,
+                    ),
+                    to_attr="filtered_products",
+                )
+            )
+            .filter(
+                hidden=False,
+                products__hidden=False,
+                products__image__contains=Product.PRODUCT_IMAGES_PATH,
+            )
+            .distinct()
+        )
+
+        data = []
+        for category in queryset:
+            data.append(
+                {
+                    "id": category.id,
+                    "name": category.name,
+                    "image": request.build_absolute_uri(
+                        category.filtered_products[0].image.url
+                    ),
+                }
+            )
+
+        return Response(data)
 
 
 class ProductsView(ReadOnlyModelViewSet):

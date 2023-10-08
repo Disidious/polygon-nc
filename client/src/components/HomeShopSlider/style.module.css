@@ -1,0 +1,60 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.sliderContainer {
+    width: 90%;
+}
+
+.sliderArrow {
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+    z-index: 1;
+    background-color: var(--dark);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    width: 35px;
+    aspect-ratio: 1/1;
+    transition: 150ms;
+}
+
+.sliderArrow i {
+    font-size: 30px;
+}
+
+.sliderArrow:hover {
+    background-color: var(--medium);
+}
+
+.sliderRightArrow {
+    right: 0px;
+}
+
+.sliderDotsContainer {
+    padding: 2px;
+}
+
+.sliderDots {
+    background-color: var(--light);
+    width: 100%;
+    aspect-ratio: 1/1;
+    -webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+    clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+}

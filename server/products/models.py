@@ -33,6 +33,8 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+    PRODUCT_IMAGES_PATH = "product_images/"
+
     category = models.ForeignKey(
         Category,
         on_delete=models.SET_NULL,
@@ -45,7 +47,7 @@ class Product(models.Model):
         max_length=200,
     )
     image = models.FileField(
-        upload_to="product_images/",
+        upload_to=PRODUCT_IMAGES_PATH,
         validators=[validate_image_extension],
         null=True,
         blank=True,

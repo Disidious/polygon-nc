@@ -26,6 +26,11 @@ class ProductAdmin(admin.ModelAdmin):
         "hidden",
     ]
     list_display_links = ["name"]
+    list_filter = [
+        "hidden",
+        "category",
+        "brand",
+    ]
     search_fields = [
         "id",
         "name",

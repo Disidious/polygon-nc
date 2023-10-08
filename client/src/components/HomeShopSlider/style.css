@@ -1,0 +1,11 @@
+.slick-list {
+  overflow: visible!important;
+}
+
+.slick-dots {
+    position: unset;
+}
+
+.slick-dots .slick-active div div {
+  background-color: var(--medium);
+}

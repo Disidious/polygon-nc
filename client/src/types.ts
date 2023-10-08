@@ -52,3 +52,9 @@ export type CartContextType = {
   removeProduct: (id: number) => void; 
   emptyProducts: () => void;
 }
+
+export type CategoryDisplay = {
+	id: number;
+	name: string;
+	image: string;
+}

@@ -29,6 +29,7 @@ function Shop() {
 	useEffect(() => {
 		setProductsLoading(true)
 		setChosenCategory(constructChosenCategory());
+		window.scrollTo(0, 0);
 		
 		(async () => {
 			await fetchProducts()

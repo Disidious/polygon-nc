@@ -76,6 +76,7 @@ function Checkout() {
 									<tr>
 										<th>Name</th>
 										<th>Quantity</th>
+										<th/>
 									</tr>
 									{cartProducts?.map((cartProd, idx) => {
 										const product = getProduct(cartProd.product)
@@ -84,7 +85,7 @@ function Checkout() {
 											<tr key={idx}>
 												<td>
 													<img src={product!.image ? product!.image : noImg} />
-													{product!.name}
+													{product!.brand} {product!.name}
 												</td>
 												<td>{cartProd.quantity}</td>
 												<td>

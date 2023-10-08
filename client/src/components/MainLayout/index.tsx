@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 
 import { Footer, Header, MainBackground } from "components";
-import { Toaster } from "react-hot-toast";
 
 const MainLayout = () => {
   const location = useLocation();

@@ -20,3 +20,5 @@ export { default as SearchBar } from "./SearchBar";
 export { default as Spinner } from "./Spinner";
 export { default as Cart } from "./Cart";
 export { default as CheckoutForm } from "./CheckoutForm";
+export { default as HomeShopSlider } from "./HomeShopSlider";
+export { default as ShopCategoryCard } from "./ShopCategoryCard";

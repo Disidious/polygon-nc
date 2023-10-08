@@ -5,7 +5,7 @@ from quote_requests.validators import validate_requested_product_quantity
 
 
 class QuoteRequest(models.Model):
-    company_name = models.CharField(max_length=100)
+    company_name = models.CharField(max_length=100, null=True, blank=True)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField(max_length=50)

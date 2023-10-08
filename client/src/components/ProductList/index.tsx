@@ -31,7 +31,7 @@ function ProductList(props: Props) {
               backgroundImage: `url(${product.image ? product.image : noImg})`
             }}/>
             <h1>
-              {product.name}
+              {product.brand} {product.name}
             </h1>
           </div>
         </div>

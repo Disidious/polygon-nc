@@ -9,4 +9,5 @@ urlpatterns = [
     path("checkout/", views.ProductsCheckoutView.as_view({"get": "list"})),
     path("<int:pk>/", views.ProductsView.as_view({"get": "retrieve"})),
     path("categories/", views.CategoriesView.as_view({"get": "list"})),
+    path("categories/display/", views.CategoriesDisplayView.as_view({"get": "list"})),
 ]

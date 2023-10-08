@@ -80,7 +80,12 @@ export class ApiHandler {
     return await this.get("/products/checkout?productids=" + productIds)
   }
 
+  static async getCategoriesDisplay() {
+    return await this.get("/products/categories/display")
+  }
+
   static async postQuoteRequest(request: QuoteRequest) {
     return await this.post("/quote_requests/request/", request)
   }
+
 }
