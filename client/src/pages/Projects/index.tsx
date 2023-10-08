@@ -84,7 +84,7 @@ function Projects() {
 	return (
 		<div className={style.container}>
       <PageTitle text='Latest Projects'/>
-      <div className={style.projectsContainer}>
+      <div>
         <ProjectItems
           projects={projects}
         />

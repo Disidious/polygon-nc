@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import style from './style.module.css';
 
-import { Button, DotsAnimation, HomeServiceCard, PageTitle } from 'components';
+import { Button, DotsAnimation, HomeServiceCard, HomeShopSlider, PageTitle } from 'components';
 
 import headerBackground from 'assets/home-header-background.webp'
 import datacenterImg from 'assets/datacenter.jpg'
@@ -36,12 +36,19 @@ function Home() {
 							Surveillances, System security, and Display
 							solutions.
 						</p>
-						<Button text={"Get in Touch"} goto={"/contactus"} btnClass={style.contactUsBtn} secondary/>
+						<div className={style.headerButtonsContainer}>
+							<Button text={"Shop"} goto={"/shop"} btnClass={style.headerButton} secondary/>
+							<Button text={"Get in Touch"} goto={"/contactus"} btnClass={style.headerButton} secondary/>
+						</div>
 					</div>
 				</div>
 			</div>
 
-			<PageTitle text={"Our Services"}/>
+			<PageTitle text={"Shop Categories"} />
+
+			<HomeShopSlider />
+
+			<PageTitle text={"Our Services"} />
 			
 			<HomeServiceCard 
 				imgSrc={datacenterImg}

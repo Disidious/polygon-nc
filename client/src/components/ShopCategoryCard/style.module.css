@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 30px 0;
+}
+
+.cardContent {
+    text-align: center;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 150ms;
+}
+
+.cardContent:hover {
+    opacity: 0.8;
+}
+
+.cardContent img {
+    width: 350px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+@media(max-width: 1200px) {
+    .cardContent img {
+        width: 250px;
+    }
+}
+
+@media(max-width: 850px) {
+    .cardContent img {
+        width: 200px;
+    }
+}

@@ -1,12 +1,16 @@
 from django.contrib import admin
 
-from quote_requests.models import QuoteRequest
+from quote_requests.models import QuoteRequest, RequestedProduct
+
+
+class RequestedProductInline(admin.TabularInline):
+    model = RequestedProduct
+    extra = 0
 
 
 @admin.register(QuoteRequest)
 class QuoteRequestAdmin(admin.ModelAdmin):
     list_display = [
-        "id",
         "company_name",
         "first_name",
         "last_name",
@@ -14,6 +18,7 @@ class QuoteRequestAdmin(admin.ModelAdmin):
         "phone",
         "created_on",
     ]
+    list_display_links = ["company_name"]
     search_fields = [
         "id",
         "company_name",
@@ -23,8 +28,7 @@ class QuoteRequestAdmin(admin.ModelAdmin):
         "phone",
         "address",
         "message",
-        "products",
         "created_on",
     ]
     readonly_fields = ["created_on"]
-    filter_horizontal = ["products"]
+    inlines = [RequestedProductInline]

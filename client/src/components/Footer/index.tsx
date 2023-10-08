@@ -26,8 +26,8 @@ function Footer() {
   const navigate = useNavigate(); 
   const animationParentRef = useRef<HTMLDivElement>(null)
 
-  const routeChange = () =>{ 
-    let path = '/'; 
+  const goToHome = () => { 
+    const path = '/'; 
     navigate(path);
   }
 
@@ -93,7 +93,7 @@ function Footer() {
     <div className={style.footer} ref={animationParentRef}>
       <DotsAnimation parentRef={animationParentRef}/>
       <div className={style.footerContainer}>
-        <img className={style.footerLogo} src={footerLogo} onClick={routeChange}/>
+        <img className={style.footerLogo} src={footerLogo} onClick={goToHome}/>
         <div className={style.footerContentContainer}>
           {renderContent({
             title: "Services",

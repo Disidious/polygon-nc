@@ -14,29 +14,29 @@ function HomeServiceCard(props: Props) {
   const { imgSrc, title, points, inverted, btnGoto, btnText } = props;
 
 	return (
-			<div className={style.cardContainer}>
-				<div className={`${style.cardContent} ${inverted && style.reversedContent}`}>
-					<div className={style.cardImg} style={{
-						backgroundImage: `url(${imgSrc})`
-					}}/>
-					<div className={style.cardTextContainer}>
-						<div className={style.cardText}>
-              <div>
-                <h1>
-                  { title }
-                </h1>
-                <div className={style.underline}/>
-              </div>
-							<ul>
-                {
-                  points.map((point, idx) => <li key={idx}>{ point }</li>)
-                }
-							</ul>
+		<div className={style.cardContainer}>
+			<div className={`${style.cardContent} ${inverted && style.reversedContent}`}>
+				<div className={style.cardImg} style={{
+					backgroundImage: `url(${imgSrc})`
+				}}/>
+				<div className={style.cardTextContainer}>
+					<div className={style.cardText}>
+						<div>
+							<h1>
+							{ title }
+							</h1>
+							<div className={style.underline}/>
 						</div>
-						<Button text={btnText ? btnText : 'Learn More'} btnClass={style.learnMore} goto={btnGoto} primary/>
+						<ul>
+							{
+								points.map((point, idx) => <li key={idx}>{ point }</li>)
+							}
+						</ul>
 					</div>
+					<Button text={btnText ? btnText : 'Learn More'} btnClass={style.learnMore} goto={btnGoto} primary/>
 				</div>
 			</div>
+		</div>
 	);
 }
 

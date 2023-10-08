@@ -53,10 +53,17 @@
   height: 80px
 }
 
+.navContainer {
+  display: flex;
+  align-items: center;
+}
+
 .menu {
-  display: inherit;
+  display: flex;
   justify-content: space-evenly;
+  align-items: center;
   width: 550px;
+  margin-right: 20px;
 }
 
 .dropbtn {
@@ -104,6 +111,7 @@
   display: none;
   position: relative;
   z-index: 2;
+  margin-left: 5px;
 }
 
 @media (max-width: 1100px) {
@@ -141,6 +149,7 @@
     background-color: rgba(255, 255, 255, 0.979);
     width: 250px;
     border-radius: 4px;
+    margin-right: 0;
   }
 
   .dropdown {

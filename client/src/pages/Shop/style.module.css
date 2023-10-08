@@ -3,3 +3,65 @@
   width: 100%;
   height: 100%;
 }
+
+.shopContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.shopSubContainer {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  width: 95%;
+  max-width: 2000px;
+}
+
+.categoryList {
+  width: 15%;
+}
+
+.productList {
+  width: 100%;
+}
+
+.productListContainer {
+  width: 100%;
+  height: 100%;
+  margin-left: 20px;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--dark);
+  margin: 10px 0;
+}
+
+@media(max-width: 1170px) {
+  .categoryList {
+    width: 20%;
+  }
+
+  .productListContainer {
+    width: 80%;
+  }
+}
+
+@media(max-width: 870px) {
+  .shopSubContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .categoryList, .productListContainer {
+    width: 100%;
+  }
+
+  .productListContainer {
+    margin: 10px 0;
+  }
+}
