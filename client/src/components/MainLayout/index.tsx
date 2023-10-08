@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 
 import { Footer, Header, MainBackground } from "components";
+import { Toaster } from "react-hot-toast";
 
 const MainLayout = () => {
   const location = useLocation();
@@ -23,6 +24,16 @@ const MainLayout = () => {
       <MainBackground/>
       <Header/>
       
+      <Toaster
+			toastOptions={{
+				success: {
+					iconTheme: {
+						primary: "rgb(44, 50, 133)",
+						secondary: "white"
+					}
+				}
+			}}/>
+
       <Outlet/>
       
       <Footer/>

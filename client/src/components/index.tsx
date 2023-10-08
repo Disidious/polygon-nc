@@ -18,3 +18,5 @@ export { default as ProductList } from "./ProductList";
 export { default as PageNumbers } from "./PageNumbers";
 export { default as SearchBar } from "./SearchBar";
 export { default as Spinner } from "./Spinner";
+export { default as Cart } from "./Cart";
+export { default as CheckoutForm } from "./CheckoutForm";

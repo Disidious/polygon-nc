@@ -1,0 +1,121 @@
+.container {
+    position: relative;
+}
+
+.checkoutContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.checkoutContent {
+    width: 90%;
+    background-color: white;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    border: 30px solid transparent;
+}
+
+.productsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.productsTable tr {
+    font-weight: bold;
+}
+
+.productsTable th {
+    text-align: left;
+}
+
+.productsTable td:first-child {
+    display: flex;
+    align-items: center;
+    width: 400px;
+}
+
+.productsTable tr:first-child, .productsTable tr:last-child {
+    border-bottom: 1px solid var(--dark);
+}
+
+.productsTable tr:first-child th {
+    padding-bottom: 10px;
+}
+
+.productsTable td:nth-child(2) {
+    text-align: left;
+}
+
+.productsTable td:nth-child(3) {
+    text-align: right;
+}
+
+.productsTable img {
+    object-fit: cover;
+    width: 100px;
+    aspect-ratio: 1/1;
+    margin-right: 10px;
+}
+
+.deleteIcon {
+    color: var(--dark);
+    font-size: 25px;
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.infoContainer {
+    text-align: center;
+    margin: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.infoContainer h2 {
+    margin: 0;
+}
+
+.infoContainer i {
+    font-size: 200px;
+    color: var(--medium);
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+@media(max-width: 540px) {
+    .productsTable td:first-child {
+        width: fit-content;
+    }
+
+    .infoContainer {
+        margin: 50px;
+    }
+    
+    .infoContainer i {
+        font-size: 100px;
+    }
+
+    .infoContainer h1 {
+        font-size: 25px;
+    }
+
+    .infoContainer h2 {
+        font-size: 15px;
+    }
+}
+
+@media(max-width: 330px) {
+    .productsTable img {
+        width: 50px;
+    }
+
+    .checkoutContent {
+        border-width: 10px;
+    }
+}

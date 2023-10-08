@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 import style from './style.module.css';
@@ -17,30 +17,12 @@ function CategoryList(props: Props) {
   const { categories = [], chosenCategory, containerStyle, loading } = props
 
 	const [searchParams, setSearchParams] = useSearchParams();
-	const [expanded, setExpanded] = useState<{[id: number]: boolean}>({});
-
-	useEffect(() => {
-		const newExpanded:{[id: number]: boolean} = []
-		if(categories != null) {
-			for(let cat of categories) {
-				for(let subCat of cat.categories) {
-					if(isActive(subCat, false)) {
-						newExpanded[cat.id] = true;
-						break;
-					}
-				}
-				if(newExpanded[cat.id]) {
-					setExpanded(newExpanded)
-					break
-				}
-			}
-		}
-	}, [categories])
+	const [collaped, setCollapsed] = useState<{[id: number]: boolean}>({});
 
 	const setCatExpanded = (id: number) => {
-		const newExpanded = {...expanded}
+		const newExpanded = {...collaped}
 		newExpanded[id] = !newExpanded[id]
-		setExpanded(newExpanded)
+		setCollapsed(newExpanded)
 	}
 
 	const isActive = (category: MasterCategory | Category, isMaster: boolean) => {
@@ -65,12 +47,12 @@ function CategoryList(props: Props) {
 		searchParams.delete("category")
 		searchParams.delete("page")
 
-		searchParams.set("category", name)
 		if(isMaster) {
 			searchParams.set("mastercategoryid", `${id}`)
 		} else {
 			searchParams.set("categoryid", `${id}`)
 		}
+		searchParams.set("category", name)
 
 		setSearchParams(searchParams)
 	}
@@ -95,13 +77,13 @@ function CategoryList(props: Props) {
 							</h2>
 						</div>
 						<Button
-							text={expanded[cat.id] ? "▲" : "▼"}
+							text={collaped[cat.id] ? "▼" : "▲"}
 							btnClass={style.listItemExpand}
 							onClick={() => setCatExpanded(cat.id)}
 							secondary
 						/>
 					</div>
-					<div className={`${style.listSubItemsContainer} ${!expanded[cat.id] && style.hidden}`}>
+					<div className={`${style.listSubItemsContainer} ${collaped[cat.id] && style.hidden}`}>
 						{cat.categories.map((subCat) => (
 								<div className={`${style.listItemBtn} ${isActive(subCat, false) && style.active}`} key={subCat.id} onClick={() => {
                   setCategory(subCat.id, subCat.name)

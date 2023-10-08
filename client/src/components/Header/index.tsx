@@ -5,6 +5,8 @@ import {
 } from 'react-router-dom';
 import Hamburger from 'hamburger-react'
 
+import { Cart } from 'components';
+
 import style from './style.module.css';
 
 import logo from 'assets/logo.png'
@@ -107,11 +109,14 @@ function Header() {
     <div className={style.header}>
       <div className={style.backgroundImg}/>
       <img className={style.logo} src={logo} onClick={routeChange}/>
-      <div className={style.hamburger} ref={hamRef}>
-        <Hamburger size={25} toggled={menuToggled} onToggle={toggled => setMenuToggled(toggled)} color='var(--dark)'/>
-      </div>
-      <div className={`${style.menu} ${!menuToggled ? style.hidden : ""}`} onClick={() => setMenuToggled(false)} ref={menuRef}>
-        {elements.map((el, idx) => renderBarItem(el, idx))}
+      <div className={style.navContainer}>
+        <div className={`${style.menu} ${!menuToggled ? style.hidden : ""}`} onClick={() => setMenuToggled(false)} ref={menuRef}>
+          {elements.map((el, idx) => renderBarItem(el, idx))}
+        </div>
+        <Cart/>
+        <div className={style.hamburger} ref={hamRef}>
+          <Hamburger size={25} toggled={menuToggled} onToggle={toggled => setMenuToggled(toggled)} color='var(--dark)'/>
+        </div>
       </div>
     </div>
   );

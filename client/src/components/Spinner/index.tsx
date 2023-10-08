@@ -3,10 +3,11 @@ import style from './style.module.css';
 type Props = {
   size?: "sml" | "med" | "lrg";
   height?: number;
+  color?: string;
 }
 
 function Spinner(props: Props) {
-  const { size = "med", height } = props
+  const { size = "med", height, color } = props
 
   const sizeStyle = () => {
     switch(size) {
@@ -48,24 +49,24 @@ function Spinner(props: Props) {
     }}>
       <div style={sizeStyle()}>
         <div>
-          <span className={`${style.one} ${style.h6}`}></span>
-          <span className={`${style.two} ${style.h3}`}></span>
+          <span className={`${style.one} ${style.h6}`} style={color ? {background: color} : undefined}></span>
+          <span className={`${style.two} ${style.h3}`} style={color ? {background: color} : undefined}></span>
         </div>
       </div>
 
 
       <div style={sizeStyle()}>
         <div>
-          <span className={`${style.one} ${style.h1}`}></span>
-          <span className={`${style.two} ${style.h4}`}></span>
+          <span className={`${style.one} ${style.h1}`} style={color ? {background: color} : undefined}></span>
+          <span className={`${style.two} ${style.h4}`} style={color ? {background: color} : undefined}></span>
         </div>
       </div>
 
 
       <div style={sizeStyle()}>
         <div>
-          <span className={`${style.one} ${style.h5}`}></span>
-          <span className={`${style.two} ${style.h2}`}></span>
+          <span className={`${style.one} ${style.h5}`} style={color ? {background: color} : undefined}></span>
+          <span className={`${style.two} ${style.h2}`} style={color ? {background: color} : undefined}></span>
         </div>
       </div>
     </div>

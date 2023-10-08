@@ -1,3 +1,5 @@
+import { QuoteProduct, QuoteRequest } from "types";
+
 type Response = {
   json: any;
   status: "success" | "failed" | "not_found"
@@ -35,11 +37,50 @@ export class ApiHandler {
     }
   }
 
+  static async post(path: string, payload: any): Promise<Response> {
+    try {
+      const response = await fetch(ApiHandler.url + path, {
+        method: "POST",
+        body: JSON.stringify(payload),
+        headers: {
+          "content-type": "application/json"
+        }
+      })
+      
+      const json = await response.json()
+
+      return {
+        json,
+        status: response.ok ? "success" : "failed"
+      }
+    } catch (error) {
+        return {
+          json: undefined,
+          status: "failed"
+        }
+    }
+  }
+
   static async getCategories() {
     return await this.get("/products/categories/")
   }
 
   static async getProducts(params: URLSearchParams | undefined = undefined) {
     return await this.get("/products" + (params != null ? `?${params.toString()}` : ""))
+  }
+
+  static async getProduct(id: string) {
+    return await this.get("/products/" + id)
+  }
+
+  static async getCheckoutProducts(quoteProducts: QuoteProduct[]) {
+    let productIds = ""
+    quoteProducts.map((prod) => productIds += `${prod.product},`)
+
+    return await this.get("/products/checkout?productids=" + productIds)
+  }
+
+  static async postQuoteRequest(request: QuoteRequest) {
+    return await this.post("/quote_requests/request/", request)
   }
 }

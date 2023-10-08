@@ -36,7 +36,10 @@ function Home() {
 							Surveillances, System security, and Display
 							solutions.
 						</p>
-						<Button text={"Get in Touch"} goto={"/contactus"} btnClass={style.contactUsBtn} secondary/>
+						<div className={style.headerButtonsContainer}>
+							<Button text={"Shop"} goto={"/shop"} btnClass={style.headerButton} secondary/>
+							<Button text={"Get in Touch"} goto={"/contactus"} btnClass={style.headerButton} secondary/>
+						</div>
 					</div>
 				</div>
 			</div>

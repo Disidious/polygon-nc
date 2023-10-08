@@ -29,3 +29,26 @@ export type ProductsPagePayload = {
 	total_pages: number;
 	results: Product[];
 }
+
+export type QuoteProduct = {
+	product: number;
+	quantity: number;
+}
+
+export type QuoteRequest = {
+	company_name: string;
+	first_name: string;
+	last_name: string;
+	email: string;
+	phone: string;
+	address: string;
+	message?: string;
+	requested_products: QuoteProduct[];
+}
+
+export type CartContextType = { 
+  cartProducts: QuoteProduct[]; 
+  appendProduct: (id: number, quantity: number) => void; 
+  removeProduct: (id: number) => void; 
+  emptyProducts: () => void;
+}

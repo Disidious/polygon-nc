@@ -66,12 +66,21 @@
   font-size: 18px;
 }
 
-.contactUsBtn {
-  color: white;
-  border-color: white;
+.headerButtonsContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
-.contactUsBtn:hover {
+.headerButton {
+  color: white;
+  border-color: white;
+  margin: 0 10px;
+  width: 30%;
+  padding: 20px 0;
+}
+
+.headerButton:hover {
   background-color: var(--medium);
 }
 
@@ -98,4 +107,5 @@
   .headerContent {
     width: 90%;
   }
+
 }

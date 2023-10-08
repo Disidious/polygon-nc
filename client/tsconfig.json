@@ -24,6 +24,7 @@
     "paths": {
       "contacts": ["src/contacts"],
       "types": ["src/types"],
+      "contexts": ["src/contexts"],
       "api_handler": ["src/api_handler"],
       "assets/*": ["src/assets/*"],
       "components": ["src/components/index"],
