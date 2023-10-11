@@ -11,14 +11,14 @@ class RequestedProductInline(admin.TabularInline):
 @admin.register(QuoteRequest)
 class QuoteRequestAdmin(admin.ModelAdmin):
     list_display = [
-        "company_name",
         "first_name",
         "last_name",
+        "company_name",
         "email",
         "phone",
         "created_on",
     ]
-    list_display_links = ["company_name"]
+    list_display_links = ["first_name"]
     search_fields = [
         "id",
         "company_name",

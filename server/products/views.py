@@ -67,7 +67,7 @@ class ProductsView(ReadOnlyModelViewSet):
     authentication_classes = []
 
     serializer_class = ProductSerializer
-    queryset = Product.objects.all()
+    queryset = Product.objects.all().order_by("category")
 
     def get_queryset(self):
         params = self.request.query_params

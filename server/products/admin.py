@@ -13,7 +13,7 @@ class MasterCategoryAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ["name", "master_category", "hidden"]
     list_display_links = ["name"]
-    search_fields = ["id", "master_category", "name", "hidden"]
+    search_fields = ["id", "name", "hidden"]
 
 
 @admin.register(Product)
@@ -22,7 +22,6 @@ class ProductAdmin(admin.ModelAdmin):
         "name",
         "category",
         "brand",
-        "name",
         "hidden",
     ]
     list_display_links = ["name"]
@@ -34,9 +33,7 @@ class ProductAdmin(admin.ModelAdmin):
     search_fields = [
         "id",
         "name",
-        "category",
         "brand",
-        "name",
         "specs",
         "hidden",
     ]
