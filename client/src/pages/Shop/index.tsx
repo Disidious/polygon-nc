@@ -3,10 +3,10 @@ import { useSearchParams } from 'react-router-dom';
 
 import style from './style.module.css';
 
-import { ApiHandler } from 'api_handler';
 import { CategoryList, PageNumbers, PageTitle, ProductList, SearchBar } from 'components';
 import { ChosenCategory, MasterCategory, ProductsPagePayload } from 'types';
 
+import { ApiHandler } from 'handlers/api_handler';
 
 function Shop() {
 	const [categories, setCategories] = useState<MasterCategory[]>();

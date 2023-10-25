@@ -55,5 +55,9 @@ class Product(models.Model):
     specs = models.TextField(max_length=2000)
     hidden = models.BooleanField(default=False)
 
+    @property
+    def full_name(self):
+        return f"{self.brand} {self.name}"
+
     def __str__(self):
         return self.name

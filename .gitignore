@@ -37,4 +37,5 @@ __pycache__
 # Frontend
 .env
 .env.production
+ngrok.yml
 

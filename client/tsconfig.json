@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": ["ES2020", "DOM", "DOM.Iterable", "ES2021.String"],
     "module": "ESNext",
     "skipLibCheck": true,
 
@@ -25,8 +25,9 @@
       "contacts": ["src/contacts"],
       "types": ["src/types"],
       "contexts": ["src/contexts"],
-      "api_handler": ["src/api_handler"],
+      "handlers/*": ["src/handlers/*"],
       "assets/*": ["src/assets/*"],
+      "public/*": ["public/*"],
       "components": ["src/components/index"],
       "pages": ["src/pages/index"],
     },

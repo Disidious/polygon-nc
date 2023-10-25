@@ -6,9 +6,10 @@ import { Button, CheckoutForm, PageTitle, Spinner } from 'components';
 
 import { CartContext } from 'contexts';
 import { Product } from 'types';
-import { ApiHandler } from 'api_handler';
 
 import noImg from 'assets/noimage.png'
+
+import { ApiHandler } from 'handlers/api_handler';
 
 function Checkout() {
 	const { cartProducts, removeProduct } = useContext(CartContext);

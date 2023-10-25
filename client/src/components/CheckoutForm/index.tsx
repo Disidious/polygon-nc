@@ -6,7 +6,8 @@ import { Button } from 'components';
 
 import { CartContext } from 'contexts';
 import { QuoteRequest } from 'types';
-import { ApiHandler } from 'api_handler';
+
+import { ApiHandler } from 'handlers/api_handler';
 
 type Props = {
     onDone?: () => void;

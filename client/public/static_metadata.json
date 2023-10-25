@@ -1,0 +1,49 @@
+{
+    "default": {
+        "title": "Polygon Network Company",
+        "description": "We are an IT Service Provider and a System Integrator Company offering special skills in designing, supplying and implementing fast and reliable IT Services including Network Solutions, Video System Surveillances, System security, and Display solutions.",
+        "image": "https://polygon-nc.com/logo.png"
+    },
+    "paths": [
+        {
+            "path": "shop",
+            "title": "Shop - Polygon Network Company"
+        },
+        {
+            "path": "services/networking",
+            "title": "Networking - Polygon Network Company",
+            "description": "We provide the optimum LAN and WAN network solution from single connectivity to multi-point to meet your current and future needs. We can plan, design and execute the structured cabling system for your company that will be secure, robust and scalable to reach the peak level of productivity and performance. If you're thinking about rewiring or reconfiguring your current network setup, it's all right within our wheelhouse."
+        },
+        {
+            "path": "services/cctv",
+            "title": "CCTV - Polygon Network Company",
+            "description": "Our professional business CCTV systems provide ultimate protection with state-of-the-art High Definition cameras featuring infrared capability. Day or night, you'll get high-resolution details and accurate imaging, ensuring reliable surveillance for peace of mind. Trust our cutting-edge solutions to handle your security needs, allowing you to focus on what matters most."
+        },
+        {
+            "path": "services/accesscontrol",
+            "title": "Access Control - Polygon Network Company",
+            "description": "Protect your business with our advanced Access Control Solutions. These integrated security technologies ensure controlled access to computing resources, enhancing operational efficiency. Tailored for any facility size, our full-featured solutions offer robust protection and peace of mind, allowing you to focus on core operations confidently."
+        },
+        {
+            "path": "services/datashow",
+            "title": "Data Show - Polygon Network Company",
+            "description": "We specialize in high-quality projector and display solutions, meeting the highest standards of brightness, resolution, and contrast. From small meeting rooms to large auditoriums, we have the perfect solution for you. Count on our expert team for a seamless and impressive viewing experience at your intended place of projection."
+        },
+        {
+            "path": "projects",
+            "title": "Projects - Polygon Network Company"
+        },
+        {
+            "path": "clients",
+            "title": "Clients - Polygon Network Company"
+        },
+        {
+            "path": "contactus",
+            "title": "Contact Us - Polygon Network Company"
+        },
+        {
+            "path": "checkout",
+            "title": "Checkout - Polygon Network Company"
+        }
+    ]
+}
