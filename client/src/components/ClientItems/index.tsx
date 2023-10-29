@@ -15,7 +15,7 @@ function ClientItems(props: Props) {
   const renderItem = (client: Client, key: number) => (
     <div key={key} className={style.clientsContent}>
       <div className={style.hex}>
-        <img src={client.img}/>
+        <img src={client.img} alt={client.name} />
       </div>
       <div className={style.clientsText}>
         <h1>

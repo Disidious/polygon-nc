@@ -71,9 +71,7 @@ function ProductDetails() {
 	return (
 		<div className={style.container}>
 			<div className={style.productContainer}>
-				<div className={style.productImg} style={{
-					backgroundImage: `url(${product.image ? product.image : noImg})`
-				}}/>
+				<img className={style.productImg} src={product.image ? product.image : noImg} alt={product.name} />
 				<div className={style.productContent}>
 					<div>
 						<h1>

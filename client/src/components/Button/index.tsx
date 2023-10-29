@@ -16,13 +16,13 @@ type Props = {
 function Button(props: Props) {
   const { text, goto, onClick, btnClass, primary, secondary, disabled, loading } = props
 
-  const className = `
-    ${style.main} 
-    ${primary && style.primary} 
-    ${secondary && style.secondary} 
-    ${btnClass} ${disabled && style.disabled} 
-    ${loading && style.loading}
-  `
+  const className = 
+    style.main + " " +
+    (primary ? style.primary + " " : "") + 
+    (secondary ? style.secondary + " " : "") +
+    btnClass + " " + 
+    (disabled ? style.disabled + " " : "") + 
+    (loading ? style.loading + " " : "")
 
   const getContent = () => (
     <>

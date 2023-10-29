@@ -25,7 +25,7 @@ function HexagonItems(props: Props) {
 
     return (
       <div className={style.hex}>
-        <img src={img}/>
+        <img src={img} alt={title}/>
         <div className={style.overlay}/>
         <h2>
           {title}
@@ -45,7 +45,7 @@ function HexagonItems(props: Props) {
       <div className={inverted ? style.invertedHexContainer : style.hexContainer}>
         <div className={style.hex}>
           <div className={style.hexContent}>
-            <img src={mainImg}/>
+            <img src={mainImg} alt={title}/>
           </div>
         </div>
         {renderItem(firstImg, firstTitle)}

@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 
 import style from './style.module.css';
 
-import { Button, Spinner } from 'components';
+import { Button, Navigatable, Spinner } from 'components';
 import { Category, ChosenCategory, MasterCategory } from 'types';
 
 type Props = {
@@ -16,7 +16,7 @@ type Props = {
 function CategoryList(props: Props) {
   const { categories = [], chosenCategory, containerStyle, loading } = props
 
-	const [searchParams, setSearchParams] = useSearchParams();
+	const [searchParams] = useSearchParams();
 	const [collaped, setCollapsed] = useState<{[id: number]: boolean}>({});
 
 	const setCatExpanded = (id: number) => {
@@ -33,15 +33,16 @@ function CategoryList(props: Props) {
 		)
 	}
 
-	const setCategoryAll = () => {
+	const generateCategoryAllURL = () => {
 		searchParams.delete("mastercategoryid")
 		searchParams.delete("categoryid")
 		searchParams.delete("category")
 		searchParams.delete("page")
-		setSearchParams(searchParams)
+		
+		return `${window.location.pathname}?${searchParams.toString()}`
 	}
 
-	const setCategory = (id: number, name: string, isMaster = false) => {
+	const generateCategoryURL = (id: number, name: string, isMaster = false) => {
 		searchParams.delete("mastercategoryid")
 		searchParams.delete("categoryid")
 		searchParams.delete("category")
@@ -54,28 +55,26 @@ function CategoryList(props: Props) {
 		}
 		searchParams.set("category", name)
 
-		setSearchParams(searchParams)
+		return `${window.location.pathname}?${searchParams.toString()}`
 	}
   
 	const renderCategories = () => (
 		<>
 			<div className={style.listItem}>
-				<div className={style.listItemBtn} onClick={setCategoryAll}>
+				<Navigatable className={style.listItemBtn} goto={generateCategoryAllURL()}>
 					<h2>
 						All
 					</h2>
-				</div>
+				</Navigatable>
 			</div>
 			{categories!.map((cat) => (
 				<div key={cat.id}>
 					<div className={style.listItem}>
-						<div className={`${style.listItemBtn} ${isActive(cat, true) && style.active}`} onClick={() => {
-              setCategory(cat.id, cat.name, true)
-            }}>
+						<Navigatable className={`${style.listItemBtn} ${isActive(cat, true) && style.active}`} goto={generateCategoryURL(cat.id, cat.name, true)}>
 							<h2>
 								{cat.name}
 							</h2>
-						</div>
+						</Navigatable>
 						<Button
 							text={collaped[cat.id] ? "▼" : "▲"}
 							btnClass={style.listItemExpand}
@@ -83,17 +82,18 @@ function CategoryList(props: Props) {
 							secondary
 						/>
 					</div>
-					<div className={`${style.listSubItemsContainer} ${collaped[cat.id] && style.hidden}`}>
+					<div className={`${style.listSubItemsContainer}${collaped[cat.id] && style.hidden ? " " + style.hidden : ""}`}>
 						{cat.categories.map((subCat) => (
-								<div className={`${style.listItemBtn} ${isActive(subCat, false) && style.active}`} key={subCat.id} onClick={() => {
-                  setCategory(subCat.id, subCat.name)
-                }}>
+								<Navigatable 
+								className={`${style.listItemBtn}${isActive(subCat, false) ? " "  + style.active : ""}`} 
+								key={subCat.id} 
+								goto={generateCategoryURL(subCat.id, subCat.name)}>
 									<div className={style.listItem}>
 										<h2>
 											{subCat.name}
 										</h2>
 									</div>
-								</div>
+								</Navigatable>
 						))}
 					</div>
 				</div>

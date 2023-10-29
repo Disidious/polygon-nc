@@ -32,9 +32,8 @@
   width: 400px;
   margin-right: 30px;
   aspect-ratio : 1 / 1;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  object-fit: contain;
+  object-position: center;
   background-color: white;
   border-radius: 5px;
   border: 1px solid var(--dark);
