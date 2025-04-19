@@ -2,8 +2,8 @@
   --dark: rgb(44, 50, 133);
   --medium: rgb(79, 84, 159);
   --light: rgb(145, 180, 213);
-
-  --darkOpaque: rgba(44, 50, 133, 0.9)
+  --darkOpaque: rgba(44, 50, 133, 0.9);
+  --shadow: 0px 0px 20px rgba(0,0,0,0.2);
 }
 
 body {

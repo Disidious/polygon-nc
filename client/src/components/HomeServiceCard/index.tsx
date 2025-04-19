@@ -2,12 +2,12 @@ import { Button } from 'components';
 import style from './style.module.css';
 
 type Props = {
-  imgSrc: string;
-  title: string;
-  points: string[];
+	imgSrc: string;
+	title: string;
+	points: string[];
 	btnGoto: string;
 	btnText?: string;
-  inverted?: boolean;
+  	inverted?: boolean;
 }
 
 function HomeServiceCard(props: Props) {
@@ -15,15 +15,13 @@ function HomeServiceCard(props: Props) {
 
 	return (
 		<div className={style.cardContainer}>
-			<div className={`${style.cardContent} ${inverted && style.reversedContent}`}>
-				<div className={style.cardImg} style={{
-					backgroundImage: `url(${imgSrc})`
-				}}/>
+			<div className={`${style.cardContent}${inverted ? " " + style.reversedContent : ""}`}>
+				<img className={style.cardImg} src={imgSrc} alt={title} />
 				<div className={style.cardTextContainer}>
 					<div className={style.cardText}>
 						<div>
 							<h1>
-							{ title }
+								{ title }
 							</h1>
 							<div className={style.underline}/>
 						</div>

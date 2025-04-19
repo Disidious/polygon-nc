@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 
 import style from './style.module.css';
 
-import { ApiHandler } from 'api_handler';
+import { ApiHandler } from 'handlers/api_handler';
 
 import { Button, Spinner } from 'components';
 import { Product } from 'types';
@@ -12,6 +12,7 @@ import { CartContext } from 'contexts';
 
 import noImg from 'assets/noimage.png'
 
+import { MetadataHandler } from 'handlers/metadata_handler';
 
 function ProductDetails() {
 	const { appendProduct } = useContext(CartContext);
@@ -29,9 +30,18 @@ function ProductDetails() {
 			const productId = searchParams.get("productid")
 			if(productId != null && +productId) {
 				const productRes = await ApiHandler.getProduct(productId)
-				setProduct(productRes.json)
+				const currProduct: Product = productRes.json
+				setProduct(currProduct)
+
+				MetadataHandler.setMetadata({
+					metadata: {
+						title: `${currProduct.name} - Polygon Network Company`,
+						description: `Brand:\n${currProduct.brand}\nSpecs:\n${currProduct.specs}`,
+						image: currProduct.image
+					}
+				})
 			}
-			
+
 			setProductLoading(false)
 		})()
 	}, [])
@@ -61,9 +71,7 @@ function ProductDetails() {
 	return (
 		<div className={style.container}>
 			<div className={style.productContainer}>
-				<div className={style.productImg} style={{
-					backgroundImage: `url(${product.image ? product.image : noImg})`
-				}}/>
+				<img className={style.productImg} src={product.image ? product.image : noImg} alt={product.name} />
 				<div className={style.productContent}>
 					<div>
 						<h1>

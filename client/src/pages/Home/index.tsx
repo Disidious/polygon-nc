@@ -24,9 +24,9 @@ function Home() {
 							We Are Polygon Network Company
 						</h1>
 						<div className={style.partnerBadge}>
-							<img src={panduitLogo} width={150}/>
+							<img src={panduitLogo} alt="Panduit Logo" width={150}/>
 							<p>
-								Silver Partner
+								Registered Certified Installer
 							</p>
 						</div>
 						<p>

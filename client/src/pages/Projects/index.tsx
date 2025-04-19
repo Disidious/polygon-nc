@@ -13,7 +13,7 @@ function Projects() {
   const projects = [
     {
       img: acaImg,
-      title: "Administrative Capital Authority",
+      title: "Administrative Control Authority",
       subTitle: "Currently supplying, designing and installing",
       points: [
         "Structured cabling system for Datacenter (80 Racks) at the new capital using MPO fiber cables interconnection.",

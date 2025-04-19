@@ -16,7 +16,7 @@ function TechnologyItems(props: Props) {
   const renderTech = (tech: Tech, key: number) => (
     <div className={style.techContainer} key={key}>
       <div className={style.hex}>
-        <img src={tech.img}/>
+        <img src={tech.img} alt={tech.title}/>
       </div>
       <div className={style.itemTextContainer}>
         <div className={style.itemText}>

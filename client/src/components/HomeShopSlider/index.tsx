@@ -1,14 +1,16 @@
-import style from './style.module.css';
+import { useEffect, useState } from 'react';
 import Slider from 'react-slick';
+
+import style from './style.module.css';
+import './style.css';
 
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import './style.css';
 
 import { ShopCategoryCard, Spinner } from 'components';
-import { useEffect, useState } from 'react';
 import { CategoryDisplay } from 'types';
-import { ApiHandler } from 'api_handler';
+
+import { ApiHandler } from 'handlers/api_handler';
 
 function HomeShopSlider() {
     const [loading, setLoading] = useState(true);

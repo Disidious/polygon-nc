@@ -9,7 +9,7 @@
   display: flex;
   justify-content: center;
   height: fit-content;
-  margin: 20px 0 20px 0;
+  margin-bottom: 20px;
 }
 
 .listContent {
@@ -20,6 +20,7 @@
   align-items: center;
   border-radius: 5px;
   cursor: pointer;
+  word-break: break-word;
 }
 
 .listContent:hover .listItemImage {
@@ -31,18 +32,20 @@
   font-size: 15px;
   font-weight: bold;
   text-align: center;
+  box-shadow: 0px -10px 20px white, 0px 10px 20px white, 10px 0px 20px white, -10px 0px 20px white;
+  background-color: white;
 }
 
 .listItemImage {
   width: 100%;
   aspect-ratio : 1 / 1;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: white;
+  object-fit: contain;
+  object-position: center;
   border-radius: 5px;
   border: 1px solid var(--dark);
   transition: 150ms;
+  background-color: white;
+  z-index: 1;
 }
 
 

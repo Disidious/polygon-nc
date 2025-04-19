@@ -12,15 +12,15 @@ type Props = {
 function PageNumbers(props: Props) {
   const { totalPages = 0, currentPage = 0 } = props
   
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
 	
   const isCurrPage = (page: number) => {
     return page === currentPage
   }
 
-  const setCurrPage = (page: number) => {
+  const generatePageURL = (page: number) => {
     searchParams.set("page", `${page}`)
-    setSearchParams(searchParams)
+    return `${window.location.pathname}?${searchParams.toString()}`
   }
 
   if(totalPages == null || currentPage == null) {
@@ -33,24 +33,24 @@ function PageNumbers(props: Props) {
           text='❮'
           btnClass={style.numberBtn}
           secondary
-          onClick={() => setCurrPage(currentPage - 1)}
+          goto={generatePageURL(currentPage - 1)}
           disabled={currentPage <= 1}
         />
         {[...Array(totalPages)].map((_, i) => (
-          <Button
-            text={`${i+1}`}
-            btnClass={`${style.numberBtn} ${isCurrPage(i+1) && style.activeNumberBtn}`}
-            secondary={!isCurrPage(i+1)}
-            primary={isCurrPage(i+1)}
-            onClick={() => setCurrPage(i+1)}
-            key={i}
-          />
-        ))}
+            <Button
+              text={`${i+1}`}
+              btnClass={`${style.numberBtn}${isCurrPage(i+1) ? " " + style.activeNumberBtn : ""}`}
+              secondary={!isCurrPage(i+1)}
+              primary={isCurrPage(i+1)}
+              goto={generatePageURL(i+1)}
+              key={i}
+            />
+          ))}
         <Button
           text='❯'
           btnClass={style.numberBtn}
           secondary
-          onClick={() => setCurrPage(currentPage + 1)}
+          goto={generatePageURL(currentPage + 1)}
           disabled={currentPage === totalPages}
         />
 			</div>

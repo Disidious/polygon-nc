@@ -12,6 +12,7 @@ dist
 *.zip
 dist-ssr
 *.local
+logs.*
 
 # Editor directories and files
 .vscode/*
@@ -37,4 +38,5 @@ __pycache__
 # Frontend
 .env
 .env.production
+ngrok.yml
 

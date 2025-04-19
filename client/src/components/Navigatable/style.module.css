@@ -1,0 +1,8 @@
+.container {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.contaier:visited {
+    color: inherit;
+}

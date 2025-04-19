@@ -20,7 +20,7 @@
 .itemTextContainer {
   background-color: white;
   border-radius: 10px;
-  box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+  box-shadow: var(--shadow);
   margin-top: -60px;
   width: 100%;
 }

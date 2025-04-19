@@ -3,9 +3,9 @@
 }
 
 .slick-dots {
-    position: unset;
+    position: unset!important;
 }
 
 .slick-dots .slick-active div div {
-  background-color: var(--medium);
+  background-color: var(--medium)!important;
 }

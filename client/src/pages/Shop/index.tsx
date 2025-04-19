@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 
 import style from './style.module.css';
 
-import { ApiHandler } from 'api_handler';
 import { CategoryList, PageNumbers, PageTitle, ProductList, SearchBar } from 'components';
 import { ChosenCategory, MasterCategory, ProductsPagePayload } from 'types';
 
+import { ApiHandler } from 'handlers/api_handler';
 
 function Shop() {
 	const [categories, setCategories] = useState<MasterCategory[]>();
@@ -72,16 +72,27 @@ function Shop() {
 					/>
 					<div className={style.productListContainer}>
 						<SearchBar/>
+						<div className={style.noteContainer}>
+							<p>
+								Can't find what you're looking for?&nbsp;
+								<Link to="/contactus">
+									Contact us
+								</Link>
+								&nbsp;and we'll get it for you!
+							</p>
+						</div>
 						<ProductList
 							products={productsPayload?.results}
 							loading={productsLoading}
 							containerStyle={style.productList}
 						/>
-						<div className={style.divider}/>
-						<PageNumbers
-							totalPages={productsPayload?.total_pages}
-							currentPage={productsPayload?.page}
-						/>
+						<div>
+							<div className={style.divider}/>
+							<PageNumbers
+								totalPages={productsPayload?.total_pages}
+								currentPage={productsPayload?.page}
+							/>
+						</div>
 					</div>
 				</div>
 			</div>

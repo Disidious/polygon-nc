@@ -19,12 +19,16 @@ import dorrahImg from "assets/clients/dorrah.png";
 import primaplastImg from "assets/clients/primaplast.png";
 import dareleftaImg from "assets/clients/darelefta.jpeg";
 import trainsectorImg from "assets/clients/trainsector.jpg";
-import topbusinessImg from "assets/clients/topbusiness.jpg";
+import ministryoftourismImg from "assets/clients/ministryoftourism.jpeg";
 import pyramidswalkImg from "assets/clients/pyramidswalk.png";
 import wallstreetImg from "assets/clients/wallstreet.jpg";
 
 function Clients() {
   const clients = [
+    {
+      img: rekabaImg,
+      name: "Administrative Control Authority"
+    },
     {
       img: egyproImg,
       name: "Egypro"
@@ -62,10 +66,6 @@ function Clients() {
       name: "Good Life"
     },
     {
-      img: rekabaImg,
-      name: "Administrative Control Authority"
-    },
-    {
       img: myahelshorbImg,
       name: "Dakahlia Water and Sanitation Company"
     },
@@ -98,8 +98,8 @@ function Clients() {
       name: "El Entag El Harby"
     },
     {
-      img: topbusinessImg,
-      name: "Top Business"
+      img: ministryoftourismImg,
+      name: "Ministry of Tourism & Antiquities"
     },
     {
       img: pyramidswalkImg,
