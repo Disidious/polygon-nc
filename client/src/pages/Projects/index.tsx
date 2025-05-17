@@ -8,16 +8,25 @@ import eeehImg from 'assets/eeeh.png';
 import ccImg from 'assets/cc.jpg';
 import lcImg from 'assets/lc.png';
 import pwcImg from 'assets/pwc.jpg';
+import sahlImg from 'assets/sahl.png';
+import mtaImg from 'assets/mta.jpg';
+
+type ProjectType = {
+  img: string;
+  title: string;
+  subTitle: string;
+  points: string[];
+}
 
 function Projects() {
-  const projects = [
+  const projects: ProjectType[] = [
     {
       img: acaImg,
       title: "Administrative Control Authority",
-      subTitle: "Currently supplying, designing and installing",
+      subTitle: "Supplying, designing and installing",
       points: [
-        "Structured cabling system for Datacenter (80 Racks) at the new capital using MPO fiber cables interconnection.",
-        "Structured cabling system for Datacenter (36 Racks) at the new capital using SM fiber cables interconnection.",
+        "Structured cabling system for the data center at the new capital using MPO fiber cables interconnection.",
+        "Structured cabling system for the data center at the new capital using SM fiber cables interconnection.",
         "Fiber fusion splicing and testing.",
         "Wyr-Grid and cable trays."
       ]
@@ -27,10 +36,10 @@ function Projects() {
       title: "Dar Al Ifta",
       subTitle: "Supplying, designing and installing",
       points: [
-        "Structured cabling system for Datacenter (10 Racks) using UTP and fiber cables interconnection.",
+        "Structured cabling system for the data center using UTP and fiber cables interconnection.",
         "Structured cabling systems for digital telephone system.",
         "Fiber fusion splicing and testing.",
-        "Centralized access control system for the Datacenter.",
+        "Centralized access control system for the the data center.",
         "IP system surveillance."
       ]
     },
@@ -40,19 +49,19 @@ function Projects() {
       subTitle: "Supplying, designing and installing",
       points: [
         "UTP network infrastructure for IP cameras.",
-        "Centralized access control system for the Datacenter.",
+        "Centralized access control system for the data center.",
         "IP system surveillance."
       ]
     },
     {
-      img: ccImg,
-      title: "Coptic Cathedral",
+      img: sahlImg,
+      title: "Shefa Al-Orman Hospital (Luxor)",
       subTitle: "Supplying, designing and installing",
       points: [
-        "UTP network infrastructure for IP cameras at Pope headquarter.",
-        "Stand-alone access control system.",
+        "Structured cabling system for the data center using fiber cables interconnection.",
+        "Fiber fusion splicing and testing.",
         "IP system surveillance.",
-        "Cables trays and pipes."
+        "Wyr-Grid and cable trays."
       ]
     },
     {
@@ -65,6 +74,28 @@ function Projects() {
         "Fiber fusion splicing and testing.",
         "Stand-alone access control system.",
         "IP system surveillance."
+      ]
+    },
+    {
+      img: mtaImg,
+      title: "Ministry of Tourism and Antiquities",
+      subTitle: "Supplying, designing and installing",
+      points: [
+        "Data center migration.",
+        "Backup and disaster recovery arrangement.",
+        "Physical move of servers, hardware devices and applications.",
+        "WAN and LAN configuration and testing."
+      ]
+    },
+    {
+      img: ccImg,
+      title: "Coptic Cathedral",
+      subTitle: "Supplying, designing and installing",
+      points: [
+        "UTP network infrastructure for IP cameras at the Pope headquarter.",
+        "Stand-alone access control system.",
+        "IP system surveillance.",
+        "Cables trays and pipes."
       ]
     },
     {

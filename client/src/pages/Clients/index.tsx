@@ -5,7 +5,6 @@ import { ClientItems, PageTitle } from 'components';
 import egyproImg from "assets/clients/egypro.jpg";
 import collegeImg from "assets/clients/college.png";
 import rayaImg from "assets/clients/raya.jpg";
-import lifetogetherImg from "assets/clients/lifetogether.jpg";
 import cultureImg from "assets/clients/culture.jpg";
 import wadiImg from "assets/clients/wadi.jpg";
 import althurayaImg from "assets/clients/althuraya.jfif";
@@ -22,52 +21,61 @@ import trainsectorImg from "assets/clients/trainsector.jpg";
 import ministryoftourismImg from "assets/clients/ministryoftourism.jpeg";
 import pyramidswalkImg from "assets/clients/pyramidswalk.png";
 import wallstreetImg from "assets/clients/wallstreet.jpg";
+import ormanImg from "assets/clients/orman.png";
+import etisalatImg from "assets/clients/etisalat.png";
+import topBusinessImg from "assets/clients/topbusiness.jpg";
+import lifeTogetherImg from "assets/clients/lifetogether.jpg";
+import copticImg from "assets/clients/coptic.jpg";
 
 function Clients() {
   const clients = [
     {
-      img: rekabaImg,
-      name: "Administrative Control Authority"
-    },
-    {
-      img: egyproImg,
-      name: "Egypro"
-    },
-    {
-      img: collegeImg,
-      name: "New Ramses College"
+      img: wadiImg,
+      name: "Wadi Degla"
     },
     {
       img: rayaImg,
       name: "Raya"
     },
     {
-      img: lifetogetherImg,
-      name: "Life Together"
+      img: egyproImg,
+      name: "Egypro"
     },
     {
-      img: cultureImg,
-      name: "Culture and Education Foundation"
+      img: myahelshorbImg,
+      name: "Dakahlia Water and Sanitation Company"
     },
     {
-      img: wadiImg,
-      name: "Wadi Degla"
+      img: dareleftaImg,
+      name: "Dar Al Ifta"
     },
     {
-      img: althurayaImg,
-      name: "Al Thuraya Holdings"
+      img: ormanImg,
+      name: "Shefa Al-Orman Hospital (Luxor)"
     },
     {
-      img: coffeeshopImg,
-      name: "Coffeeshop Company"
+      img: ministryoftourismImg,
+      name: "Ministry of Tourism & Antiquities"
+    },
+    {
+      img: etisalatImg,
+      name: "Etisalat"
+    },
+    {
+      img: rekabaImg,
+      name: "Administrative Control Authority"
     },
     {
       img: goodlifeImg,
       name: "Good Life"
     },
     {
-      img: myahelshorbImg,
-      name: "Dakahlia Water and Sanitation Company"
+      img: trainsectorImg,
+      name: "El Entag El Harby"
+    },
+    {
+      img: althurayaImg,
+      name: "Al Thuraya Holdings"
     },
     {
       img: lcImg,
@@ -86,24 +94,36 @@ function Clients() {
       name: "Prima Plast"
     },
     {
-      img: dareleftaImg,
-      name: "Dar Al Ifta"
+      img: collegeImg,
+      name: "New Ramses College"
     },
     {
       img: wallstreetImg,
       name: "Wallstreet Securities Brokerage"
     },
     {
-      img: trainsectorImg,
-      name: "El Entag El Harby"
+      img: coffeeshopImg,
+      name: "Coffeeshop Company"
     },
     {
-      img: ministryoftourismImg,
-      name: "Ministry of Tourism & Antiquities"
+      img: topBusinessImg,
+      name: "Top Business for Human Resource"
+    },
+    {
+      img: lifeTogetherImg,
+      name: "Life Together"
+    },
+    {
+      img: cultureImg,
+      name: "Culture and Education Foundation"
     },
     {
       img: pyramidswalkImg,
       name: "Pyramids Walk"
+    },
+    {
+      img: copticImg,
+      name: "Coptic Cathedral"
     }
   ]
 
