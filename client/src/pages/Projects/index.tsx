@@ -6,10 +6,10 @@ import acaImg from 'assets/aca.jpg';
 import daiImg from 'assets/dai.jpg';
 import eeehImg from 'assets/eeeh.png';
 import ccImg from 'assets/cc.jpg';
-import lcImg from 'assets/lc.png';
 import pwcImg from 'assets/pwc.jpg';
 import sahlImg from 'assets/sahl.png';
 import mtaImg from 'assets/mta.jpg';
+import etisalatImg from 'assets/etisalat.jpg';
 
 type ProjectType = {
   img: string;
@@ -65,15 +65,12 @@ function Projects() {
       ]
     },
     {
-      img: lcImg,
-      title: "Lufthansa Cargo",
+      img: etisalatImg,
+      title: "Etisalat",
       subTitle: "Supplying, designing and installing",
       points: [
-        "UTP network infrastructure at airport branch.",
-        "Digital telephone system.",
-        "Fiber fusion splicing and testing.",
-        "Stand-alone access control system.",
-        "IP system surveillance."
+        "Structured cabling system for call center at Mokatam branch.",
+        "Access Control System.",
       ]
     },
     {
