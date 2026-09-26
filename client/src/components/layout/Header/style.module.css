@@ -1,0 +1,214 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+
+/* Its own layer, so the phone menu's backdrop (inside the header) dims the page but not the bar itself. */
+.inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px var(--gutter);
+  background: #fff;
+}
+
+.logoLink {
+  display: block;
+  flex: none;
+}
+
+.logo {
+  display: block;
+  height: 54px;
+  width: auto;
+}
+
+/* ---------- desktop links ---------- */
+.links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-left: auto;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.link {
+  position: relative;
+  color: var(--navy);
+}
+
+.link:hover {
+  color: var(--medium);
+}
+
+/* The underline is drawn below the text, so the active link stays aligned with the others. */
+.on::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--light);
+}
+
+.services {
+  position: relative;
+}
+
+.servicesButton {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Underline only the word, not the chevron. */
+.servicesButton.on::after {
+  right: 20px;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: -14px;
+  display: none;
+  padding-top: 12px;
+}
+
+.services:hover .dropdown,
+.services:focus-within .dropdown,
+.servicesOpen .dropdown {
+  display: block;
+}
+
+.dropdownBox {
+  min-width: 190px;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: #fff;
+  box-shadow: 0 14px 30px rgba(20, 24, 80, .14);
+}
+
+.dropdownLink {
+  display: block;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.dropdownLink:hover {
+  background: var(--mist);
+}
+
+.dropdownOn,
+.dropdownOn:hover {
+  background: var(--navy);
+  color: #fff;
+}
+
+/* ---------- cart + burger ---------- */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-left: 22px;
+}
+
+.cart {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  color: var(--navy);
+}
+
+.cart:hover {
+  background: var(--mist);
+}
+
+.badge {
+  position: absolute;
+  top: 3px;
+  right: 1px;
+  display: grid;
+  place-items: center;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: var(--light);
+  color: var(--deep);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.burger {
+  position: relative;
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  cursor: pointer;
+}
+
+.burger:hover {
+  background: var(--mist);
+}
+
+.burger span {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  height: 2.5px;
+  border-radius: 2px;
+  background: var(--navy);
+  transition: transform .25s ease, top .25s ease, opacity .2s ease;
+}
+
+.burger span:nth-child(1) { top: 13px; }
+.burger span:nth-child(2) { top: 20px; }
+.burger span:nth-child(3) { top: 27px; }
+
+.menuOpen .burger span:nth-child(1) { top: 20px; transform: rotate(45deg); }
+.menuOpen .burger span:nth-child(2) { opacity: 0; }
+.menuOpen .burger span:nth-child(3) { top: 20px; transform: rotate(-45deg); }
+
+@media (max-width: 900px) {
+  .links {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .actions {
+    gap: 4px;
+  }
+}
+
+@media (max-width: 700px) {
+  .inner {
+    padding: 10px 16px;
+  }
+}

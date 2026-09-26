@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "ES2022",
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable", "ES2021.String"],
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
 
@@ -20,17 +20,11 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    "baseUrl": ".",
+    /* Aliases (mirrored in vite.config.ts). TypeScript 7 has no baseUrl, so paths are relative to this file. */
     "paths": {
-      "contacts": ["src/contacts"],
-      "types": ["src/types"],
-      "contexts": ["src/contexts"],
-      "handlers/*": ["src/handlers/*"],
-      "assets/*": ["src/assets/*"],
-      "public/*": ["public/*"],
-      "components": ["src/components/index"],
-      "pages": ["src/pages/index"],
-    },
+      "@/*": ["./src/*"],
+      "public/*": ["./public/*"]
+    }
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

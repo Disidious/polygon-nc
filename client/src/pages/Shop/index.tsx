@@ -1,103 +1,65 @@
-import { useEffect, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, useSearchParams } from 'react-router';
 
+import { getProducts, isNotFound, type ProductsPage } from '@/api';
+import CategoryList from '@/components/shop/CategoryList';
+import Pagination from '@/components/shop/Pagination';
+import { ProductGrid, ProductGridSkeleton } from '@/components/shop/ProductGrid';
+import SearchBar from '@/components/shop/SearchBar';
+import { filtersFromParams } from '@/components/shop/shopUrl';
+import PageHead from '@/components/ui/PageHead';
+import StatusMessage from '@/components/ui/StatusMessage';
+import { useApi } from '@/hooks/useApi';
 import style from './style.module.css';
 
-import { CategoryList, PageNumbers, PageTitle, ProductList, SearchBar } from 'components';
-import { ChosenCategory, MasterCategory, ProductsPagePayload } from 'types';
-
-import { ApiHandler } from 'handlers/api_handler';
+const EMPTY_PAGE: ProductsPage = { page: 1, count: 0, total_pages: 0, results: [] };
 
 function Shop() {
-	const [categories, setCategories] = useState<MasterCategory[]>();
-	const [productsPayload, setProductsPayload] = useState<ProductsPagePayload>();
-	const [chosenCategory, setChosenCategory] = useState<ChosenCategory>();
+  const [params] = useSearchParams();
+  const query = params.toString();
+  const filters = filtersFromParams(params);
 
-	const [categoriesLoading, setCategoriesLoading] = useState(true);
-	const [productsLoading, setProductsLoading] = useState(true);
+  // A page past the last one comes back as 404: that simply means "no products".
+  const products = useApi(
+    (signal) => getProducts(filters, signal).catch((error: unknown) => {
+      if (isNotFound(error)) return EMPTY_PAGE;
+      throw error;
+    }),
+    [query],
+  );
 
-	const [searchParams, _] = useSearchParams();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [query]);
 
-	useEffect(() => {
-		(async () => {
-			const categoriesRes = await ApiHandler.getCategories()
-			setCategories(categoriesRes.json)
-			setCategoriesLoading(false)
-		})()
-	}, [])
+  return (
+    <>
+      <PageHead title="Shop" />
+      <div className={style.layout}>
+        <CategoryList />
+        <div>
+          <SearchBar />
+          <p className={style.note}>
+            Can't find what you're looking for? <Link to="/contactus">Contact us</Link> and we'll get it for you!
+          </p>
 
-	useEffect(() => {
-		setProductsLoading(true)
-		setChosenCategory(constructChosenCategory());
-		window.scrollTo(0, 0);
-		
-		(async () => {
-			await fetchProducts()
-			setProductsLoading(false)
-		})()
-	}, [searchParams])
-
-	const fetchProducts = async () => {
-		const productsRes = await ApiHandler.getProducts(searchParams)
-		setProductsPayload(productsRes.json)
-	} 
-
-	const constructChosenCategory = (): ChosenCategory | undefined => {
-		const id = searchParams.get("categoryid") || searchParams.get("mastercategoryid")
-		if(id == null || !+id) {
-			return undefined
-		}
-
-		const isMaster = !searchParams.has("categoryid")
-
-		return {
-			id: +id,
-			isMaster
-		}
-	}
-
-	
-	return (
-		<div className={style.container}>
-			<PageTitle
-				text='Shop'
-			/>
-			<div className={style.shopContainer}>
-				<div className={style.shopSubContainer}>
-					<CategoryList
-						categories={categories}
-						chosenCategory={chosenCategory}
-						containerStyle={style.categoryList}
-						loading={categoriesLoading}
-					/>
-					<div className={style.productListContainer}>
-						<SearchBar/>
-						<div className={style.noteContainer}>
-							<p>
-								Can't find what you're looking for?&nbsp;
-								<Link to="/contactus">
-									Contact us
-								</Link>
-								&nbsp;and we'll get it for you!
-							</p>
-						</div>
-						<ProductList
-							products={productsPayload?.results}
-							loading={productsLoading}
-							containerStyle={style.productList}
-						/>
-						<div>
-							<div className={style.divider}/>
-							<PageNumbers
-								totalPages={productsPayload?.total_pages}
-								currentPage={productsPayload?.page}
-							/>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+          {products.status === 'loading' && <ProductGridSkeleton />}
+          {products.status === 'error' && (
+            <StatusMessage icon="error" title="Couldn't load products." action={{ label: 'Try again', onClick: products.reload }} className={style.message} />
+          )}
+          {products.status === 'success' &&
+            (products.data.results.length === 0 ? (
+              <StatusMessage icon="search" title="No products found." className={style.message} />
+            ) : (
+              <>
+                <ProductGrid products={products.data.results} />
+                <Pagination page={products.data.page} totalPages={products.data.total_pages} />
+              </>
+            ))}
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default Shop;

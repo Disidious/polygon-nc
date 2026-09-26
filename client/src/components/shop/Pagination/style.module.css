@@ -1,0 +1,44 @@
+.pager {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.page {
+  display: grid;
+  place-items: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid var(--line-input);
+  border-radius: var(--radius);
+  background: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+a.page:hover {
+  border-color: var(--light);
+  background: var(--mist);
+}
+
+.on {
+  border-color: var(--navy);
+  background: var(--navy);
+  color: #fff;
+}
+
+.off {
+  opacity: .4;
+}
+
+@media (max-width: 700px) {
+  .pager {
+    justify-content: center;
+  }
+}

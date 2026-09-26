@@ -1,0 +1,108 @@
+.backdrop,
+.panel {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    display: block;
+    background: rgba(15, 18, 64, .45);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s, visibility .2s;
+  }
+
+  .panel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: block;
+    max-height: calc(100vh - var(--header-h));
+    overflow: auto;
+    padding: 8px 16px 18px;
+    border-bottom: 1px solid var(--line);
+    background: #fff;
+    box-shadow: 0 20px 34px rgba(15, 18, 64, .18);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity .2s ease, transform .2s ease, visibility .2s;
+  }
+
+  .visible {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 14px 12px;
+  border: 0;
+  border-bottom: 1px solid var(--line-soft);
+  background: none;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: left;
+  color: var(--navy);
+  cursor: pointer;
+}
+
+.panel > .item:last-child {
+  border-bottom: 0;
+}
+
+.on {
+  border-radius: var(--radius);
+  border-bottom-color: transparent;
+  background: var(--navy);
+  color: #fff;
+}
+
+.group svg {
+  color: var(--medium);
+  transition: transform .2s;
+}
+
+.group.expanded svg {
+  transform: rotate(180deg);
+}
+
+.sub {
+  display: grid;
+  grid-template-rows: 0fr;
+  border-bottom: 1px solid var(--line-soft);
+  transition: grid-template-rows .25s ease;
+}
+
+.sub.expanded {
+  grid-template-rows: 1fr;
+}
+
+.sub > div {
+  overflow: hidden;
+}
+
+.subItem {
+  display: block;
+  padding: 11px 12px 11px 26px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--medium);
+}
+
+.subItem:last-child {
+  margin-bottom: 8px;
+}
+
+.subItem.on {
+  color: #fff;
+}

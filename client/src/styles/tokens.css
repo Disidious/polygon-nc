@@ -1,0 +1,48 @@
+/* Design tokens. Colours are the logo's three blues plus close shades (see the design spec, section 8). */
+:root {
+  --navy: #2C3285;
+  --medium: #4F549F;
+  --light: #91B4D5;
+  --deep: #1B1F5E;
+  --tint: #DCE7F2;
+  --mist: #F3F6FB;
+
+  --ink: #1a1d3a;
+  --text: #3d4266;
+  --muted: #6b7094;
+
+  --line: #e6ebf3;
+  --line-soft: #eef2f8;
+  --line-input: #d9e1ee;
+
+  --error: #D32F2F;
+  --error-bg: #FDECEC;
+  --error-text: #B71C1C;
+  --bezel: #12163F;
+
+  --font: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --radius-sm: 8px;
+  --radius: 10px;
+  --radius-md: 12px;
+  --radius-lg: 14px;
+  --radius-xl: 16px;
+
+  --shadow-card: 0 1px 2px rgba(20, 24, 80, .06), 0 8px 24px rgba(20, 24, 80, .07);
+  --shadow-card-hover: 0 2px 4px rgba(20, 24, 80, .06), 0 14px 32px rgba(20, 24, 80, .12);
+  --shadow-lift: 0 12px 28px rgba(20, 24, 80, .12);
+
+  /* Pointy-top hexagon, the brand shape. */
+  --hex: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+
+  --gutter: 32px;
+  /* Sticky header height (54px logo + padding + border); the toast sits just below it. */
+  --header-h: 83px;
+}
+
+@media (max-width: 700px) {
+  :root {
+    --gutter: 20px;
+    --header-h: 75px;
+  }
+}

@@ -1,0 +1,17 @@
+.section {
+  background: #fff;
+}
+
+.mist {
+  background: var(--mist);
+}
+
+.inner {
+  padding: 44px var(--gutter);
+}
+
+@media (max-width: 700px) {
+  .inner {
+    padding: 40px var(--gutter);
+  }
+}

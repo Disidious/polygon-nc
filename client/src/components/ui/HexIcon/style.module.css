@@ -1,0 +1,21 @@
+.hex {
+  flex: none;
+  display: grid;
+  place-items: center;
+  clip-path: var(--hex);
+}
+
+.navy {
+  background: var(--navy);
+  color: #fff;
+}
+
+.tint {
+  background: var(--tint);
+  color: var(--navy);
+}
+
+.glass {
+  background: rgba(145, 180, 213, .22);
+  color: var(--light);
+}

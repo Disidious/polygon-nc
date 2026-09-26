@@ -1,0 +1,81 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  transition: box-shadow .2s, transform .2s, border-color .2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--light);
+  box-shadow: var(--shadow-lift);
+}
+
+.placeholder:hover {
+  transform: none;
+  border-color: var(--line);
+  box-shadow: none;
+}
+
+.image {
+  height: 180px;
+  padding: 16px;
+  border-bottom: 1px solid var(--line-soft);
+  background: #fff;
+}
+
+.image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Two lines at most, so every card in a row has the same height. */
+.name {
+  display: -webkit-box;
+  height: calc(2 * 1.35em + 24px);
+  overflow: hidden;
+  padding: 12px 14px;
+  background: var(--mist);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--navy);
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.placeholderName {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .image {
+    height: 130px;
+    padding: 12px;
+  }
+
+  .name {
+    height: calc(2 * 1.35em + 20px);
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+}

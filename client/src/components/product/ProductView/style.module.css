@@ -1,0 +1,109 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 460px) minmax(0, 560px);
+  align-items: start;
+  justify-content: center;
+  gap: 40px;
+  padding: 44px var(--gutter) 60px;
+}
+
+.image {
+  aspect-ratio: 1 / 1;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: #fff;
+}
+
+.image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.name {
+  margin-bottom: 22px;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--navy);
+  overflow-wrap: anywhere;
+}
+
+.field {
+  margin-bottom: 18px;
+}
+
+.label {
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--medium);
+}
+
+.value {
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.specs {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--mist);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+.specs span {
+  display: block;
+}
+
+.buy {
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.actions {
+  margin-top: 16px;
+}
+
+.after {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.skeletonTitle {
+  margin-bottom: 22px;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: minmax(0, 560px);
+    gap: 24px;
+    padding: 24px var(--gutter) 44px;
+  }
+
+  .image {
+    height: min(80vw, 380px);
+    aspect-ratio: auto;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .name {
+    font-size: 23px;
+  }
+
+  .after {
+    grid-template-columns: 1fr;
+  }
+}

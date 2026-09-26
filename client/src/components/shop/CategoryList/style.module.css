@@ -1,0 +1,162 @@
+.box {
+  padding: 16px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: #fff;
+}
+
+.heading {
+  margin: 2px 12px 10px;
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.toggle {
+  display: none;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.link {
+  display: block;
+  flex: 1;
+  padding: 9px 12px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.link:hover {
+  background: var(--mist);
+}
+
+.master {
+  font-weight: 800;
+}
+
+.on,
+.on:hover {
+  background: var(--navy);
+  color: #fff;
+}
+
+.expand {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: none;
+  color: var(--medium);
+  cursor: pointer;
+}
+
+.expand:hover {
+  background: var(--mist);
+}
+
+.expand svg {
+  transform: rotate(180deg);
+  transition: transform .2s;
+}
+
+.expand.collapsed svg {
+  transform: none;
+}
+
+.sub {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows .25s ease;
+}
+
+.subClosed {
+  grid-template-rows: 0fr;
+}
+
+.sub > div {
+  overflow: hidden;
+}
+
+.subInner {
+  margin: 2px 0 8px 18px;
+  padding-left: 8px;
+  border-left: 1px solid var(--line);
+}
+
+.subLink {
+  padding: 7px 12px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.subLink.on {
+  color: #fff;
+}
+
+.skeletonRow {
+  margin: 13px 12px;
+}
+
+.skeletonSub {
+  margin-left: 40px;
+}
+
+@media (max-width: 900px) {
+  .box {
+    padding: 10px;
+  }
+
+  .heading {
+    display: none;
+  }
+
+  .toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    padding: 6px 8px;
+    border: 0;
+    background: none;
+    font-size: 15px;
+    font-weight: 800;
+    text-align: left;
+    color: var(--navy);
+    cursor: pointer;
+  }
+
+  .current {
+    margin-left: auto;
+    font-weight: 600;
+    color: var(--medium);
+  }
+
+  .toggle svg {
+    color: var(--medium);
+    transition: transform .2s;
+  }
+
+  .open .toggle svg {
+    transform: rotate(180deg);
+  }
+
+  .body {
+    display: none;
+    margin-top: 8px;
+  }
+
+  .open .body {
+    display: block;
+  }
+}

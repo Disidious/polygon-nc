@@ -1,0 +1,92 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 22px 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  text-align: center;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--light);
+  box-shadow: 0 12px 28px rgba(20, 24, 80, .1);
+}
+
+/* A light ring (the hexagon's background) around the logo, which fills the hexagon like the original. */
+.hex {
+  position: relative;
+  flex: none;
+  width: 118px;
+  height: 136px;
+  background: var(--tint);
+  clip-path: var(--hex);
+  transition: background .2s;
+}
+
+.card:hover .hex {
+  background: var(--navy);
+}
+
+.hex img {
+  position: absolute;
+  inset: 3px;
+  display: block;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  background: #fff;
+  object-fit: cover;
+  clip-path: var(--hex);
+}
+
+.name {
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--navy);
+}
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .card {
+    padding: 18px 10px 14px;
+  }
+
+  .hex {
+    width: 100px;
+    height: 115px;
+  }
+
+  .name {
+    font-size: 13px;
+  }
+}

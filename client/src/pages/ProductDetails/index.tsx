@@ -1,153 +1,45 @@
-import { useContext, useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import toast from 'react-hot-toast';
+import { useSearchParams } from 'react-router';
 
+import { getProduct, isNotFound } from '@/api';
+import { ProductView, ProductViewSkeleton } from '@/components/product/ProductView';
+import StatusMessage from '@/components/ui/StatusMessage';
+import { useApi } from '@/hooks/useApi';
+import { usePageMetadata } from '@/hooks/usePageMetadata';
 import style from './style.module.css';
 
-import { ApiHandler } from 'handlers/api_handler';
+function NotFound() {
+  return <StatusMessage icon="search" title="Product not found." action={{ label: 'Go to Shop', to: '/shop' }} className={style.message} />;
+}
 
-import { Button, Spinner } from 'components';
-import { Product } from 'types';
-import { CartContext } from 'contexts';
-
-import noImg from 'assets/noimage.png'
-
-import { MetadataHandler } from 'handlers/metadata_handler';
-
+/** /product?productid=ID (the Flask server reads the same URL to fill in link previews). */
 function ProductDetails() {
-	const { appendProduct } = useContext(CartContext);
+  const [params] = useSearchParams();
+  const raw = params.get('productid');
+  const id = raw && /^\d+$/.test(raw) ? Number(raw) : null;
+  if (id === null) return <NotFound />;
+  // A new id starts a fresh page (quantity, "added" state).
+  return <ProductLoader key={id} id={id} />;
+}
 
-  	const [product, setProduct] = useState<Product>();
-	const [quantity, setQuantity] = useState(1);
-	const [productLoading, setProductLoading] = useState(true);
-	const [added, setAdded] = useState(false);
+function ProductLoader({ id }: { id: number }) {
+  const product = useApi((signal) => getProduct(id, signal), [id]);
+  const data = product.status === 'success' ? product.data : undefined;
 
-	const [searchParams, _] = useSearchParams();
+  usePageMetadata(data && {
+    title: `${data.name} - Polygon Network Company`,
+    description: `Brand:\n${data.brand}\nSpecs:\n${data.specs}`,
+    image: data.image ?? undefined,
+  });
 
-	useEffect(() => {
-    	setProductLoading(true);
-		(async () => {
-			const productId = searchParams.get("productid")
-			if(productId != null && +productId) {
-				const productRes = await ApiHandler.getProduct(productId)
-				const currProduct: Product = productRes.json
-				setProduct(currProduct)
-
-				MetadataHandler.setMetadata({
-					metadata: {
-						title: `${currProduct.name} - Polygon Network Company`,
-						description: `Brand:\n${currProduct.brand}\nSpecs:\n${currProduct.specs}`,
-						image: currProduct.image
-					}
-				})
-			}
-
-			setProductLoading(false)
-		})()
-	}, [])
-
-	const incrementQuantity = () => {
-		setQuantity(quantity + 1)
-	}
-
-	const decrementQuantity = () => {
-		setQuantity(quantity - 1)
-	}
-	
-	const addToQuote = () => {
-		appendProduct(product!.id, quantity);
-		setAdded(true);
-		toast.success("Product added!")
-	}
-
-	if(productLoading) {
-		return <Spinner size='lrg'/>
-	}
-
-	if(product == null) {
-		return
-	}
-	
-	return (
-		<div className={style.container}>
-			<div className={style.productContainer}>
-				<img className={style.productImg} src={product.image ? product.image : noImg} alt={product.name} />
-				<div className={style.productContent}>
-					<div>
-						<h1>
-							{product.name}
-						</h1>
-						<h2>Brand:</h2>
-						<p>
-							{product.brand}
-						</p>
-						<h2>Specifications:</h2>
-						<p>
-							{product.specs.split("\r\n").map((text, idx) => (
-										<span key={idx}>
-											{text} 
-											<br/>
-										</span>
-									)
-								)
-							}
-						</p>
-					</div>
-					<div>
-						<h2>
-							Quantity:
-						</h2>
-						<div className={style.quantityBtnsContainer}>
-							<Button
-								text='-'
-								onClick={decrementQuantity}
-								btnClass={style.quantityBtn}
-								disabled={quantity === 1}
-								secondary
-							/>
-							<Button
-								text={`${quantity}`}
-								btnClass={`${style.quantityBtn} ${style.disablePointer}`}
-								secondary
-							/>
-							<Button
-								text='+'
-								onClick={incrementQuantity}
-								btnClass={style.quantityBtn}
-								secondary
-							/>
-						</div>
-						{
-							added
-							?
-							<div className={style.navButtonsContainer}>
-								<Button
-								primary
-								text='Continue Shopping'
-								btnClass={style.navButton}
-								goto='/shop'
-								/>
-								<Button
-								secondary
-								text='Go to Checkout'
-								btnClass={style.navButton}
-								goto='/checkout'
-								/>
-							</div>
-							:
-							<Button
-								text={'Add to Quote'}
-								btnClass={style.addBtn}
-								disabled={quantity === 0}
-								primary
-								onClick={addToQuote}
-							/>
-						}
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+  if (product.status === 'loading') return <ProductViewSkeleton />;
+  if (product.status === 'error') {
+    return isNotFound(product.error) ? (
+      <NotFound />
+    ) : (
+      <StatusMessage icon="error" title="Couldn't load this product." action={{ label: 'Try again', onClick: product.reload }} className={style.message} />
+    );
+  }
+  return <ProductView product={product.data} />;
 }
 
 export default ProductDetails;

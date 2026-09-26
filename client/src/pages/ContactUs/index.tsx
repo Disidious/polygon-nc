@@ -1,15 +1,19 @@
-import style from './style.module.css';
-
-import { ContactItems, PageTitle } from 'components';
-import { contacts } from 'contacts';
+import ContactCards from '@/components/contact/ContactCards';
+import VisitUs from '@/components/contact/VisitUs';
+import PageHead from '@/components/ui/PageHead';
+import Section from '@/components/ui/Section';
+import { contacts } from '@/content/contacts';
 
 function ContactUs() {
-	return (
-		<div className={style.container}>
-			<PageTitle text='Contact Us'/>
-			<ContactItems contacts={contacts}/>
-		</div>
-	);
+  return (
+    <>
+      <PageHead title="Contact Us" />
+      <Section>
+        <ContactCards contacts={contacts} />
+        <VisitUs />
+      </Section>
+    </>
+  );
 }
 
 export default ContactUs;
